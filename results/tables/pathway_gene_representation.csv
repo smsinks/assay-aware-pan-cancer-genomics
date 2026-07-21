@@ -1,0 +1,11 @@
+pathway,nRoleAnnotatedPublishedGenes,nEligiblePublishedGenes,nGenesRepresented,representationPct,analysisScope,reference,pmid
+Cell cycle,15,15,13,86.66666667,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+Hippo,38,26,8,30.76923077,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+MYC,10,7,4,57.14285714,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+NOTCH,30,29,13,44.82758621,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+NRF2,3,3,3,100,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+PI3K–AKT,28,22,19,86.36363636,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+TGF-β,7,7,7,100,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+RTK–RAS,42,38,37,97.36842105,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+TP53,6,6,5,83.33333333,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050
+WNT/β-catenin,64,25,21,84,Protein-altering mutations in represented genes with a published genomic-alteration role,"Sanchez-Vega et al., Cell 2018",29625050

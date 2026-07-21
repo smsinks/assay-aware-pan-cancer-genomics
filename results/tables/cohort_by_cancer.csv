@@ -1,0 +1,90 @@
+rank,cancerGroup,cancerGroupLabel,nEligibleSamples,nWesWgsSamples,nTargetedSamples,nCallableSampleGenePairs,nUnassayedSampleGenePairs,nMutatedSampleGenePairs,callableFractionPct,targetedFractionPct,assayStratum
+1,BRCA,Breast cancer,12717,3577,9140,8083509,8969988,72754,47.40088792,71.87229693,Mixed WES/WGS and targeted panel
+2,COADREAD,Colorectal cancer,11259,4524,6721,9142980,5955339,209571,60.55627782,59.69446665,Mixed WES/WGS and targeted panel
+3,LUAD,Lung adenocarcinoma,10289,3921,6368,8173491,5624058,105835,59.23871696,61.89134027,Mixed WES/WGS and targeted panel
+4,SARC,Soft-tissue sarcoma,9238,1385,7853,4649568,7738590,19460,37.53235953,85.0075774,Mixed WES/WGS and targeted panel
+5,PRAD,Prostate cancer,6748,2900,3848,5610191,3438877,31451,61.99744548,57.0243035,Mixed WES/WGS and targeted panel
+6,PAAD,Pancreatic cancer,5823,2185,3638,4639056,3169587,28391,59.40924691,62.47638674,Mixed WES/WGS and targeted panel
+7,UCEC,Endometrial cancer,5045,1010,4021,3236742,3528603,121932,47.84297031,79.70267592,Mixed WES/WGS and targeted panel
+8,MDS,Myelodysplastic syndrome,4276,41,4235,607432,5126684,14796,10.59329808,99.04115996,Mixed WES/WGS and targeted panel
+9,AML,Acute myeloid leukaemia,4205,2381,1824,3429900,2209005,13223,60.82563902,43.37693222,Mixed WES/WGS and targeted panel
+10,BLCA,Bladder and urinary tract cancer,4170,1515,2644,3190887,2401083,64306,57.06194776,63.40527578,Mixed WES/WGS and targeted panel
+11,OV,Ovarian cancer,3350,1115,2235,2532783,1959567,17913,56.37991252,66.71641791,Mixed WES/WGS and targeted panel
+12,SKCM,Cutaneous and unspecified melanoma,3091,1658,1433,2866865,1278166,104061,69.16389769,46.36040116,Mixed WES/WGS and targeted panel
+13,HCC,Hepatocellular carcinoma,2985,2675,310,3727975,274910,26632,93.1322034,10.38525963,Mixed WES/WGS and targeted panel
+14,CLL,Chronic lymphocytic leukaemia/small lymphocytic lymphoma,2699,2486,213,3418956,200403,8761,94.46302508,7.891811782,Mixed WES/WGS and targeted panel
+15,CCRCC,Clear-cell renal cell carcinoma,2625,1979,646,2947155,572970,9899,83.7230212,24.60952381,Mixed WES/WGS and targeted panel
+16,CHOL,Cholangiocarcinoma,2591,1624,967,2616820,857711,13643,75.31433739,37.32149749,Mixed WES/WGS and targeted panel
+17,GBM,Portal-defined or legacy glioblastoma,2381,981,1400,1940325,1252596,14753,60.76958998,58.79882402,Mixed WES/WGS and targeted panel
+18,BRAIN,CNS/Brain,2365,1717,648,2591475,579990,8122,81.71223709,27.39957717,Mixed WES/WGS and targeted panel
+19,STAD,Stomach adenocarcinoma,2245,1668,577,2497707,512838,34037,82.96527705,25.70155902,Mixed WES/WGS and targeted panel
+20,LUSC,Lung squamous-cell carcinoma,2159,1173,958,2017244,877975,34105,69.67500559,44.37239463,Mixed WES/WGS and targeted panel
+21,BONE,Bone cancer,2008,314,1694,1028774,1663954,2805,38.20564127,84.3625498,Mixed WES/WGS and targeted panel
+22,DLBCL,Diffuse large B-cell lymphoma,1961,1519,442,2214479,415222,17588,84.21029615,22.53952065,Mixed WES/WGS and targeted panel
+23,CUP,Cancer of unknown primary,1741,152,1514,882086,1452595,14771,37.78186399,86.96151637,Mixed WES/WGS and targeted panel
+24,HNSC,Head and neck cancer,1704,1101,603,1748533,536531,18558,76.52008872,35.38732394,Mixed WES/WGS and targeted panel
+25,THCA,Thyroid cancer,1639,836,803,1480908,716991,5557,67.37834632,48.99328859,Mixed WES/WGS and targeted panel
+26,MBN,Mature B-cell neoplasm,1521,1009,512,1558379,481282,11406,76.40382397,33.66206443,Mixed WES/WGS and targeted panel
+27,NSCLC,Non-small-cell lung cancer,1276,273,1003,816162,894954,12519,47.69764294,78.60501567,Mixed WES/WGS and targeted panel
+28,KIDNEY,Kidney,1149,729,420,1154402,386407,12289,74.92181056,36.5535248,Mixed WES/WGS and targeted panel
+29,ACYC,Adenoid cystic carcinoma,1133,1023,110,1424094,95259,5027,93.73029178,9.708737864,Mixed WES/WGS and targeted panel
+30,USARC,Uterine sarcoma,1103,13,1090,414586,1064537,2217,28.02917675,98.82139619,Mixed WES/WGS and targeted panel
+31,ESCC,Oesophageal squamous-cell carcinoma,1014,791,223,1144837,214937,7875,84.1931821,21.99211045,Mixed WES/WGS and targeted panel
+32,NMSC,Non-melanoma skin cancer,837,247,590,569955,552462,35733,50.77925584,70.48984468,Mixed WES/WGS and targeted panel
+33,PNS,Peripheral Nervous System,820,111,698,438021,661599,2757,39.83385169,85.12195122,Mixed WES/WGS and targeted panel
+34,ESCA,Oesophageal adenocarcinoma,811,365,446,691174,396377,8957,63.55324946,54.99383477,Mixed WES/WGS and targeted panel
+35,SCLC,Small-cell lung cancer,803,384,419,705794,371029,9821,65.54410521,52.17932752,Mixed WES/WGS and targeted panel
+36,CESC,Cervical cancer,749,416,333,711373,293036,8343,70.82503243,44.45927904,Mixed WES/WGS and targeted panel
+37,GIST,Gastrointestinal stromal tumour,703,71,632,367790,574933,1391,39.01358087,89.90042674,Mixed WES/WGS and targeted panel
+38,HIST,Histiocytosis,632,534,98,753056,94456,506,88.85490707,15.50632911,Mixed WES/WGS and targeted panel
+39,TGCT,Testicular germ-cell tumour,593,171,422,416069,379144,1160,52.321705,71.16357504,Mixed WES/WGS and targeted panel
+40,GBC,Gallbladder cancer,592,281,311,516537,277335,3854,65.06552694,52.53378378,Mixed WES/WGS and targeted panel
+41,MPN,Myeloproliferative neoplasm,589,188,401,365123,424726,1347,46.22693705,68.08149406,Mixed WES/WGS and targeted panel
+42,UCS,Uterine carcinosarcoma,570,62,508,318564,445806,3484,41.67667491,89.12280702,Mixed WES/WGS and targeted panel
+43,STOMACH,Esophagus/Stomach,541,183,358,414870,310611,5235,57.18550865,66.17375231,Mixed WES/WGS and targeted panel
+44,LIVER,Liver,522,437,85,622291,77711,3885,88.89846029,16.2835249,Mixed WES/WGS and targeted panel
+45,MESO,Mesothelioma,477,94,383,297140,342517,1268,46.45302092,80.29350105,Mixed WES/WGS and targeted panel
+46,ODG,"Oligodendroglioma, IDH-mutant and 1p/19q-codeleted",468,231,237,411781,215807,3033,65.61326858,50.64102564,Mixed WES/WGS and targeted panel
+47,PRCC,Papillary renal cell carcinoma,437,342,95,501307,84710,2839,85.54478795,21.73913043,Mixed WES/WGS and targeted panel
+48,ASTR,"Astrocytoma, IDH-mutant",432,38,394,223453,355859,2320,38.57213384,91.2037037,Mixed WES/WGS and targeted panel
+49,APPX,Appendiceal cancer,317,3,314,146873,278224,1298,34.55046731,99.05362776,Mixed WES/WGS and targeted panel
+50,CHRCC,Chromophobe renal cell carcinoma,316,260,56,373290,50466,661,88.0907881,17.72151899,Mixed WES/WGS and targeted panel
+51,AMPCA,Ampullary cancer,296,165,131,281296,115640,3627,70.86683999,44.25675676,Mixed WES/WGS and targeted panel
+52,TNKN,Mature T- and NK-cell neoplasm,292,46,246,160094,231478,1391,40.88494581,84.24657534,Mixed WES/WGS and targeted panel
+53,PCPG,Phaeochromocytoma/paraganglioma,284,255,29,355031,25813,488,93.2221592,10.21126761,Mixed WES/WGS and targeted panel
+54,THYM,Thymic tumour,272,196,76,297056,67696,875,81.44054042,27.94117647,Mixed WES/WGS and targeted panel
+55,GEJ,Gastro-oesophageal junction adenocarcinoma,261,7,254,126217,223784,2028,36.06189697,97.31800766,Mixed WES/WGS and targeted panel
+56,GCT,Germ-cell tumour,256,0,256,107028,236268,486,31.17659396,100,Targeted panel only
+57,MM,Plasma-cell myeloma,255,213,42,302443,39512,1216,88.44526327,16.47058824,Mixed WES/WGS and targeted panel
+58,MDS_MPN,Myelodysplastic/myeloproliferative neoplasm,227,25,202,57365,247042,701,18.84483603,88.98678414,Mixed WES/WGS and targeted panel
+59,SBWL,Small-bowel cancer,220,60,160,152685,142335,3063,51.75411836,72.72727273,Mixed WES/WGS and targeted panel
+60,UM,Uveal melanoma,210,87,123,171517,110093,704,60.90586272,58.57142857,Mixed WES/WGS and targeted panel
+61,GINET,Gastrointestinal neuroendocrine tumour,197,15,182,102323,161854,625,38.73274358,92.3857868,Mixed WES/WGS and targeted panel
+62,ACC,Adrenocortical carcinoma,191,105,86,179161,76970,1291,69.94897142,45.02617801,Mixed WES/WGS and targeted panel
+63,BLL,B-lymphoblastic leukaemia/lymphoma,165,103,62,162923,58342,491,73.63252209,37.57575758,Mixed WES/WGS and targeted panel
+64,SG,Salivary gland cancer,163,10,153,82940,135643,806,37.94439641,93.86503067,Mixed WES/WGS and targeted panel
+65,ANAL,Anal cancer,142,8,134,71679,118743,1161,37.6421842,94.36619718,Mixed WES/WGS and targeted panel
+66,MYELOID,Myeloid,131,64,67,91456,84215,229,52.06095485,51.14503817,Mixed WES/WGS and targeted panel
+67,VULVA,Vulva/Vagina,112,3,109,53763,96429,610,35.79618089,97.32142857,Mixed WES/WGS and targeted panel
+68,RBL,Retinoblastoma,109,0,109,51078,95091,204,34.94448207,100,Targeted panel only
+69,BOWEL,Bowel,100,1,99,46377,87723,470,34.58389262,99,Mixed WES/WGS and targeted panel
+70,LYMPH,Lymphoid,94,74,20,107234,18820,226,85.06989068,21.27659574,Mixed WES/WGS and targeted panel
+71,OVARY,Ovary/Fallopian Tube,85,6,79,43988,69997,154,38.59104268,92.94117647,Mixed WES/WGS and targeted panel
+72,HL,Hodgkin lymphoma,82,61,21,90251,19711,1035,82.07471672,25.6097561,Mixed WES/WGS and targeted panel
+73,HEAD_NECK,Head and Neck,63,2,61,30481,54002,349,36.07944794,96.82539683,Mixed WES/WGS and targeted panel
+74,BREAST,Breast,43,3,40,21681,35982,141,37.59950055,93.02325581,Mixed WES/WGS and targeted panel
+75,LEUK,Leukaemia,35,14,21,27174,19761,92,57.89709172,60,Mixed WES/WGS and targeted panel
+76,PERITONEUM,Peritoneum,26,0,26,12266,22600,103,35.18040498,100,Targeted panel only
+77,TLL,T-lymphoblastic leukaemia/lymphoma,24,7,17,16197,15987,85,50.32624907,70.83333333,Mixed WES/WGS and targeted panel
+78,EYE,Eye,21,0,21,9993,18168,116,35.48524555,100,Targeted panel only
+79,PENIS,Penis,19,4,15,11923,13556,432,46.79540013,78.94736842,Mixed WES/WGS and targeted panel
+80,UTERUS,Uterus,19,0,19,8783,16696,71,34.47152557,100,Targeted panel only
+81,BILIARY_TRACT,Biliary Tract,17,11,6,17637,5160,151,77.36544282,35.29411765,Mixed WES/WGS and targeted panel
+82,SOFT_TISSUE,Soft Tissue,17,6,11,13385,9412,19,58.71386586,64.70588235,Mixed WES/WGS and targeted panel
+83,MAST,Mastocytosis,9,3,6,6433,5636,29,53.30184771,66.66666667,Mixed WES/WGS and targeted panel
+84,TESTIS,Testis,8,1,7,4565,6163,11,42.55219985,87.5,Mixed WES/WGS and targeted panel
+85,BLADDER,Bladder/Urinary Tract,7,0,7,3096,6291,31,32.98178332,100,Targeted panel only
+86,NHL,Non-Hodgkin lymphoma,4,0,4,1640,3724,10,30.57419836,100,Targeted panel only
+87,ADRENAL_GLAND,Adrenal Gland,3,0,3,1384,2639,16,34.40218742,100,Targeted panel only
+88,SKIN,Skin,2,0,2,974,1708,2,36.31618195,100,Targeted panel only
+89,LUNG,Lung,1,1,0,1341,0,3,100,0,WES/WGS only

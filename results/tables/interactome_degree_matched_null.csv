@@ -1,0 +1,5 @@
+network,metric,nObservedEdges,observedConnectedEdges,observedProportion,nullMeanConnectedEdges,nullMeanProportion,nullCiLowConnectedEdges,nullCiHighConnectedEdges,empiricalEnrichmentP,nPermutations,matchingVariables,randomSeed
+main,direct connection,33,11,0.3333333333,4.8536,0.1470787879,2,9,0.00199960008,5000,log2 interactome degree bin and CGC membership,42
+main,connection within two steps,33,32,0.9696969697,32.7876,0.9935636364,32,33,0.9830033993,5000,log2 interactome degree bin and CGC membership,42
+expanded,direct connection,45,15,0.3333333333,7.1562,0.1590266667,3,12,0.001399720056,5000,log2 interactome degree bin and CGC membership,42
+expanded,connection within two steps,45,44,0.9777777778,44.7048,0.99344,43,45,0.9670065987,5000,log2 interactome degree bin and CGC membership,42

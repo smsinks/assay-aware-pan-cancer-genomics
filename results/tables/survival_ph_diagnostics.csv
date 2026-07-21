@@ -1,0 +1,117 @@
+datasetId,context,scope,cancer,geneA,geneB,term,chiSquare,degreesFreedom,phTestP,transform,diagnostic,tiesMethod,phFdr,phFdrFamily
+cancer-specific_LUAD_KEAP1_STK11_positive,KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,A_only,17.70112339,1,2.584739093e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_KEAP1_STK11_positive,KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,B_only,1.307638836,1,0.2528226023,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_KEAP1_STK11_positive,KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,Both,29.49753657,1,5.598781929e-08,rank,cox.zph scaled Schoenfeld-residual test,Efron,8.118233796e-07,all 29 primary A+B coefficient-level PH tests
+cancer-specific_LUAD_KEAP1_STK11_positive,KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,GLOBAL,52.76312712,3,2.059428377e-11,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUSC_KEAP1_STK11_positive,KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,A_only,0.3809715137,1,0.5370837568,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUSC_KEAP1_STK11_positive,KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,B_only,0.02607865451,1,0.8717083783,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUSC_KEAP1_STK11_positive,KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,Both,0.3824613564,1,0.5362888949,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.7776188977,all 29 primary A+B coefficient-level PH tests
+cancer-specific_LUSC_KEAP1_STK11_positive,KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,GLOBAL,0.8196740181,3,0.844755711,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_PAAD_KRAS_TP53_positive,KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,A_only,0.4105457173,1,0.5216926507,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_PAAD_KRAS_TP53_positive,KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,B_only,1.729357456,1,0.1884929772,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_PAAD_KRAS_TP53_positive,KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,Both,0.6087163232,1,0.4352715469,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.6970326698,all 29 primary A+B coefficient-level PH tests
+cancer-specific_PAAD_KRAS_TP53_positive,KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,GLOBAL,2.400551919,3,0.4935318915,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_KRAS_TP53_positive,KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,A_only,0.7830120515,1,0.3762215275,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_KRAS_TP53_positive,KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,B_only,0.9521022273,1,0.3291847701,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_KRAS_TP53_positive,KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,Both,0.2191990548,1,0.6396508772,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.7977353305,all 29 primary A+B coefficient-level PH tests
+cancer-specific_COADREAD_KRAS_TP53_positive,KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,GLOBAL,2.14372125,3,0.5431184191,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_PIK3CA_positive,PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,A_only,1.691899736,1,0.1933507314,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_PIK3CA_positive,PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,B_only,4.005452582,1,0.04535331931,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_PIK3CA_positive,PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,Both,0.232470033,1,0.6296983539,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.7977353305,all 29 primary A+B coefficient-level PH tests
+cancer-specific_UCEC_PTEN_PIK3CA_positive,PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,GLOBAL,4.532855464,3,0.2093783108,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_GBM_IDH1_TP53_positive,IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,A_only,2.471122266,1,0.1159551051,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_GBM_IDH1_TP53_positive,IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,B_only,1.862008029,1,0.1723932237,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_GBM_IDH1_TP53_positive,IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,Both,0.0287088415,1,0.8654530512,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.8963620887,all 29 primary A+B coefficient-level PH tests
+cancer-specific_GBM_IDH1_TP53_positive,IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,GLOBAL,4.248901642,3,0.2358112805,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_BRCA_PIK3CA_TP53_positive,PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,A_only,34.50622674,1,4.248899223e-09,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_BRCA_PIK3CA_TP53_positive,PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,B_only,115.7533583,1,5.382409749e-27,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_BRCA_PIK3CA_TP53_positive,PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,Both,5.580366478,1,0.01816292154,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.08778745409,all 29 primary A+B coefficient-level PH tests
+cancer-specific_BRCA_PIK3CA_TP53_positive,PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,GLOBAL,148.9553379,3,4.427048025e-32,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_EGFR_KRAS_positive,EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,A_only,45.03715896,1,1.933308485e-11,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_EGFR_KRAS_positive,EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,B_only,18.61943808,1,1.595850662e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_EGFR_KRAS_positive,EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,Both,0.265271138,1,0.60652172,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.7977353305,all 29 primary A+B coefficient-level PH tests
+cancer-specific_LUAD_EGFR_KRAS_positive,EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,GLOBAL,49.40783217,3,1.068073113e-10,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_KRAS_TP53_positive,KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,A_only,14.09285051,1,0.0001740039142,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_KRAS_TP53_positive,KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,B_only,7.902070131,1,0.004937825447,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_KRAS_TP53_positive,KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,Both,5.220909454,1,0.0223168768,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.09245563247,all 29 primary A+B coefficient-level PH tests
+cancer-specific_LUAD_KRAS_TP53_positive,KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,GLOBAL,23.29694068,3,3.5017916e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_STK11_TP53_positive,STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,A_only,10.24877503,1,0.00136775395,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_STK11_TP53_positive,STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,B_only,6.758178701,1,0.009331895889,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_LUAD_STK11_TP53_positive,STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,Both,6.282716392,1,0.01219210769,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.07071422459,all 29 primary A+B coefficient-level PH tests
+cancer-specific_LUAD_STK11_TP53_positive,STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,GLOBAL,19.15885786,3,0.000253480325,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_BRAF_KRAS_positive,BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,A_only,18.86278229,1,1.404666551e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_BRAF_KRAS_positive,BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,B_only,0.04055135112,1,0.8404064093,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_COADREAD_BRAF_KRAS_positive,BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,Both,0.6275709464,1,0.428247709,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.6970326698,all 29 primary A+B coefficient-level PH tests
+cancer-specific_COADREAD_BRAF_KRAS_positive,BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,GLOBAL,23.09329461,3,3.861457835e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_SKCM_BRAF_NRAS_positive,BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,A_only,3.298416631,1,0.06934669812,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_SKCM_BRAF_NRAS_positive,BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,B_only,0.7019147769,1,0.4021410485,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_SKCM_BRAF_NRAS_positive,BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,Both,0.06556163187,1,0.7979121851,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.8570167914,all 29 primary A+B coefficient-level PH tests
+cancer-specific_SKCM_BRAF_NRAS_positive,BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,GLOBAL,3.696224727,3,0.2961898736,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,A_only,1.349676159,1,0.2453347391,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,B_only,0.4923609328,1,0.4828760324,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,Both,0.1550381194,1,0.6937665068,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.8047691479,all 29 primary A+B coefficient-level PH tests
+cancer-specific_UCEC_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,GLOBAL,4.0369369,3,0.2575031361,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_TP53_positive,PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,A_only,0.01549403094,1,0.9009391766,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_TP53_positive,PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,B_only,0.05136081053,1,0.8207120568,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_PTEN_TP53_positive,PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,Both,4.714136928,1,0.02991557907,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.1006695139,all 29 primary A+B coefficient-level PH tests
+cancer-specific_UCEC_PTEN_TP53_positive,PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,GLOBAL,6.566635195,3,0.08707129643,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_CTNNB1_TP53_positive,CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,A_only,1.982127865,1,0.15916642,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_CTNNB1_TP53_positive,CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,B_only,0.2609211481,1,0.6094880189,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_UCEC_CTNNB1_TP53_positive,CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,Both,2.574973939,1,0.1085658897,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.2623675667,all 29 primary A+B coefficient-level PH tests
+cancer-specific_UCEC_CTNNB1_TP53_positive,CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,GLOBAL,7.374123699,3,0.06088250834,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_MDS_SF3B1_SRSF2_positive,SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,A_only,37.06431391,1,1.142964609e-09,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_MDS_SF3B1_SRSF2_positive,SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,B_only,0.09018042877,1,0.763947903,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+cancer-specific_MDS_SF3B1_SRSF2_positive,SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,Both,4.639601137,1,0.03124226293,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.1006695139,all 29 primary A+B coefficient-level PH tests
+cancer-specific_MDS_SF3B1_SRSF2_positive,SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,GLOBAL,46.02594711,3,5.599896055e-10,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KEAP1_STK11_positive,KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,A_only,10.05886094,1,0.001516169379,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KEAP1_STK11_positive,KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,B_only,1.586184516,1,0.2078721082,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KEAP1_STK11_positive,KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,Both,39.81228785,1,2.795806209e-10,rank,cox.zph scaled Schoenfeld-residual test,Efron,8.107838007e-09,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_KEAP1_STK11_positive,KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,GLOBAL,55.8333197,3,4.559475833e-12,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KRAS_TP53_positive,KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,A_only,19.27601816,1,1.131182821e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KRAS_TP53_positive,KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,B_only,45.38576008,1,1.618065361e-11,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_KRAS_TP53_positive,KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,Both,3.377797055,1,0.06608032395,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.1742117632,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_KRAS_TP53_positive,KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,GLOBAL,102.3714984,3,4.803115436e-22,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_PIK3CA_positive,PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,A_only,0.04872728068,1,0.8252928856,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_PIK3CA_positive,PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,B_only,3.249991798,1,0.07142381512,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_PIK3CA_positive,PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,Both,1.3970469,1,0.2372186421,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.491381473,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_PTEN_PIK3CA_positive,PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,GLOBAL,4.38413443,3,0.2228610105,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_IDH1_TP53_positive,IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,A_only,0.435140398,1,0.5094773528,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_IDH1_TP53_positive,IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,B_only,23.45925268,1,1.275876085e-06,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_IDH1_TP53_positive,IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,Both,0.001161435309,1,0.9728134867,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.9728134867,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_IDH1_TP53_positive,IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,GLOBAL,24.46656433,3,1.995957225e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_TP53_positive,PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,A_only,3.51431327,1,0.06084086594,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_TP53_positive,PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,B_only,56.34195167,1,6.090205296e-14,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_TP53_positive,PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,Both,1.068398606,1,0.3013074432,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.5461197408,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_PIK3CA_TP53_positive,PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,GLOBAL,57.0978901,3,2.449156262e-12,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_EGFR_KRAS_positive,EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,A_only,29.57246567,1,5.386469573e-08,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_EGFR_KRAS_positive,EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,B_only,21.29057311,1,3.946675829e-06,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_EGFR_KRAS_positive,EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,Both,0.5540278364,1,0.4566765768,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.6970326698,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_EGFR_KRAS_positive,EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,GLOBAL,45.01508955,3,9.184630539e-10,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_STK11_TP53_positive,STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,A_only,21.14457103,1,4.259060851e-06,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_STK11_TP53_positive,STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,B_only,28.56493293,1,9.060833833e-08,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_STK11_TP53_positive,STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,Both,16.37664633,1,5.192103106e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.0005019033002,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_STK11_TP53_positive,STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,GLOBAL,83.83438128,3,4.61675981e-18,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_KRAS_positive,BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,A_only,16.2815555,1,5.459277459e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_KRAS_positive,BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,B_only,20.57973844,1,5.719829221e-06,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_KRAS_positive,BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,Both,1.166427989,1,0.28013641,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.5415970593,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_BRAF_KRAS_positive,BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,GLOBAL,43.14471741,3,2.292898512e-09,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_NRAS_positive,BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,A_only,14.33278792,1,0.0001531736709,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_NRAS_positive,BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,B_only,0.3634718896,1,0.5465843311,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_BRAF_NRAS_positive,BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,Both,0.1932871032,1,0.6601947562,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.7977353305,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_BRAF_NRAS_positive,BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,GLOBAL,17.12020393,3,0.0006676292287,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,A_only,2.771463065,1,0.0959584168,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,B_only,0.002709412238,1,0.9584872478,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,Both,0.07164142025,1,0.7889616968,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.8570167914,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_PIK3CA_PIK3R1_positive,PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,GLOBAL,2.850322064,3,0.4152828638,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_TP53_positive,PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,A_only,1.642623512,1,0.1999658915,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_TP53_positive,PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,B_only,36.46983576,1,1.550472049e-09,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_PTEN_TP53_positive,PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,Both,7.068051242,1,0.007847055941,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.05689115557,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_PTEN_TP53_positive,PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,GLOBAL,50.36764913,3,6.671125409e-11,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_CTNNB1_TP53_positive,CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,A_only,1.512560255,1,0.2187488295,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_CTNNB1_TP53_positive,CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,B_only,23.9881078,1,9.693256908e-07,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_CTNNB1_TP53_positive,CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,Both,1.523430614,1,0.2171010764,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.4843024011,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_CTNNB1_TP53_positive,CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,GLOBAL,31.16048452,3,7.864116896e-07,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_SF3B1_SRSF2_positive,SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,A_only,12.86304321,1,0.000335135147,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_SF3B1_SRSF2_positive,SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,B_only,2.778381332,1,0.095544688,rank,cox.zph scaled Schoenfeld-residual test,Efron,,
+pan-cancer_PAN-CANCER_SF3B1_SRSF2_positive,SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,Both,3.943335528,1,0.0470573849,rank,cox.zph scaled Schoenfeld-residual test,Efron,0.1364664162,all 29 primary A+B coefficient-level PH tests
+pan-cancer_PAN-CANCER_SF3B1_SRSF2_positive,SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,GLOBAL,21.94727668,3,6.689975299e-05,rank,cox.zph scaled Schoenfeld-residual test,Efron,,

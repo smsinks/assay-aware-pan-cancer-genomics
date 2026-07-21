@@ -1,0 +1,1158 @@
+cancerGroup,nEligibleSamples,nDocumentedWesWgs,nTargetedPanel,nStudies,hallmark,nHallmarkGenes,nMutatedDocumentedWesWgs,mutationPctDocumentedWesWgs,mutationCiLowPct,mutationCiHighPct,estimateStatus
+BRCA,12717,3577,9140,39,angiogenesis,66,2660,74.36399217,72.90753033,75.76817956,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,cell division control,93,2435,68.07380486,66.52736249,69.58146877,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,cell replicative immortality,42,2035,56.89124965,55.2618021,58.5059116,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,change of cellular energetics,61,2451,68.52110707,66.97993926,70.0225367,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,differentiation and development,140,2945,82.33156276,81.04717992,83.54657623,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,escaping immune response to cancer,41,2244,62.73413475,61.13675067,64.30419695,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,escaping programmed cell death,187,2997,83.78529494,82.54126578,84.95683565,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,genome instability and mutations,96,2546,71.17696394,69.67054584,72.63794554,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,global regulation of gene expression,54,1604,44.84204641,43.21864071,46.47651881,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,invasion and metastasis,190,3073,85.90998043,84.73125652,87.01165725,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,proliferative signalling,163,2599,72.6586525,71.17428922,74.09440024,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,suppression of growth,118,2660,74.36399217,72.90753033,75.76817956,Estimated from documented WES/WGS
+BRCA,12717,3577,9140,39,tumour promoting inflammation,43,2109,58.96002237,57.33922433,60.56159612,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,angiogenesis,66,3814,84.30592396,83.21692261,85.33671444,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,cell division control,93,3901,86.22900088,85.19407497,87.20245282,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,cell replicative immortality,42,3771,83.35543767,82.24182982,84.41244744,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,change of cellular energetics,61,3711,82.02917772,80.88334209,83.1206657,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,differentiation and development,140,4043,89.36781609,88.43594403,90.23288818,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,escaping immune response to cancer,41,3309,73.14323607,71.83248107,74.41472124,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,escaping programmed cell death,187,4065,89.85411141,88.94018825,90.70040944,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,genome instability and mutations,96,3971,87.77630416,86.78961956,88.69888928,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,global regulation of gene expression,54,2234,49.38107869,47.92534271,50.83786487,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,invasion and metastasis,190,4084,90.27409372,89.37617263,91.10367705,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,proliferative signalling,163,3631,80.26083112,79.0755122,81.39480296,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,suppression of growth,118,4015,88.74889478,87.7950225,89.63701729,Estimated from documented WES/WGS
+COADREAD,11259,4524,6721,38,tumour promoting inflammation,43,3683,81.41025641,80.25016695,82.51704841,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,angiogenesis,66,3329,84.90181076,83.74702671,85.98827416,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,cell division control,93,2865,73.06809487,71.65750899,74.43352472,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,cell replicative immortality,42,2731,69.65059934,68.1928547,71.06987772,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,change of cellular energetics,61,3304,84.26421831,83.09098113,85.37038293,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,differentiation and development,140,3552,90.58913542,89.63508447,91.46373273,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,escaping immune response to cancer,41,3001,76.53659781,75.1846039,77.83664605,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,escaping programmed cell death,187,3584,91.40525376,90.48691426,92.24254205,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,genome instability and mutations,96,2967,75.66947207,74.30174003,76.98695586,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,global regulation of gene expression,54,1925,49.09461872,47.53150794,50.65950179,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,invasion and metastasis,190,3556,90.69115022,89.74144393,91.56120316,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,proliferative signalling,163,3420,87.22264728,86.14116759,88.23126326,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,suppression of growth,118,3139,80.05610814,78.7762604,81.27712073,Estimated from documented WES/WGS
+LUAD,10289,3921,6368,36,tumour promoting inflammation,43,2661,67.86534047,66.38675784,69.30895152,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,angiogenesis,66,541,39.06137184,36.52553664,41.65771832,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,cell division control,93,622,44.90974729,42.30783874,47.53981456,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,cell replicative immortality,42,543,39.20577617,36.66785542,41.80340938,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,change of cellular energetics,61,537,38.77256318,36.24096974,41.36626555,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,differentiation and development,140,734,52.99638989,50.3632026,55.61300148,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,escaping immune response to cancer,41,462,33.35740072,30.92333639,35.88353008,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,escaping programmed cell death,187,757,54.65703971,52.02594545,57.26237174,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,genome instability and mutations,96,681,49.16967509,46.54272081,51.80122263,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,global regulation of gene expression,54,455,32.85198556,30.42883442,35.36999762,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,invasion and metastasis,190,800,57.76173285,55.14244025,60.33808841,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,proliferative signalling,163,604,43.6101083,41.01967218,46.2358926,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,suppression of growth,118,680,49.09747292,46.47078398,51.72915454,Estimated from documented WES/WGS
+SARC,9238,1385,7853,28,tumour promoting inflammation,43,470,33.93501805,31.48887238,36.47003343,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,angiogenesis,66,1012,34.89655172,33.18279284,36.65027097,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,cell division control,93,1250,43.10344828,41.311354,44.91378929,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,cell replicative immortality,42,1054,36.34482759,34.6133556,38.11242812,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,change of cellular energetics,61,1080,37.24137931,35.4998027,39.01671239,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,differentiation and development,140,1497,51.62068966,49.8009232,53.43616812,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,escaping immune response to cancer,41,952,32.82758621,31.14219666,34.55841013,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,escaping programmed cell death,187,1636,56.4137931,54.60173574,58.20888099,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,genome instability and mutations,96,1433,49.4137931,47.59611662,51.23302056,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,global regulation of gene expression,54,826,28.48275862,26.86941192,30.15303515,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,invasion and metastasis,190,1726,59.51724138,57.71927845,61.29002381,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,proliferative signalling,163,1360,46.89655172,45.08558227,48.71573221,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,suppression of growth,118,1490,51.37931034,49.55960006,53.19537128,Estimated from documented WES/WGS
+PRAD,6748,2900,3848,32,tumour promoting inflammation,43,889,30.65517241,29.0036165,32.35791044,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,angiogenesis,66,1838,84.11899314,82.52676064,85.59146665,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,cell division control,93,1591,72.81464531,70.91029574,74.63891459,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,cell replicative immortality,42,1833,83.89016018,82.28945853,85.37190607,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,change of cellular energetics,61,1840,84.21052632,82.6217127,85.67925967,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,differentiation and development,140,1908,87.32265446,85.86175615,88.65254882,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,escaping immune response to cancer,41,1412,64.62242563,62.59352646,66.59999952,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,escaping programmed cell death,187,1969,90.11441648,88.79166254,91.29636727,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,genome instability and mutations,96,1682,76.97940503,75.16787538,78.69623594,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,global regulation of gene expression,54,732,33.50114416,31.55256394,35.50763601,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,invasion and metastasis,190,1950,89.24485126,87.87625106,90.47570052,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,proliferative signalling,163,1899,86.91075515,85.43151523,88.26043689,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,suppression of growth,118,1790,81.9221968,80.25301576,83.47932969,Estimated from documented WES/WGS
+PAAD,5823,2185,3638,25,tumour promoting inflammation,43,1796,82.19679634,80.53672278,83.7438579,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,angiogenesis,66,914,90.4950495,88.52980027,92.15342618,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,cell division control,93,946,93.66336634,91.98922061,95.00662991,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,cell replicative immortality,42,951,94.15841584,92.53779854,95.44439949,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,change of cellular energetics,61,946,93.66336634,91.98922061,95.00662991,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,differentiation and development,140,970,96.03960396,94.65206382,97.07825475,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,escaping immune response to cancer,41,932,92.27722772,90.46602454,93.76805294,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,escaping programmed cell death,187,967,95.74257426,94.31446205,96.82404802,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,genome instability and mutations,96,960,95.04950495,93.53269645,96.2249271,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,global regulation of gene expression,54,736,72.87128713,70.04637508,75.52287995,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,invasion and metastasis,190,973,96.33663366,94.9914355,97.33069158,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,proliferative signalling,163,909,90,87.99558151,91.70129742,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,suppression of growth,118,960,95.04950495,93.53269645,96.2249271,Estimated from documented WES/WGS
+UCEC,5045,1010,4021,19,tumour promoting inflammation,43,728,72.07920792,69.23286592,74.75823309,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,angiogenesis,66,24,58.53658537,43.36710313,72.24345055,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,cell division control,93,23,56.09756098,41.04052722,70.10986826,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,cell replicative immortality,42,15,36.58536585,23.58983102,51.87929891,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,change of cellular energetics,61,21,51.2195122,36.48450865,65.74557045,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,differentiation and development,140,26,63.41463415,48.12070109,76.41016898,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,escaping immune response to cancer,41,19,46.34146341,32.05623398,61.25352873,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,escaping programmed cell death,187,28,68.29268293,53.01580036,80.4353861,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,genome instability and mutations,96,26,63.41463415,48.12070109,76.41016898,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,global regulation of gene expression,54,17,41.46341463,27.75654945,56.63289687,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,invasion and metastasis,190,28,68.29268293,53.01580036,80.4353861,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,proliferative signalling,163,21,51.2195122,36.48450865,65.74557045,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,suppression of growth,118,25,60.97560976,45.72685693,74.34385494,Estimated from documented WES/WGS
+MDS,4276,41,4235,6,tumour promoting inflammation,43,18,43.90243902,29.89013174,58.95947278,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,angiogenesis,66,1003,42.1251575,40.15611932,44.11956497,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,cell division control,93,1240,52.07895842,50.07061506,54.08060428,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,cell replicative immortality,42,708,29.73540529,27.93323216,31.6028621,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,change of cellular energetics,61,1368,57.4548509,55.45850927,59.42717626,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,differentiation and development,140,1687,70.85258295,68.99480492,72.64318306,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,escaping immune response to cancer,41,909,38.17723646,36.24636616,40.14619453,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,escaping programmed cell death,187,1809,75.97648047,74.2194746,77.64980147,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,genome instability and mutations,96,1203,50.5249895,48.51752709,52.53076062,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,global regulation of gene expression,54,1429,60.01679966,58.03455325,61.96677633,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,invasion and metastasis,190,1703,71.52456951,69.67830501,73.30149125,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,proliferative signalling,163,1756,73.75052499,71.94597366,75.4785625,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,suppression of growth,118,1537,64.55270895,62.6092755,66.44925992,Estimated from documented WES/WGS
+AML,4205,2381,1824,7,tumour promoting inflammation,43,567,23.81352373,22.1456841,25.56572475,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,angiogenesis,66,1185,78.21782178,76.0693795,80.22352685,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,cell division control,93,1230,81.18811881,79.14224063,83.07623481,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,cell replicative immortality,42,1200,79.20792079,77.09179549,81.17630056,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,change of cellular energetics,61,1176,77.62376238,75.45677332,79.65101922,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,differentiation and development,140,1335,88.11881188,86.39229125,89.65251207,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,escaping immune response to cancer,41,1072,70.75907591,68.41837794,72.99476603,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,escaping programmed cell death,187,1345,88.77887789,87.09044968,90.27114676,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,genome instability and mutations,96,1279,84.42244224,82.50953219,86.16122959,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,global regulation of gene expression,54,1178,77.75577558,75.59285466,79.7782965,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,invasion and metastasis,190,1350,89.10891089,87.44016901,90.579824,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,proliferative signalling,163,1308,86.33663366,84.51498575,87.97447611,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,suppression of growth,118,1268,83.69636964,81.75144053,85.4708488,Estimated from documented WES/WGS
+BLCA,4170,1515,2644,35,tumour promoting inflammation,43,1093,72.14521452,69.83403351,74.34437603,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,angiogenesis,66,853,76.50224215,73.92522524,78.89727211,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,cell division control,93,849,76.14349776,73.55474925,78.55272276,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,cell replicative immortality,42,851,76.32286996,73.73995673,78.72502795,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,change of cellular energetics,61,841,75.42600897,72.81452025,77.86290107,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,differentiation and development,140,871,78.11659193,75.5954705,80.44464091,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,escaping immune response to cancer,41,820,73.5426009,70.8758249,76.04771336,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,escaping programmed cell death,187,881,79.01345291,76.52567982,81.30199496,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,genome instability and mutations,96,861,77.21973094,74.66691927,79.58562878,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,global regulation of gene expression,54,365,32.73542601,30.04448596,35.54491932,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,invasion and metastasis,190,882,79.10313901,76.61879484,81.38763627,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,proliferative signalling,163,597,53.5426009,50.60800335,56.45287193,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,suppression of growth,118,856,76.77130045,74.20324348,79.15552289,Estimated from documented WES/WGS
+OV,3350,1115,2235,19,tumour promoting inflammation,43,835,74.88789238,72.25996703,77.34491627,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,angiogenesis,66,1211,73.039807,70.85237469,75.12072316,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,cell division control,93,1280,77.20144753,75.12052584,79.15661325,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,cell replicative immortality,42,1171,70.62726176,68.38922487,72.76993604,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,change of cellular energetics,61,1141,68.81785283,66.54674143,71.00196677,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,differentiation and development,140,1455,87.75633293,86.09067058,89.24744265,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,escaping immune response to cancer,41,1076,64.89746683,62.56801657,67.15804409,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,escaping programmed cell death,187,1493,90.0482509,88.51343792,91.39791541,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,genome instability and mutations,96,1294,78.04583836,75.98979925,79.97221777,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,global regulation of gene expression,54,1107,66.76718938,64.46335911,68.99350268,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,invasion and metastasis,190,1462,88.17852835,86.53548787,89.64506433,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,proliferative signalling,163,1475,88.96260555,87.36327767,90.38180404,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,suppression of growth,118,1372,82.75030157,80.8565476,84.49264647,Estimated from documented WES/WGS
+SKCM,3091,1658,1433,29,tumour promoting inflammation,43,1032,62.24366707,59.88444268,64.54628733,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,angiogenesis,66,2024,75.6635514,74.0013587,77.25214103,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,cell division control,93,2192,81.94392523,80.44078301,83.35545228,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,cell replicative immortality,42,2109,78.8411215,77.25254174,80.34698492,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,change of cellular energetics,61,2122,79.3271028,77.75096315,80.81913232,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,differentiation and development,140,2370,88.59813084,87.33792929,89.74763295,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,escaping immune response to cancer,41,1997,74.65420561,72.97124047,76.26646248,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,escaping programmed cell death,187,2452,91.6635514,90.55530288,92.65230885,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,genome instability and mutations,96,2280,85.23364486,83.83873471,86.52750491,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,global regulation of gene expression,54,1452,54.28037383,52.38776694,56.16070461,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,invasion and metastasis,190,2430,90.8411215,89.68869882,91.87641183,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,proliferative signalling,163,1969,73.60747664,71.90420464,75.24304239,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,suppression of growth,118,2376,88.82242991,87.57227048,89.9612466,Estimated from documented WES/WGS
+HCC,2985,2675,310,15,tumour promoting inflammation,43,1661,62.09345794,60.23884188,63.91338997,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,angiogenesis,66,629,25.30168946,23.63174564,27.047845,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,cell division control,93,810,32.58246179,30.76819411,34.45047485,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,cell replicative immortality,42,782,31.45615447,29.66064778,33.308882,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,change of cellular energetics,61,651,26.18664521,24.49608515,27.95068628,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,differentiation and development,140,1310,52.69509252,50.72982687,54.6520419,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,escaping immune response to cancer,41,370,14.88334674,13.53843642,16.33661671,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,escaping programmed cell death,187,1457,58.60820595,56.66024621,60.52960331,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,genome instability and mutations,96,912,36.68543846,34.81282456,38.59913717,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,global regulation of gene expression,54,823,33.10539019,31.28282463,34.98008753,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,invasion and metastasis,190,1259,50.64360418,48.67881542,52.60640697,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,proliferative signalling,163,1035,41.63314562,39.70974549,43.58236339,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,suppression of growth,118,858,34.51327434,32.66963839,36.40469775,Estimated from documented WES/WGS
+CLL,2699,2486,213,11,tumour promoting inflammation,43,692,27.83588093,26.10928796,29.63086585,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,angiogenesis,66,1276,64.47700859,62.34227563,66.55564747,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,cell division control,93,715,36.12935826,34.04167095,38.27079016,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,cell replicative immortality,42,325,16.42243557,14.85551386,18.1194603,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,change of cellular energetics,61,1454,73.47145023,71.48223396,75.36972165,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,differentiation and development,140,1034,52.24861041,50.04570922,54.4427989,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,escaping immune response to cancer,41,877,44.31531076,42.13979921,46.51284878,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,escaping programmed cell death,187,1513,76.45275392,74.53325914,78.26975218,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,genome instability and mutations,96,1121,56.64477009,54.45061233,58.81318135,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,global regulation of gene expression,54,899,45.42698332,43.24428181,47.62740391,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,invasion and metastasis,190,1529,77.26124305,75.36279189,79.05406505,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,proliferative signalling,163,742,37.49368368,35.3869632,39.6488624,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,suppression of growth,118,1460,73.77463365,71.79196784,75.66517987,Estimated from documented WES/WGS
+CCRCC,2625,1979,646,15,tumour promoting inflammation,43,808,40.82870136,38.68296851,43.00997026,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,angiogenesis,66,1052,64.77832512,62.42279358,67.06410746,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,cell division control,93,1023,62.99261084,60.61627346,65.30762703,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,cell replicative immortality,42,1075,66.19458128,63.85806585,68.4546632,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,change of cellular energetics,61,1125,69.27339901,66.98624529,71.46958815,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,differentiation and development,140,1279,78.75615764,76.70012546,80.67646948,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,escaping immune response to cancer,41,849,52.27832512,49.84655209,54.69934515,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,escaping programmed cell death,187,1329,81.83497537,79.88537924,83.63432008,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,genome instability and mutations,96,1167,71.85960591,69.62292418,73.99311694,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,global regulation of gene expression,54,755,46.49014778,44.07549466,48.92136635,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,invasion and metastasis,190,1349,83.06650246,81.16488432,84.81205675,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,proliferative signalling,163,1090,67.1182266,64.79534525,69.36031512,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,suppression of growth,118,1188,73.15270936,70.94456046,75.25158449,Estimated from documented WES/WGS
+CHOL,2591,1624,967,19,tumour promoting inflammation,43,1029,63.36206897,60.98975115,65.67132187,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,angiogenesis,66,514,52.39551478,49.2670093,55.50533243,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,cell division control,93,508,51.78389399,48.65618253,54.89768898,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,cell replicative immortality,42,465,47.40061162,44.2922235,50.52927802,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,change of cellular energetics,61,522,53.21100917,50.0821717,56.31479702,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,differentiation and development,140,626,63.81243629,60.75686006,66.76025932,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,escaping immune response to cancer,41,514,52.39551478,49.2670093,55.50533243,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,escaping programmed cell death,187,629,64.11824669,61.06701073,67.05934377,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,genome instability and mutations,96,509,51.88583078,48.75795459,54.99899529,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,global regulation of gene expression,54,297,30.27522936,27.48166289,33.22267216,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,invasion and metastasis,190,639,65.13761468,62.10180201,68.05533621,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,proliferative signalling,163,506,51.58002039,48.45267726,54.6950375,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,suppression of growth,118,568,57.90010194,54.78562468,60.95294914,Estimated from documented WES/WGS
+GBM,2381,981,1400,15,tumour promoting inflammation,43,320,32.61977574,29.75878025,35.61635735,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,angiogenesis,66,630,36.69190448,34.44426451,38.99896016,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,cell division control,93,727,42.34129295,40.02383618,44.692943,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,cell replicative immortality,42,658,38.32265579,36.05153679,40.6459098,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,change of cellular energetics,61,809,47.11706465,44.76505301,49.48194752,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,differentiation and development,140,911,53.05765871,50.69287598,55.40879013,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,escaping immune response to cancer,41,572,33.31391963,31.12391872,35.57841768,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,escaping programmed cell death,187,850,49.5049505,47.14380252,51.86830869,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,genome instability and mutations,96,716,41.70064065,39.38949613,44.04883873,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,global regulation of gene expression,54,629,36.63366337,34.38691324,38.94008922,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,invasion and metastasis,190,970,56.49388468,54.13698402,58.82179256,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,proliferative signalling,163,657,38.26441468,35.99408685,40.58713753,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,suppression of growth,118,897,52.24228305,49.87728036,54.59727478,Estimated from documented WES/WGS
+BRAIN,2365,1717,648,31,tumour promoting inflammation,43,439,25.5678509,23.56054123,27.68424104,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,angiogenesis,66,1303,78.117506,76.0699857,80.03581279,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,cell division control,93,1324,79.3764988,77.36837886,81.24961956,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,cell replicative immortality,42,1318,79.01678657,76.99712605,80.90310096,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,change of cellular energetics,61,1342,80.45563549,78.48355489,82.28775776,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,differentiation and development,140,1467,87.94964029,86.2994938,89.42538988,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,escaping immune response to cancer,41,1204,72.1822542,69.98271779,74.27985245,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,escaping programmed cell death,187,1471,88.18944844,86.55219937,89.65119858,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,genome instability and mutations,96,1411,84.59232614,82.78046588,86.24521798,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,global regulation of gene expression,54,878,52.63788969,50.23842074,55.02523626,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,invasion and metastasis,190,1517,90.94724221,89.47452045,92.23179164,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,proliferative signalling,163,1166,69.90407674,67.65921908,72.05746557,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,suppression of growth,118,1452,87.05035971,85.353575,88.57688015,Estimated from documented WES/WGS
+STAD,2245,1668,577,20,tumour promoting inflammation,43,1269,76.07913669,73.97343728,78.06498989,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,angiogenesis,66,1098,93.60613811,92.05884073,94.86875621,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,cell division control,93,1089,92.83887468,91.21927541,94.1788037,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,cell replicative immortality,42,1071,91.30434783,89.55403382,92.78500962,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,change of cellular energetics,61,1083,92.32736573,90.66229572,93.71610484,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,differentiation and development,140,1114,94.97016198,93.56606681,96.08067295,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,escaping immune response to cancer,41,1065,90.79283887,89.00244704,92.31691785,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,escaping programmed cell death,187,1116,95.14066496,93.75605205,96.23058057,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,genome instability and mutations,96,1092,93.09462916,91.49855696,94.40936143,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,global regulation of gene expression,54,861,73.40153453,70.79952295,75.85077101,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,invasion and metastasis,190,1122,95.65217391,94.32853934,96.67777183,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,proliferative signalling,163,1027,87.55328218,85.54067297,89.32072772,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,suppression of growth,118,1102,93.94714408,92.4337397,95.17364295,Estimated from documented WES/WGS
+LUSC,2159,1173,958,19,tumour promoting inflammation,43,1064,90.70758738,88.91066746,92.238751,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,angiogenesis,66,101,32.1656051,27.24135694,37.52094927,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,cell division control,93,134,42.67515924,37.32543531,48.20194046,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,cell replicative immortality,42,104,33.12101911,28.14684428,38.50319553,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,change of cellular energetics,61,108,34.39490446,29.35784228,39.80917565,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,differentiation and development,140,158,50.31847134,44.81789588,55.81134865,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,escaping immune response to cancer,41,101,32.1656051,27.24135694,37.52094927,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,escaping programmed cell death,187,159,50.63694268,45.13284863,56.12564044,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,genome instability and mutations,96,141,44.9044586,39.49747949,50.434608,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,global regulation of gene expression,54,86,27.38853503,22.75157037,32.57206786,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,invasion and metastasis,190,165,52.5477707,47.02719601,58.00676025,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,proliferative signalling,163,113,35.98726115,30.87734867,41.43589193,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,suppression of growth,118,142,45.22292994,39.80867038,50.75266164,Estimated from documented WES/WGS
+BONE,2008,314,1694,11,tumour promoting inflammation,43,81,25.79617834,21.26994705,30.90746852,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,angiogenesis,66,803,52.86372614,50.34935949,55.36364494,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,cell division control,93,915,60.23699803,57.75298173,62.66936744,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,cell replicative immortality,42,848,55.82620145,53.31731357,58.30569545,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,change of cellular energetics,61,1014,66.75444371,64.34573192,69.07862733,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,differentiation and development,140,1159,76.3001975,74.09704633,78.37066102,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,escaping immune response to cancer,41,788,51.87623436,49.36201104,54.38099186,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,escaping programmed cell death,187,1253,82.48847926,80.4958836,84.31716665,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,genome instability and mutations,96,1017,66.95194207,64.54627382,69.27208573,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,global regulation of gene expression,54,935,61.55365372,59.08104409,63.96797378,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,invasion and metastasis,190,1293,85.12179065,83.24362121,86.82276645,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,proliferative signalling,163,1242,81.76431863,79.74315336,83.62522911,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,suppression of growth,118,1081,71.16524029,68.83605847,73.38764094,Estimated from documented WES/WGS
+DLBCL,1961,1519,442,13,tumour promoting inflammation,43,780,51.34957209,48.83582572,53.8565097,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,angiogenesis,66,113,74.34210526,66.85886872,80.62528637,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,cell division control,93,114,75,67.55747457,81.21003606,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,cell replicative immortality,42,108,71.05263158,63.39445507,77.6729223,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,change of cellular energetics,61,116,76.31578947,68.96078828,82.37343343,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,differentiation and development,140,126,82.89473684,76.11653548,88.05124166,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,escaping immune response to cancer,41,105,69.07894737,61.3372754,75.88003535,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,escaping programmed cell death,187,127,83.55263158,76.84693639,88.60419631,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,genome instability and mutations,96,119,78.28947368,71.08187137,84.10241698,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,global regulation of gene expression,54,82,53.94736842,46.02383829,61.67629497,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,invasion and metastasis,190,132,86.84210526,80.54962193,91.31828848,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,proliferative signalling,163,114,75,67.55747457,81.21003606,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,suppression of growth,118,126,82.89473684,76.11653548,88.05124166,Estimated from documented WES/WGS
+CUP,1741,152,1514,20,tumour promoting inflammation,43,103,67.76315789,59.97421514,74.67638452,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,angiogenesis,66,860,78.11080836,75.57291517,80.45322279,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,cell division control,93,843,76.56675749,73.9750128,78.97376056,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,cell replicative immortality,42,810,73.56948229,70.88608338,76.08898222,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,change of cellular energetics,61,830,75.38601272,72.75620964,77.8392849,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,differentiation and development,140,929,84.37783833,82.11414127,86.40247657,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,escaping immune response to cancer,41,771,70.02724796,67.25527961,72.65994953,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,escaping programmed cell death,187,942,85.55858311,83.35857207,87.51132458,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,genome instability and mutations,96,866,78.65576748,76.13804232,80.97422432,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,global regulation of gene expression,54,544,49.40962761,46.46360926,52.35975133,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,invasion and metastasis,190,943,85.64940963,83.45448604,87.59643206,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,proliferative signalling,163,787,71.4804723,68.74240207,74.06917024,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,suppression of growth,118,881,80.0181653,77.55366831,82.27392004,Estimated from documented WES/WGS
+HNSC,1704,1101,603,17,tumour promoting inflammation,43,779,70.75386013,67.99842926,73.36497147,Estimated from documented WES/WGS
+THCA,1639,836,803,12,angiogenesis,66,207,24.76076555,21.95479716,27.79762389,Estimated from documented WES/WGS
+THCA,1639,836,803,12,cell division control,93,206,24.64114833,21.84044731,27.67383357,Estimated from documented WES/WGS
+THCA,1639,836,803,12,cell replicative immortality,42,238,28.46889952,25.51381099,31.62095579,Estimated from documented WES/WGS
+THCA,1639,836,803,12,change of cellular energetics,61,172,20.57416268,17.97149083,23.44602377,Estimated from documented WES/WGS
+THCA,1639,836,803,12,differentiation and development,140,540,64.59330144,61.29152088,67.76158163,Estimated from documented WES/WGS
+THCA,1639,836,803,12,escaping immune response to cancer,41,170,20.33492823,17.74513324,23.19610099,Estimated from documented WES/WGS
+THCA,1639,836,803,12,escaping programmed cell death,187,617,73.80382775,70.71918293,76.6707138,Estimated from documented WES/WGS
+THCA,1639,836,803,12,genome instability and mutations,96,246,29.42583732,26.43647875,32.6034095,Estimated from documented WES/WGS
+THCA,1639,836,803,12,global regulation of gene expression,54,142,16.98564593,14.59255869,19.68075038,Estimated from documented WES/WGS
+THCA,1639,836,803,12,invasion and metastasis,190,350,41.86602871,38.56649414,45.23997331,Estimated from documented WES/WGS
+THCA,1639,836,803,12,proliferative signalling,163,585,69.97607656,66.78338583,72.98602499,Estimated from documented WES/WGS
+THCA,1639,836,803,12,suppression of growth,118,233,27.8708134,24.93799092,31.00607494,Estimated from documented WES/WGS
+THCA,1639,836,803,12,tumour promoting inflammation,43,173,20.6937799,18.08472423,23.57093055,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,angiogenesis,66,518,51.33795837,48.25471521,54.41105244,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,cell division control,93,693,68.68186323,65.75387792,71.46813711,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,cell replicative immortality,42,705,69.87115956,66.9691436,72.62244268,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,change of cellular energetics,61,678,67.19524281,64.23784443,70.02220654,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,differentiation and development,140,788,78.09712587,75.44123539,80.53988535,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,escaping immune response to cancer,41,472,46.7789891,43.7183103,49.86410091,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,escaping programmed cell death,187,804,79.68285431,77.08977641,82.05077267,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,genome instability and mutations,96,744,73.73637265,70.93468744,76.35800539,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,global regulation of gene expression,54,648,64.22200198,61.21549429,67.12062855,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,invasion and metastasis,190,843,83.54806739,81.13403229,85.70762334,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,proliferative signalling,163,740,73.33994054,70.52678791,75.97604784,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,suppression of growth,118,686,67.98810704,65.04598081,70.79378432,Estimated from documented WES/WGS
+MBN,1521,1009,512,9,tumour promoting inflammation,43,471,46.67988107,43.61997674,49.76497019,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,angiogenesis,66,218,79.85347985,74.69635029,84.18211419,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,cell division control,93,213,78.02197802,72.73974428,82.52654447,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,cell replicative immortality,42,199,72.89377289,67.33031823,77.82187845,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,change of cellular energetics,61,218,79.85347985,74.69635029,84.18211419,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,differentiation and development,140,254,93.04029304,89.386618,95.49951177,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,escaping immune response to cancer,41,194,71.06227106,65.42026231,76.11975864,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,escaping programmed cell death,187,249,91.20879121,87.25271037,94.02124367,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,genome instability and mutations,96,229,83.88278388,79.05592537,87.76932573,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,global regulation of gene expression,54,173,63.36996337,57.5060563,68.86282657,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,invasion and metastasis,190,252,92.30769231,88.52728654,94.91397294,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,proliferative signalling,163,234,85.71428571,81.0670099,89.37041694,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,suppression of growth,118,235,86.08058608,81.47179427,89.68806771,Estimated from documented WES/WGS
+NSCLC,1276,273,1003,21,tumour promoting inflammation,43,183,67.03296703,61.25403811,72.33919623,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,angiogenesis,66,409,56.1042524,52.47915382,59.6653556,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,cell division control,93,355,48.69684499,45.08486165,52.32249027,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,cell replicative immortality,42,252,34.56790123,31.20454305,38.09304549,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,change of cellular energetics,61,435,59.67078189,56.06804708,63.17213077,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,differentiation and development,140,437,59.94513032,56.34490969,63.44108881,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,escaping immune response to cancer,41,322,44.17009602,40.60517977,47.79613146,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,escaping programmed cell death,187,483,66.25514403,62.74548419,69.5943892,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,genome instability and mutations,96,411,56.37860082,52.75454997,59.9357801,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,global regulation of gene expression,54,336,46.09053498,42.50201475,49.72004102,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,invasion and metastasis,190,488,66.94101509,63.44513866,70.25928636,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,proliferative signalling,163,375,51.44032922,47.81423604,55.05132237,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,suppression of growth,118,453,62.1399177,58.5639909,65.58857277,Estimated from documented WES/WGS
+KIDNEY,1149,729,420,12,tumour promoting inflammation,43,272,37.31138546,33.87573387,40.88006116,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,angiogenesis,66,477,46.62756598,43.58891701,49.6914478,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,cell division control,93,507,49.5601173,46.50367721,52.61984863,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,cell replicative immortality,42,519,50.73313783,47.67251905,53.78827121,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,change of cellular energetics,61,520,50.83088954,47.76999824,53.88556405,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,differentiation and development,140,736,71.94525904,69.11403668,74.61228505,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,escaping immune response to cancer,41,330,32.25806452,29.46446882,35.18440693,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,escaping programmed cell death,187,721,70.47898338,67.61139816,73.19334305,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,genome instability and mutations,96,608,59.43304008,56.39425799,62.40124334,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,global regulation of gene expression,54,618,60.41055718,57.38017757,63.3630441,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,invasion and metastasis,190,728,71.16324536,68.31219107,73.85595439,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,proliferative signalling,163,697,68.13294233,65.21429184,70.91592055,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,suppression of growth,118,638,62.3655914,59.3557667,65.28289566,Estimated from documented WES/WGS
+ACYC,1133,1023,110,7,tumour promoting inflammation,43,313,30.59628543,27.8494146,33.48833657,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,angiogenesis,66,7,53.84615385,29.14379571,76.79393219,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,cell division control,93,9,69.23076923,42.36934318,87.31929634,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,cell replicative immortality,42,5,38.46153846,17.7097078,64.47710849,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,change of cellular energetics,61,7,53.84615385,29.14379571,76.79393219,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,differentiation and development,140,8,61.53846154,35.52289151,82.2902922,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,escaping immune response to cancer,41,6,46.15384615,23.20606781,70.85620429,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,escaping programmed cell death,187,8,61.53846154,35.52289151,82.2902922,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,genome instability and mutations,96,10,76.92307692,49.74362405,91.82047128,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,global regulation of gene expression,54,7,53.84615385,29.14379571,76.79393219,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,invasion and metastasis,190,8,61.53846154,35.52289151,82.2902922,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,proliferative signalling,163,4,30.76923077,12.68070366,57.63065682,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,suppression of growth,118,8,61.53846154,35.52289151,82.2902922,Estimated from documented WES/WGS
+USARC,1103,13,1090,8,tumour promoting inflammation,43,4,30.76923077,12.68070366,57.63065682,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,angiogenesis,66,752,95.06953224,93.330907,96.3725165,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,cell division control,93,752,95.06953224,93.330907,96.3725165,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,cell replicative immortality,42,748,94.56384324,92.75760178,95.9393317,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,change of cellular energetics,61,751,94.94310999,93.18720665,96.26459435,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,differentiation and development,140,764,96.58659924,95.07923178,97.6436618,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,escaping immune response to cancer,41,740,93.55246523,91.62166273,95.0622907,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,escaping programmed cell death,187,766,96.83944374,95.37595127,97.85018732,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,genome instability and mutations,96,752,95.06953224,93.330907,96.3725165,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,global regulation of gene expression,54,526,66.49810367,63.13609067,69.7006464,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,invasion and metastasis,190,765,96.71302149,95.22735922,97.74715686,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,proliferative signalling,163,640,80.9102402,78.02458717,83.49711562,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,suppression of growth,118,763,96.46017699,94.93154509,97.53972598,Estimated from documented WES/WGS
+ESCC,1014,791,223,9,tumour promoting inflammation,43,743,93.93173198,92.04612107,95.39269988,Estimated from documented WES/WGS
+NMSC,837,247,590,14,angiogenesis,66,227,91.90283401,87.82485039,94.69739333,Estimated from documented WES/WGS
+NMSC,837,247,590,14,cell division control,93,233,94.33198381,90.71213677,96.59400514,Estimated from documented WES/WGS
+NMSC,837,247,590,14,cell replicative immortality,42,224,90.68825911,86.41539953,93.7148951,Estimated from documented WES/WGS
+NMSC,837,247,590,14,change of cellular energetics,61,224,90.68825911,86.41539953,93.7148951,Estimated from documented WES/WGS
+NMSC,837,247,590,14,differentiation and development,140,238,96.3562753,93.22133423,98.0713895,Estimated from documented WES/WGS
+NMSC,837,247,590,14,escaping immune response to cancer,41,214,86.63967611,81.83101815,90.32611284,Estimated from documented WES/WGS
+NMSC,837,247,590,14,escaping programmed cell death,187,238,96.3562753,93.22133423,98.0713895,Estimated from documented WES/WGS
+NMSC,837,247,590,14,genome instability and mutations,96,237,95.951417,92.70913855,97.78626881,Estimated from documented WES/WGS
+NMSC,837,247,590,14,global regulation of gene expression,54,220,89.06882591,84.56303712,92.37799205,Estimated from documented WES/WGS
+NMSC,837,247,590,14,invasion and metastasis,190,241,97.5708502,94.80262156,98.88205126,Estimated from documented WES/WGS
+NMSC,837,247,590,14,proliferative signalling,163,234,94.73684211,91.20474585,96.89871242,Estimated from documented WES/WGS
+NMSC,837,247,590,14,suppression of growth,118,237,95.951417,92.70913855,97.78626881,Estimated from documented WES/WGS
+NMSC,837,247,590,14,tumour promoting inflammation,43,219,88.66396761,84.10411752,92.03959529,Estimated from documented WES/WGS
+PNS,820,111,698,13,angiogenesis,66,47,42.34234234,33.55806208,51.63892151,Estimated from documented WES/WGS
+PNS,820,111,698,13,cell division control,93,48,43.24324324,34.40563672,52.53287821,Estimated from documented WES/WGS
+PNS,820,111,698,13,cell replicative immortality,42,47,42.34234234,33.55806208,51.63892151,Estimated from documented WES/WGS
+PNS,820,111,698,13,change of cellular energetics,61,53,47.74774775,38.68737254,56.95879911,Estimated from documented WES/WGS
+PNS,820,111,698,13,differentiation and development,140,59,53.15315315,43.9205876,62.1747721,Estimated from documented WES/WGS
+PNS,820,111,698,13,escaping immune response to cancer,41,35,31.53153153,23.62888134,40.66972613,Estimated from documented WES/WGS
+PNS,820,111,698,13,escaping programmed cell death,187,63,56.75675676,47.46712179,65.59436328,Estimated from documented WES/WGS
+PNS,820,111,698,13,genome instability and mutations,96,55,49.54954955,40.42029097,58.70894336,Estimated from documented WES/WGS
+PNS,820,111,698,13,global regulation of gene expression,54,46,41.44144144,32.71345763,50.74199461,Estimated from documented WES/WGS
+PNS,820,111,698,13,invasion and metastasis,190,69,62.16216216,52.87598468,70.63468845,Estimated from documented WES/WGS
+PNS,820,111,698,13,proliferative signalling,163,60,54.05405405,44.80286068,63.03403037,Estimated from documented WES/WGS
+PNS,820,111,698,13,suppression of growth,118,66,59.45945946,50.15792842,68.12815068,Estimated from documented WES/WGS
+PNS,820,111,698,13,tumour promoting inflammation,43,34,30.63063063,22.82303764,39.73403849,Estimated from documented WES/WGS
+ESCA,811,365,446,16,angiogenesis,66,332,90.95890411,87.57480693,93.48983286,Estimated from documented WES/WGS
+ESCA,811,365,446,16,cell division control,93,323,88.49315068,84.81108676,91.37340749,Estimated from documented WES/WGS
+ESCA,811,365,446,16,cell replicative immortality,42,320,87.67123288,83.90084177,90.6569373,Estimated from documented WES/WGS
+ESCA,811,365,446,16,change of cellular energetics,61,322,88.21917808,84.50712355,91.13513231,Estimated from documented WES/WGS
+ESCA,811,365,446,16,differentiation and development,140,344,94.24657534,91.36505643,96.20644408,Estimated from documented WES/WGS
+ESCA,811,365,446,16,escaping immune response to cancer,41,309,84.65753425,80.60093508,87.99222167,Estimated from documented WES/WGS
+ESCA,811,365,446,16,escaping programmed cell death,187,346,94.79452055,92.0134887,96.6424886,Estimated from documented WES/WGS
+ESCA,811,365,446,16,genome instability and mutations,96,333,91.23287671,87.88542624,93.72145194,Estimated from documented WES/WGS
+ESCA,811,365,446,16,global regulation of gene expression,54,194,53.15068493,48.02522701,58.21051451,Estimated from documented WES/WGS
+ESCA,811,365,446,16,invasion and metastasis,190,349,95.61643836,92.99867665,97.28401583,Estimated from documented WES/WGS
+ESCA,811,365,446,16,proliferative signalling,163,294,80.54794521,76.17768253,84.28189832,Estimated from documented WES/WGS
+ESCA,811,365,446,16,suppression of growth,118,342,93.69863014,90.72231805,95.76470568,Estimated from documented WES/WGS
+ESCA,811,365,446,16,tumour promoting inflammation,43,310,84.93150685,80.89873564,88.2366595,Estimated from documented WES/WGS
+SCLC,803,384,419,12,angiogenesis,66,338,88.02083333,84.39071006,90.89778563,Estimated from documented WES/WGS
+SCLC,803,384,419,12,cell division control,93,353,91.92708333,88.76901019,94.25460492,Estimated from documented WES/WGS
+SCLC,803,384,419,12,cell replicative immortality,42,342,89.0625,85.54540782,91.80578638,Estimated from documented WES/WGS
+SCLC,803,384,419,12,change of cellular energetics,61,350,91.14583333,87.88183041,93.59476081,Estimated from documented WES/WGS
+SCLC,803,384,419,12,differentiation and development,140,354,92.1875,89.06629045,94.47299929,Estimated from documented WES/WGS
+SCLC,803,384,419,12,escaping immune response to cancer,41,348,90.625,87.2939614,93.15128057,Estimated from documented WES/WGS
+SCLC,803,384,419,12,escaping programmed cell death,187,355,92.44791667,89.36440449,94.69055987,Estimated from documented WES/WGS
+SCLC,803,384,419,12,genome instability and mutations,96,353,91.92708333,88.76901019,94.25460492,Estimated from documented WES/WGS
+SCLC,803,384,419,12,global regulation of gene expression,54,315,82.03125,77.87990652,85.54807273,Estimated from documented WES/WGS
+SCLC,803,384,419,12,invasion and metastasis,190,357,92.96875,89.96329096,95.12302266,Estimated from documented WES/WGS
+SCLC,803,384,419,12,proliferative signalling,163,335,87.23958333,83.52976159,90.21171022,Estimated from documented WES/WGS
+SCLC,803,384,419,12,suppression of growth,118,355,92.44791667,89.36440449,94.69055987,Estimated from documented WES/WGS
+SCLC,803,384,419,12,tumour promoting inflammation,43,338,88.02083333,84.39071006,90.89778563,Estimated from documented WES/WGS
+CESC,749,416,333,12,angiogenesis,66,249,59.85576923,55.07583437,64.45534776,Estimated from documented WES/WGS
+CESC,749,416,333,12,cell division control,93,230,55.28846154,50.48392957,59.99621695,Estimated from documented WES/WGS
+CESC,749,416,333,12,cell replicative immortality,42,225,54.08653846,49.28227648,58.81601855,Estimated from documented WES/WGS
+CESC,749,416,333,12,change of cellular energetics,61,253,60.81730769,56.04782815,65.38883516,Estimated from documented WES/WGS
+CESC,749,416,333,12,differentiation and development,140,341,81.97115385,77.98978484,85.36746452,Estimated from documented WES/WGS
+CESC,749,416,333,12,escaping immune response to cancer,41,156,37.5,32.98210632,42.24663829,Estimated from documented WES/WGS
+CESC,749,416,333,12,escaping programmed cell death,187,329,79.08653846,74.92113028,82.71967553,Estimated from documented WES/WGS
+CESC,749,416,333,12,genome instability and mutations,96,282,67.78846154,63.15292871,72.09847319,Estimated from documented WES/WGS
+CESC,749,416,333,12,global regulation of gene expression,54,245,58.89423077,54.10569968,63.52000127,Estimated from documented WES/WGS
+CESC,749,416,333,12,invasion and metastasis,190,349,83.89423077,80.05434761,87.11386412,Estimated from documented WES/WGS
+CESC,749,416,333,12,proliferative signalling,163,316,75.96153846,71.62961945,79.81837251,Estimated from documented WES/WGS
+CESC,749,416,333,12,suppression of growth,118,299,71.875,67.36947894,75.980218,Estimated from documented WES/WGS
+CESC,749,416,333,12,tumour promoting inflammation,43,149,35.81730769,31.35895759,40.53519495,Estimated from documented WES/WGS
+GIST,703,71,632,9,angiogenesis,66,20,28.16901408,19.0370907,39.54201707,Estimated from documented WES/WGS
+GIST,703,71,632,9,cell division control,93,14,19.71830986,12.1255323,30.41968171,Estimated from documented WES/WGS
+GIST,703,71,632,9,cell replicative immortality,42,15,21.12676056,13.24255142,31.97497822,Estimated from documented WES/WGS
+GIST,703,71,632,9,change of cellular energetics,61,15,21.12676056,13.24255142,31.97497822,Estimated from documented WES/WGS
+GIST,703,71,632,9,differentiation and development,140,68,95.77464789,88.29758396,98.55267394,Estimated from documented WES/WGS
+GIST,703,71,632,9,escaping immune response to cancer,41,10,14.08450704,7.834202212,24.02174928,Estimated from documented WES/WGS
+GIST,703,71,632,9,escaping programmed cell death,187,68,95.77464789,88.29758396,98.55267394,Estimated from documented WES/WGS
+GIST,703,71,632,9,genome instability and mutations,96,18,25.35211268,16.68055116,36.55392535,Estimated from documented WES/WGS
+GIST,703,71,632,9,global regulation of gene expression,54,13,18.30985915,11.0247261,28.84817227,Estimated from documented WES/WGS
+GIST,703,71,632,9,invasion and metastasis,190,68,95.77464789,88.29758396,98.55267394,Estimated from documented WES/WGS
+GIST,703,71,632,9,proliferative signalling,163,67,94.36619718,86.3903942,97.78754807,Estimated from documented WES/WGS
+GIST,703,71,632,9,suppression of growth,118,24,33.8028169,23.88498843,45.38338186,Estimated from documented WES/WGS
+GIST,703,71,632,9,tumour promoting inflammation,43,9,12.67605634,6.81452759,22.36910828,Estimated from documented WES/WGS
+HIST,632,534,98,5,angiogenesis,66,114,21.34831461,18.08388011,25.02203057,Estimated from documented WES/WGS
+HIST,632,534,98,5,cell division control,93,78,14.60674157,11.8640872,17.85497893,Estimated from documented WES/WGS
+HIST,632,534,98,5,cell replicative immortality,42,53,9.925093633,7.668251566,12.75439474,Estimated from documented WES/WGS
+HIST,632,534,98,5,change of cellular energetics,61,122,22.84644195,19.48688514,26.59387988,Estimated from documented WES/WGS
+HIST,632,534,98,5,differentiation and development,140,197,36.89138577,32.9061203,41.06390419,Estimated from documented WES/WGS
+HIST,632,534,98,5,escaping immune response to cancer,41,46,8.61423221,6.520269423,11.29937933,Estimated from documented WES/WGS
+HIST,632,534,98,5,escaping programmed cell death,187,195,36.51685393,32.54293022,40.68338069,Estimated from documented WES/WGS
+HIST,632,534,98,5,genome instability and mutations,96,88,16.47940075,13.57432185,19.86331221,Estimated from documented WES/WGS
+HIST,632,534,98,5,global regulation of gene expression,54,67,12.54681648,10.00210082,15.62654059,Estimated from documented WES/WGS
+HIST,632,534,98,5,invasion and metastasis,190,144,26.96629213,23.37666559,30.88494888,Estimated from documented WES/WGS
+HIST,632,534,98,5,proliferative signalling,163,183,34.26966292,30.36938481,38.39464458,Estimated from documented WES/WGS
+HIST,632,534,98,5,suppression of growth,118,55,10.29962547,7.998786178,13.16757371,Estimated from documented WES/WGS
+HIST,632,534,98,5,tumour promoting inflammation,43,87,16.29213483,13.40262144,19.66315582,Estimated from documented WES/WGS
+TGCT,593,171,422,10,angiogenesis,66,34,19.88304094,14.59183477,26.49765242,Estimated from documented WES/WGS
+TGCT,593,171,422,10,cell division control,93,24,14.03508772,9.616334127,20.03421853,Estimated from documented WES/WGS
+TGCT,593,171,422,10,cell replicative immortality,42,32,18.71345029,13.57900388,25.22269641,Estimated from documented WES/WGS
+TGCT,593,171,422,10,change of cellular energetics,61,34,19.88304094,14.59183477,26.49765242,Estimated from documented WES/WGS
+TGCT,593,171,422,10,differentiation and development,140,64,37.42690058,30.52464953,44.88164124,Estimated from documented WES/WGS
+TGCT,593,171,422,10,escaping immune response to cancer,41,7,4.093567251,1.996840735,8.207523231,Estimated from documented WES/WGS
+TGCT,593,171,422,10,escaping programmed cell death,187,66,38.59649123,31.62669278,46.06738489,Estimated from documented WES/WGS
+TGCT,593,171,422,10,genome instability and mutations,96,26,15.20467836,10.59223132,21.34610824,Estimated from documented WES/WGS
+TGCT,593,171,422,10,global regulation of gene expression,54,22,12.86549708,8.651879834,18.71088592,Estimated from documented WES/WGS
+TGCT,593,171,422,10,invasion and metastasis,190,70,40.93567251,33.84358326,48.42606822,Estimated from documented WES/WGS
+TGCT,593,171,422,10,proliferative signalling,163,62,36.25730994,29.42697188,43.69153198,Estimated from documented WES/WGS
+TGCT,593,171,422,10,suppression of growth,118,37,21.6374269,16.12529755,28.39587,Estimated from documented WES/WGS
+TGCT,593,171,422,10,tumour promoting inflammation,43,22,12.86549708,8.651879834,18.71088592,Estimated from documented WES/WGS
+GBC,592,281,311,11,angiogenesis,66,221,78.64768683,73.4867197,83.03595108,Estimated from documented WES/WGS
+GBC,592,281,311,11,cell division control,93,234,83.27402135,78.46802755,87.18252795,Estimated from documented WES/WGS
+GBC,592,281,311,11,cell replicative immortality,42,236,83.98576512,79.24388173,87.81096372,Estimated from documented WES/WGS
+GBC,592,281,311,11,change of cellular energetics,61,226,80.42704626,75.39085111,84.64254456,Estimated from documented WES/WGS
+GBC,592,281,311,11,differentiation and development,140,253,90.03558719,85.97559978,93.01571031,Estimated from documented WES/WGS
+GBC,592,281,311,11,escaping immune response to cancer,41,212,75.44483986,70.09149859,80.11186738,Estimated from documented WES/WGS
+GBC,592,281,311,11,escaping programmed cell death,187,258,91.81494662,88.01789014,94.48414484,Estimated from documented WES/WGS
+GBC,592,281,311,11,genome instability and mutations,96,247,87.90035587,83.56759804,91.21084218,Estimated from documented WES/WGS
+GBC,592,281,311,11,global regulation of gene expression,54,145,51.60142349,45.77623741,57.38341499,Estimated from documented WES/WGS
+GBC,592,281,311,11,invasion and metastasis,190,257,91.45907473,87.60640777,94.19348224,Estimated from documented WES/WGS
+GBC,592,281,311,11,proliferative signalling,163,198,70.46263345,64.88148741,75.49184885,Estimated from documented WES/WGS
+GBC,592,281,311,11,suppression of growth,118,245,87.1886121,82.77352964,90.60062062,Estimated from documented WES/WGS
+GBC,592,281,311,11,tumour promoting inflammation,43,220,78.29181495,73.10749861,82.71302718,Estimated from documented WES/WGS
+MPN,589,188,401,6,angiogenesis,66,58,30.85106383,24.68737748,37.78163185,Estimated from documented WES/WGS
+MPN,589,188,401,6,cell division control,93,140,74.46808511,67.78844851,80.16781733,Estimated from documented WES/WGS
+MPN,589,188,401,6,cell replicative immortality,42,17,9.042553191,5.722373511,14.00300757,Estimated from documented WES/WGS
+MPN,589,188,401,6,change of cellular energetics,61,138,73.40425532,66.66571209,79.20549872,Estimated from documented WES/WGS
+MPN,589,188,401,6,differentiation and development,140,149,79.25531915,72.90189206,84.43712146,Estimated from documented WES/WGS
+MPN,589,188,401,6,escaping immune response to cancer,41,34,18.08510638,13.24029349,24.20805541,Estimated from documented WES/WGS
+MPN,589,188,401,6,escaping programmed cell death,187,164,87.23404255,81.70774302,91.26918327,Estimated from documented WES/WGS
+MPN,589,188,401,6,genome instability and mutations,96,60,31.91489362,25.67081077,38.88325361,Estimated from documented WES/WGS
+MPN,589,188,401,6,global regulation of gene expression,54,140,74.46808511,67.78844851,80.16781733,Estimated from documented WES/WGS
+MPN,589,188,401,6,invasion and metastasis,190,89,47.34042553,40.32816421,54.4591982,Estimated from documented WES/WGS
+MPN,589,188,401,6,proliferative signalling,163,164,87.23404255,81.70774302,91.26918327,Estimated from documented WES/WGS
+MPN,589,188,401,6,suppression of growth,118,54,28.72340426,22.73251492,35.56638434,Estimated from documented WES/WGS
+MPN,589,188,401,6,tumour promoting inflammation,43,137,72.87234043,66.10604627,78.72263702,Estimated from documented WES/WGS
+UCS,570,62,508,6,angiogenesis,66,58,93.5483871,84.55248427,97.46270945,Estimated from documented WES/WGS
+UCS,570,62,508,6,cell division control,93,60,96.77419355,88.97953041,99.11086285,Estimated from documented WES/WGS
+UCS,570,62,508,6,cell replicative immortality,42,58,93.5483871,84.55248427,97.46270945,Estimated from documented WES/WGS
+UCS,570,62,508,6,change of cellular energetics,61,57,91.93548387,82.47142865,96.5061653,Estimated from documented WES/WGS
+UCS,570,62,508,6,differentiation and development,140,59,95.16129032,86.71196207,98.34083141,Estimated from documented WES/WGS
+UCS,570,62,508,6,escaping immune response to cancer,41,57,91.93548387,82.47142865,96.5061653,Estimated from documented WES/WGS
+UCS,570,62,508,6,escaping programmed cell death,187,60,96.77419355,88.97953041,99.11086285,Estimated from documented WES/WGS
+UCS,570,62,508,6,genome instability and mutations,96,60,96.77419355,88.97953041,99.11086285,Estimated from documented WES/WGS
+UCS,570,62,508,6,global regulation of gene expression,54,32,51.61290323,39.44745961,63.59014016,Estimated from documented WES/WGS
+UCS,570,62,508,6,invasion and metastasis,190,60,96.77419355,88.97953041,99.11086285,Estimated from documented WES/WGS
+UCS,570,62,508,6,proliferative signalling,163,51,82.25806452,70.95843311,89.79356223,Estimated from documented WES/WGS
+UCS,570,62,508,6,suppression of growth,118,59,95.16129032,86.71196207,98.34083141,Estimated from documented WES/WGS
+UCS,570,62,508,6,tumour promoting inflammation,43,58,93.5483871,84.55248427,97.46270945,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,angiogenesis,66,145,79.23497268,72.78676781,84.48103596,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,cell division control,93,151,82.5136612,76.35773188,87.33262933,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,cell replicative immortality,42,153,83.60655738,77.56239073,88.26882295,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,change of cellular energetics,61,152,83.06010929,76.95909118,87.80169626,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,differentiation and development,140,169,92.34972678,87.56956881,95.38846469,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,escaping immune response to cancer,41,135,73.7704918,66.95550117,79.60804022,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,escaping programmed cell death,187,167,91.2568306,86.27050007,94.54668095,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,genome instability and mutations,96,161,87.97814208,82.4691841,91.92543949,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,global regulation of gene expression,54,99,54.09836066,46.86834847,61.15984832,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,invasion and metastasis,190,172,93.98907104,89.55852895,96.61078326,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,proliferative signalling,163,132,72.13114754,65.23121179,78.12105087,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,suppression of growth,118,164,89.61748634,84.35395015,93.25195216,Estimated from documented WES/WGS
+STOMACH,541,183,358,15,tumour promoting inflammation,43,138,75.40983607,68.69078609,81.08403401,Estimated from documented WES/WGS
+LIVER,522,437,85,11,angiogenesis,66,285,65.2173913,60.636809,69.53276723,Estimated from documented WES/WGS
+LIVER,522,437,85,11,cell division control,93,315,72.08237986,67.69798091,76.08193047,Estimated from documented WES/WGS
+LIVER,522,437,85,11,cell replicative immortality,42,300,68.64988558,64.15374082,72.82100298,Estimated from documented WES/WGS
+LIVER,522,437,85,11,change of cellular energetics,61,304,69.56521739,65.09609923,73.69335593,Estimated from documented WES/WGS
+LIVER,522,437,85,11,differentiation and development,140,352,80.54919908,76.57848856,83.98750283,Estimated from documented WES/WGS
+LIVER,522,437,85,11,escaping immune response to cancer,41,279,63.84439359,59.2371981,68.21031111,Estimated from documented WES/WGS
+LIVER,522,437,85,11,escaping programmed cell death,187,373,85.35469108,81.73184061,88.36138538,Estimated from documented WES/WGS
+LIVER,522,437,85,11,genome instability and mutations,96,338,77.34553776,73.19247042,81.02203123,Estimated from documented WES/WGS
+LIVER,522,437,85,11,global regulation of gene expression,54,192,43.93592677,39.3555015,48.62203579,Estimated from documented WES/WGS
+LIVER,522,437,85,11,invasion and metastasis,190,367,83.98169336,80.24900539,87.12215357,Estimated from documented WES/WGS
+LIVER,522,437,85,11,proliferative signalling,163,291,66.59038902,62.04045221,70.85119106,Estimated from documented WES/WGS
+LIVER,522,437,85,11,suppression of growth,118,346,79.17620137,75.12305275,82.72087161,Estimated from documented WES/WGS
+LIVER,522,437,85,11,tumour promoting inflammation,43,234,53.54691076,48.86023926,58.17176723,Estimated from documented WES/WGS
+MESO,477,94,383,6,angiogenesis,66,30,31.91489362,23.36115814,41.88874674,Estimated from documented WES/WGS
+MESO,477,94,383,6,cell division control,93,57,60.63829787,50.53112568,69.91010674,Estimated from documented WES/WGS
+MESO,477,94,383,6,cell replicative immortality,42,28,29.78723404,21.48444361,39.67721479,Estimated from documented WES/WGS
+MESO,477,94,383,6,change of cellular energetics,61,57,60.63829787,50.53112568,69.91010674,Estimated from documented WES/WGS
+MESO,477,94,383,6,differentiation and development,140,54,57.44680851,47.35323762,66.95562507,Estimated from documented WES/WGS
+MESO,477,94,383,6,escaping immune response to cancer,41,32,34.04255319,25.25897357,44.0791778,Estimated from documented WES/WGS
+MESO,477,94,383,6,escaping programmed cell death,187,63,67.0212766,57.01346545,75.69250642,Estimated from documented WES/WGS
+MESO,477,94,383,6,genome instability and mutations,96,60,63.82978723,53.75052079,72.82308135,Estimated from documented WES/WGS
+MESO,477,94,383,6,global regulation of gene expression,54,23,24.46808511,16.8934611,34.0475811,Estimated from documented WES/WGS
+MESO,477,94,383,6,invasion and metastasis,190,71,75.53191489,65.9524189,83.1065389,Estimated from documented WES/WGS
+MESO,477,94,383,6,proliferative signalling,163,45,47.87234043,38.05716815,57.85458537,Estimated from documented WES/WGS
+MESO,477,94,383,6,suppression of growth,118,60,63.82978723,53.75052079,72.82308135,Estimated from documented WES/WGS
+MESO,477,94,383,6,tumour promoting inflammation,43,28,29.78723404,21.48444361,39.67721479,Estimated from documented WES/WGS
+ODG,468,231,237,11,angiogenesis,66,121,52.38095238,45.9542862,58.7297249,Estimated from documented WES/WGS
+ODG,468,231,237,11,cell division control,93,101,43.72294372,37.48052919,50.17071427,Estimated from documented WES/WGS
+ODG,468,231,237,11,cell replicative immortality,42,111,48.05194805,41.69373447,54.47389281,Estimated from documented WES/WGS
+ODG,468,231,237,11,change of cellular energetics,61,177,76.62337662,70.75746174,81.61829875,Estimated from documented WES/WGS
+ODG,468,231,237,11,differentiation and development,140,195,84.41558442,79.17966721,88.52558415,Estimated from documented WES/WGS
+ODG,468,231,237,11,escaping immune response to cancer,41,78,33.76623377,27.97753669,40.08602399,Estimated from documented WES/WGS
+ODG,468,231,237,11,escaping programmed cell death,187,172,74.45887446,68.46696088,79.6506077,Estimated from documented WES/WGS
+ODG,468,231,237,11,genome instability and mutations,96,109,47.18614719,40.84728884,53.61706167,Estimated from documented WES/WGS
+ODG,468,231,237,11,global regulation of gene expression,54,213,92.20779221,88.02027181,95.01447043,Estimated from documented WES/WGS
+ODG,468,231,237,11,invasion and metastasis,190,199,86.14718615,81.09826332,90.01354157,Estimated from documented WES/WGS
+ODG,468,231,237,11,proliferative signalling,163,132,57.14285714,50.69567314,63.35636016,Estimated from documented WES/WGS
+ODG,468,231,237,11,suppression of growth,118,185,80.08658009,74.46321748,84.72565007,Estimated from documented WES/WGS
+ODG,468,231,237,11,tumour promoting inflammation,43,68,29.43722944,23.93485254,35.61232432,Estimated from documented WES/WGS
+PRCC,437,342,95,9,angiogenesis,66,137,40.05847953,35.00331574,45.33449563,Estimated from documented WES/WGS
+PRCC,437,342,95,9,cell division control,93,160,46.78362573,41.56052144,52.07818224,Estimated from documented WES/WGS
+PRCC,437,342,95,9,cell replicative immortality,42,125,36.5497076,31.621532,41.77668338,Estimated from documented WES/WGS
+PRCC,437,342,95,9,change of cellular energetics,61,143,41.8128655,36.70450973,47.10309963,Estimated from documented WES/WGS
+PRCC,437,342,95,9,differentiation and development,140,227,66.37426901,61.21003338,71.17474789,Estimated from documented WES/WGS
+PRCC,437,342,95,9,escaping immune response to cancer,41,111,32.45614035,27.71257533,37.58944473,Estimated from documented WES/WGS
+PRCC,437,342,95,9,escaping programmed cell death,187,238,69.59064327,64.51986773,74.22620987,Estimated from documented WES/WGS
+PRCC,437,342,95,9,genome instability and mutations,96,195,57.01754386,51.72155012,62.15764185,Estimated from documented WES/WGS
+PRCC,437,342,95,9,global regulation of gene expression,54,141,41.22807018,36.13669674,46.5143133,Estimated from documented WES/WGS
+PRCC,437,342,95,9,invasion and metastasis,190,258,75.43859649,70.61061865,79.70145226,Estimated from documented WES/WGS
+PRCC,437,342,95,9,proliferative signalling,163,220,64.32748538,59.11719057,69.21949305,Estimated from documented WES/WGS
+PRCC,437,342,95,9,suppression of growth,118,209,61.11111111,55.84834971,66.12703758,Estimated from documented WES/WGS
+PRCC,437,342,95,9,tumour promoting inflammation,43,82,23.97660819,19.75675729,28.77457246,Estimated from documented WES/WGS
+ASTR,432,38,394,8,angiogenesis,66,27,71.05263158,55.24286232,82.99672217,Estimated from documented WES/WGS
+ASTR,432,38,394,8,cell division control,93,27,71.05263158,55.24286232,82.99672217,Estimated from documented WES/WGS
+ASTR,432,38,394,8,cell replicative immortality,42,23,60.52631579,44.717868,74.40192425,Estimated from documented WES/WGS
+ASTR,432,38,394,8,change of cellular energetics,61,26,68.42105263,52.54424011,80.91539632,Estimated from documented WES/WGS
+ASTR,432,38,394,8,differentiation and development,140,28,73.68421053,57.99115381,85.02837875,Estimated from documented WES/WGS
+ASTR,432,38,394,8,escaping immune response to cancer,41,26,68.42105263,52.54424011,80.91539632,Estimated from documented WES/WGS
+ASTR,432,38,394,8,escaping programmed cell death,187,28,73.68421053,57.99115381,85.02837875,Estimated from documented WES/WGS
+ASTR,432,38,394,8,genome instability and mutations,96,26,68.42105263,52.54424011,80.91539632,Estimated from documented WES/WGS
+ASTR,432,38,394,8,global regulation of gene expression,54,25,65.78947368,49.89210355,78.78758482,Estimated from documented WES/WGS
+ASTR,432,38,394,8,invasion and metastasis,190,28,73.68421053,57.99115381,85.02837875,Estimated from documented WES/WGS
+ASTR,432,38,394,8,proliferative signalling,163,12,31.57894737,19.08460368,47.45575989,Estimated from documented WES/WGS
+ASTR,432,38,394,8,suppression of growth,118,27,71.05263158,55.24286232,82.99672217,Estimated from documented WES/WGS
+ASTR,432,38,394,8,tumour promoting inflammation,43,23,60.52631579,44.717868,74.40192425,Estimated from documented WES/WGS
+APPX,317,3,314,5,angiogenesis,66,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,cell division control,93,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,cell replicative immortality,42,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,change of cellular energetics,61,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,differentiation and development,140,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,escaping immune response to cancer,41,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,escaping programmed cell death,187,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,genome instability and mutations,96,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,global regulation of gene expression,54,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+APPX,317,3,314,5,invasion and metastasis,190,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,proliferative signalling,163,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,suppression of growth,118,3,100,43.85029682,100,Estimated from documented WES/WGS
+APPX,317,3,314,5,tumour promoting inflammation,43,3,100,43.85029682,100,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,angiogenesis,66,75,28.84615385,23.67884808,34.62944794,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,cell division control,93,80,30.76923077,25.47309834,36.62535259,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,cell replicative immortality,42,58,22.30769231,17.67138595,27.75038338,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,change of cellular energetics,61,90,34.61538462,29.09452218,40.58423856,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,differentiation and development,140,89,34.23076923,28.73048901,40.19024074,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,escaping immune response to cancer,41,54,20.76923077,16.28156931,26.1080761,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,escaping programmed cell death,187,115,44.23076923,38.32129122,50.30824405,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,genome instability and mutations,96,80,30.76923077,25.47309834,36.62535259,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,global regulation of gene expression,54,49,18.84615385,14.55907668,24.04041381,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,invasion and metastasis,190,120,46.15384615,40.19427651,52.22541367,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,proliferative signalling,163,71,27.30769231,22.25189317,33.02427892,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,suppression of growth,118,92,35.38461538,29.82380786,41.37101484,Estimated from documented WES/WGS
+CHRCC,316,260,56,10,tumour promoting inflammation,43,45,17.30769231,13.19406087,22.3733057,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,angiogenesis,66,147,89.09090909,83.41574961,92.98728606,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,cell division control,93,136,82.42424242,75.89825458,87.47480601,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,cell replicative immortality,42,148,89.6969697,84.12025882,93.46732003,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,change of cellular energetics,61,145,87.87878788,82.01917965,92.01476964,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,differentiation and development,140,151,91.51515152,86.26260948,94.87859894,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,escaping immune response to cancer,41,117,70.90909091,63.56612221,77.30061779,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,escaping programmed cell death,187,153,92.72727273,87.7192538,95.79104099,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,genome instability and mutations,96,141,85.45454545,79.26916115,90.02661538,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,global regulation of gene expression,54,68,41.21212121,33.98490931,48.83921446,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,invasion and metastasis,190,153,92.72727273,87.7192538,95.79104099,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,proliferative signalling,163,137,83.03030303,76.56722443,87.99037935,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,suppression of growth,118,145,87.87878788,82.01917965,92.01476964,Estimated from documented WES/WGS
+AMPCA,296,165,131,9,tumour promoting inflammation,43,146,88.48484848,82.71548153,92.50301094,Estimated from documented WES/WGS
+TNKN,292,46,246,5,angiogenesis,66,15,32.60869565,20.86594331,47.03226758,Estimated from documented WES/WGS
+TNKN,292,46,246,5,cell division control,93,19,41.30434783,28.28860322,55.66050222,Estimated from documented WES/WGS
+TNKN,292,46,246,5,cell replicative immortality,42,13,28.26086957,17.32420238,42.54856123,Estimated from documented WES/WGS
+TNKN,292,46,246,5,change of cellular energetics,61,13,28.26086957,17.32420238,42.54856123,Estimated from documented WES/WGS
+TNKN,292,46,246,5,differentiation and development,140,25,54.34782609,40.18018106,67.84526622,Estimated from documented WES/WGS
+TNKN,292,46,246,5,escaping immune response to cancer,41,8,17.39130435,9.085791702,30.72335372,Estimated from documented WES/WGS
+TNKN,292,46,246,5,escaping programmed cell death,187,24,52.17391304,38.13741307,65.87531057,Estimated from documented WES/WGS
+TNKN,292,46,246,5,genome instability and mutations,96,19,41.30434783,28.28860322,55.66050222,Estimated from documented WES/WGS
+TNKN,292,46,246,5,global regulation of gene expression,54,13,28.26086957,17.32420238,42.54856123,Estimated from documented WES/WGS
+TNKN,292,46,246,5,invasion and metastasis,190,28,60.86956522,46.45684323,73.60677496,Estimated from documented WES/WGS
+TNKN,292,46,246,5,proliferative signalling,163,21,45.65217391,32.15473378,59.81981894,Estimated from documented WES/WGS
+TNKN,292,46,246,5,suppression of growth,118,25,54.34782609,40.18018106,67.84526622,Estimated from documented WES/WGS
+TNKN,292,46,246,5,tumour promoting inflammation,43,7,15.2173913,7.572282228,28.22413955,Estimated from documented WES/WGS
+PCPG,284,255,29,5,angiogenesis,66,67,26.2745098,21.25331064,31.99992764,Estimated from documented WES/WGS
+PCPG,284,255,29,5,cell division control,93,34,13.33333333,9.700698811,18.0543058,Estimated from documented WES/WGS
+PCPG,284,255,29,5,cell replicative immortality,42,18,7.058823529,4.511361748,10.8808629,Estimated from documented WES/WGS
+PCPG,284,255,29,5,change of cellular energetics,61,25,9.803921569,6.729043587,14.07189729,Estimated from documented WES/WGS
+PCPG,284,255,29,5,differentiation and development,140,77,30.19607843,24.88925105,36.0907247,Estimated from documented WES/WGS
+PCPG,284,255,29,5,escaping immune response to cancer,41,35,13.7254902,10.03726799,18.49041037,Estimated from documented WES/WGS
+PCPG,284,255,29,5,escaping programmed cell death,187,90,35.29411765,29.6865188,41.33821566,Estimated from documented WES/WGS
+PCPG,284,255,29,5,genome instability and mutations,96,57,22.35294118,17.67140003,27.85510077,Estimated from documented WES/WGS
+PCPG,284,255,29,5,global regulation of gene expression,54,31,12.15686275,8.698036995,16.73894637,Estimated from documented WES/WGS
+PCPG,284,255,29,5,invasion and metastasis,190,100,39.21568627,33.42577635,45.3256956,Estimated from documented WES/WGS
+PCPG,284,255,29,5,proliferative signalling,163,73,28.62745098,23.42885459,34.46042617,Estimated from documented WES/WGS
+PCPG,284,255,29,5,suppression of growth,118,63,24.70588235,19.81361504,30.34892824,Estimated from documented WES/WGS
+PCPG,284,255,29,5,tumour promoting inflammation,43,44,17.25490196,13.11210333,22.36963876,Estimated from documented WES/WGS
+THYM,272,196,76,10,angiogenesis,66,54,27.55102041,21.77326155,34.19183172,Estimated from documented WES/WGS
+THYM,272,196,76,10,cell division control,93,51,26.02040816,20.38091016,32.5818031,Estimated from documented WES/WGS
+THYM,272,196,76,10,cell replicative immortality,42,43,21.93877551,16.71529794,28.24106865,Estimated from documented WES/WGS
+THYM,272,196,76,10,change of cellular energetics,61,47,23.97959184,18.5390908,30.42044913,Estimated from documented WES/WGS
+THYM,272,196,76,10,differentiation and development,140,65,33.16326531,26.95147149,40.02234846,Estimated from documented WES/WGS
+THYM,272,196,76,10,escaping immune response to cancer,41,42,21.42857143,16.26235975,27.6932135,Estimated from documented WES/WGS
+THYM,272,196,76,10,escaping programmed cell death,187,72,36.73469388,30.3009802,43.6783931,Estimated from documented WES/WGS
+THYM,272,196,76,10,genome instability and mutations,96,58,29.59183673,23.64345716,36.32480945,Estimated from documented WES/WGS
+THYM,272,196,76,10,global regulation of gene expression,54,40,20.40816327,15.36030636,26.59368023,Estimated from documented WES/WGS
+THYM,272,196,76,10,invasion and metastasis,190,80,40.81632653,34.17624292,47.80947705,Estimated from documented WES/WGS
+THYM,272,196,76,10,proliferative signalling,163,68,34.69387755,28.38208059,41.59411936,Estimated from documented WES/WGS
+THYM,272,196,76,10,suppression of growth,118,64,32.65306122,26.47627927,39.49674734,Estimated from documented WES/WGS
+THYM,272,196,76,10,tumour promoting inflammation,43,49,25,19.45784062,31.50328597,Estimated from documented WES/WGS
+GEJ,261,7,254,8,angiogenesis,66,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,cell division control,93,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,cell replicative immortality,42,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,change of cellular energetics,61,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,differentiation and development,140,7,100,64.56695649,100,Estimated from documented WES/WGS
+GEJ,261,7,254,8,escaping immune response to cancer,41,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,escaping programmed cell death,187,7,100,64.56695649,100,Estimated from documented WES/WGS
+GEJ,261,7,254,8,genome instability and mutations,96,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,global regulation of gene expression,54,3,42.85714286,15.82198553,74.95416355,Estimated from documented WES/WGS
+GEJ,261,7,254,8,invasion and metastasis,190,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,proliferative signalling,163,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GEJ,261,7,254,8,suppression of growth,118,7,100,64.56695649,100,Estimated from documented WES/WGS
+GEJ,261,7,254,8,tumour promoting inflammation,43,6,85.71428571,48.68721707,97.43203757,Estimated from documented WES/WGS
+GCT,256,0,256,3,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,cell division control,93,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+GCT,256,0,256,3,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+MM,255,213,42,5,angiogenesis,66,103,48.35680751,41.73446582,55.03736921,Estimated from documented WES/WGS
+MM,255,213,42,5,cell division control,93,82,38.49765258,32.2217248,45.18112046,Estimated from documented WES/WGS
+MM,255,213,42,5,cell replicative immortality,42,106,49.76525822,43.11450607,56.42432751,Estimated from documented WES/WGS
+MM,255,213,42,5,change of cellular energetics,61,98,46.00938967,39.44595589,52.71421491,Estimated from documented WES/WGS
+MM,255,213,42,5,differentiation and development,140,148,69.48356808,62.99976222,75.27705091,Estimated from documented WES/WGS
+MM,255,213,42,5,escaping immune response to cancer,41,56,26.29107981,20.83682225,32.58536899,Estimated from documented WES/WGS
+MM,255,213,42,5,escaping programmed cell death,187,161,75.58685446,69.39805434,80.86908581,Estimated from documented WES/WGS
+MM,255,213,42,5,genome instability and mutations,96,84,39.43661972,33.11629597,46.13121498,Estimated from documented WES/WGS
+MM,255,213,42,5,global regulation of gene expression,54,56,26.29107981,20.83682225,32.58536899,Estimated from documented WES/WGS
+MM,255,213,42,5,invasion and metastasis,190,159,74.64788732,68.40460683,80.01786762,Estimated from documented WES/WGS
+MM,255,213,42,5,proliferative signalling,163,136,63.84976526,57.2051224,70.00369658,Estimated from documented WES/WGS
+MM,255,213,42,5,suppression of growth,118,97,45.5399061,38.98999495,52.24784301,Estimated from documented WES/WGS
+MM,255,213,42,5,tumour promoting inflammation,43,89,41.78403756,35.36345122,48.49572396,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,angiogenesis,66,6,24,11.49631369,43.42968336,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,cell division control,93,16,64,44.51849775,79.75211923,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,cell replicative immortality,42,3,12,4.16681715,29.95579392,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,change of cellular energetics,61,19,76,56.57031664,88.50368631,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,differentiation and development,140,20,80,60.86904963,91.13941531,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,escaping immune response to cancer,41,9,36,20.24788077,55.48150225,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,escaping programmed cell death,187,16,64,44.51849775,79.75211923,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,genome instability and mutations,96,19,76,56.57031664,88.50368631,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,global regulation of gene expression,54,21,84,65.34637839,93.59654854,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,invasion and metastasis,190,20,80,60.86904963,91.13941531,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,proliferative signalling,163,20,80,60.86904963,91.13941531,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,suppression of growth,118,19,76,56.57031664,88.50368631,Estimated from documented WES/WGS
+MDS_MPN,227,25,202,5,tumour promoting inflammation,43,16,64,44.51849775,79.75211923,Estimated from documented WES/WGS
+SBWL,220,60,160,9,angiogenesis,66,58,96.66666667,88.63622573,99.08106807,Estimated from documented WES/WGS
+SBWL,220,60,160,9,cell division control,93,54,90,79.85053528,95.33571655,Estimated from documented WES/WGS
+SBWL,220,60,160,9,cell replicative immortality,42,57,95,86.29948352,98.28504978,Estimated from documented WES/WGS
+SBWL,220,60,160,9,change of cellular energetics,61,58,96.66666667,88.63622573,99.08106807,Estimated from documented WES/WGS
+SBWL,220,60,160,9,differentiation and development,140,58,96.66666667,88.63622573,99.08106807,Estimated from documented WES/WGS
+SBWL,220,60,160,9,escaping immune response to cancer,41,41,68.33333333,55.76623297,78.69413245,Estimated from documented WES/WGS
+SBWL,220,60,160,9,escaping programmed cell death,187,59,98.33333333,91.14487027,99.70518402,Estimated from documented WES/WGS
+SBWL,220,60,160,9,genome instability and mutations,96,54,90,79.85053528,95.33571655,Estimated from documented WES/WGS
+SBWL,220,60,160,9,global regulation of gene expression,54,22,36.66666667,25.62091669,49.31699937,Estimated from documented WES/WGS
+SBWL,220,60,160,9,invasion and metastasis,190,59,98.33333333,91.14487027,99.70518402,Estimated from documented WES/WGS
+SBWL,220,60,160,9,proliferative signalling,163,58,96.66666667,88.63622573,99.08106807,Estimated from documented WES/WGS
+SBWL,220,60,160,9,suppression of growth,118,54,90,79.85053528,95.33571655,Estimated from documented WES/WGS
+SBWL,220,60,160,9,tumour promoting inflammation,43,56,93.33333333,84.07464269,97.37713013,Estimated from documented WES/WGS
+UM,210,87,123,6,angiogenesis,66,4,4.597701149,1.802268847,11.23303351,Estimated from documented WES/WGS
+UM,210,87,123,6,cell division control,93,24,27.5862069,19.29428908,37.77377158,Estimated from documented WES/WGS
+UM,210,87,123,6,cell replicative immortality,42,3,3.448275862,1.179582053,9.654082387,Estimated from documented WES/WGS
+UM,210,87,123,6,change of cellular energetics,61,21,24.13793103,16.36416316,34.09898375,Estimated from documented WES/WGS
+UM,210,87,123,6,differentiation and development,140,34,39.08045977,29.49782936,49.58661045,Estimated from documented WES/WGS
+UM,210,87,123,6,escaping immune response to cancer,41,2,2.298850575,0.6327085106,7.999318014,Estimated from documented WES/WGS
+UM,210,87,123,6,escaping programmed cell death,187,49,56.32183908,45.85155432,66.25745421,Estimated from documented WES/WGS
+UM,210,87,123,6,genome instability and mutations,96,24,27.5862069,19.29428908,37.77377158,Estimated from documented WES/WGS
+UM,210,87,123,6,global regulation of gene expression,54,23,26.43678161,18.31002401,36.55639873,Estimated from documented WES/WGS
+UM,210,87,123,6,invasion and metastasis,190,34,39.08045977,29.49782936,49.58661045,Estimated from documented WES/WGS
+UM,210,87,123,6,proliferative signalling,163,83,95.40229885,88.76696649,98.19773115,Estimated from documented WES/WGS
+UM,210,87,123,6,suppression of growth,118,24,27.5862069,19.29428908,37.77377158,Estimated from documented WES/WGS
+UM,210,87,123,6,tumour promoting inflammation,43,5,5.747126437,2.479563779,12.75737649,Estimated from documented WES/WGS
+GINET,197,15,182,6,angiogenesis,66,9,60,35.74683012,80.17550386,Estimated from documented WES/WGS
+GINET,197,15,182,6,cell division control,93,9,60,35.74683012,80.17550386,Estimated from documented WES/WGS
+GINET,197,15,182,6,cell replicative immortality,42,8,53.33333333,30.11698003,75.19046463,Estimated from documented WES/WGS
+GINET,197,15,182,6,change of cellular energetics,61,8,53.33333333,30.11698003,75.19046463,Estimated from documented WES/WGS
+GINET,197,15,182,6,differentiation and development,140,10,66.66666667,41.71354774,84.82367556,Estimated from documented WES/WGS
+GINET,197,15,182,6,escaping immune response to cancer,41,9,60,35.74683012,80.17550386,Estimated from documented WES/WGS
+GINET,197,15,182,6,escaping programmed cell death,187,11,73.33333333,48.04956594,89.10254667,Estimated from documented WES/WGS
+GINET,197,15,182,6,genome instability and mutations,96,10,66.66666667,41.71354774,84.82367556,Estimated from documented WES/WGS
+GINET,197,15,182,6,global regulation of gene expression,54,6,40,19.82449614,64.25316988,Estimated from documented WES/WGS
+GINET,197,15,182,6,invasion and metastasis,190,10,66.66666667,41.71354774,84.82367556,Estimated from documented WES/WGS
+GINET,197,15,182,6,proliferative signalling,163,8,53.33333333,30.11698003,75.19046463,Estimated from documented WES/WGS
+GINET,197,15,182,6,suppression of growth,118,10,66.66666667,41.71354774,84.82367556,Estimated from documented WES/WGS
+GINET,197,15,182,6,tumour promoting inflammation,43,8,53.33333333,30.11698003,75.19046463,Estimated from documented WES/WGS
+ACC,191,105,86,7,angiogenesis,66,43,40.95238095,32.02789904,50.51551759,Estimated from documented WES/WGS
+ACC,191,105,86,7,cell division control,93,51,48.57142857,39.23218917,58.01150819,Estimated from documented WES/WGS
+ACC,191,105,86,7,cell replicative immortality,42,41,39.04761905,30.26079174,48.60755471,Estimated from documented WES/WGS
+ACC,191,105,86,7,change of cellular energetics,61,40,38.0952381,29.38251248,47.64829887,Estimated from documented WES/WGS
+ACC,191,105,86,7,differentiation and development,140,51,48.57142857,39.23218917,58.01150819,Estimated from documented WES/WGS
+ACC,191,105,86,7,escaping immune response to cancer,41,39,37.14285714,28.50781079,46.68546548,Estimated from documented WES/WGS
+ACC,191,105,86,7,escaping programmed cell death,187,65,61.9047619,52.35170113,70.61748752,Estimated from documented WES/WGS
+ACC,191,105,86,7,genome instability and mutations,96,53,50.47619048,41.0664358,59.85233174,Estimated from documented WES/WGS
+ACC,191,105,86,7,global regulation of gene expression,54,35,33.33333333,25.04591011,42.79722579,Estimated from documented WES/WGS
+ACC,191,105,86,7,invasion and metastasis,190,63,60,50.43671983,68.85739863,Estimated from documented WES/WGS
+ACC,191,105,86,7,proliferative signalling,163,55,52.38095238,42.91383972,61.679998,Estimated from documented WES/WGS
+ACC,191,105,86,7,suppression of growth,118,54,51.42857143,41.98849181,60.76781083,Estimated from documented WES/WGS
+ACC,191,105,86,7,tumour promoting inflammation,43,32,30.47619048,22.4902062,39.84032442,Estimated from documented WES/WGS
+BLL,165,103,62,3,angiogenesis,66,37,35.9223301,27.31709259,45.53988604,Estimated from documented WES/WGS
+BLL,165,103,62,3,cell division control,93,23,22.33009709,15.36576315,31.28416036,Estimated from documented WES/WGS
+BLL,165,103,62,3,cell replicative immortality,42,34,33.00970874,24.68297274,42.55820837,Estimated from documented WES/WGS
+BLL,165,103,62,3,change of cellular energetics,61,31,30.09708738,22.08592989,39.53945369,Estimated from documented WES/WGS
+BLL,165,103,62,3,differentiation and development,140,44,42.7184466,33.59680595,52.36370024,Estimated from documented WES/WGS
+BLL,165,103,62,3,escaping immune response to cancer,41,20,19.41747573,12.93630885,28.09781714,Estimated from documented WES/WGS
+BLL,165,103,62,3,escaping programmed cell death,187,54,52.42718447,42.86982092,61.81001035,Estimated from documented WES/WGS
+BLL,165,103,62,3,genome instability and mutations,96,26,25.24271845,17.8478288,34.41789224,Estimated from documented WES/WGS
+BLL,165,103,62,3,global regulation of gene expression,54,10,9.708737864,5.359377104,16.9554238,Estimated from documented WES/WGS
+BLL,165,103,62,3,invasion and metastasis,190,55,53.39805825,43.81614298,62.7356208,Estimated from documented WES/WGS
+BLL,165,103,62,3,proliferative signalling,163,36,34.95145631,26.43507407,44.54997205,Estimated from documented WES/WGS
+BLL,165,103,62,3,suppression of growth,118,39,37.86407767,29.09271565,47.508128,Estimated from documented WES/WGS
+BLL,165,103,62,3,tumour promoting inflammation,43,27,26.21359223,18.6857865,35.45186704,Estimated from documented WES/WGS
+SG,163,10,153,6,angiogenesis,66,6,60,31.26737697,83.18196703,Estimated from documented WES/WGS
+SG,163,10,153,6,cell division control,93,5,50,23.65930905,76.34069095,Estimated from documented WES/WGS
+SG,163,10,153,6,cell replicative immortality,42,7,70,39.67781475,89.22087326,Estimated from documented WES/WGS
+SG,163,10,153,6,change of cellular energetics,61,5,50,23.65930905,76.34069095,Estimated from documented WES/WGS
+SG,163,10,153,6,differentiation and development,140,7,70,39.67781475,89.22087326,Estimated from documented WES/WGS
+SG,163,10,153,6,escaping immune response to cancer,41,6,60,31.26737697,83.18196703,Estimated from documented WES/WGS
+SG,163,10,153,6,escaping programmed cell death,187,6,60,31.26737697,83.18196703,Estimated from documented WES/WGS
+SG,163,10,153,6,genome instability and mutations,96,6,60,31.26737697,83.18196703,Estimated from documented WES/WGS
+SG,163,10,153,6,global regulation of gene expression,54,4,40,16.81803297,68.73262303,Estimated from documented WES/WGS
+SG,163,10,153,6,invasion and metastasis,190,8,80,49.01624715,94.33178485,Estimated from documented WES/WGS
+SG,163,10,153,6,proliferative signalling,163,6,60,31.26737697,83.18196703,Estimated from documented WES/WGS
+SG,163,10,153,6,suppression of growth,118,8,80,49.01624715,94.33178485,Estimated from documented WES/WGS
+SG,163,10,153,6,tumour promoting inflammation,43,5,50,23.65930905,76.34069095,Estimated from documented WES/WGS
+ANAL,142,8,134,5,angiogenesis,66,5,62.5,30.57423946,86.31557142,Estimated from documented WES/WGS
+ANAL,142,8,134,5,cell division control,93,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,cell replicative immortality,42,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,change of cellular energetics,61,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,differentiation and development,140,8,100,67.55924351,100,Estimated from documented WES/WGS
+ANAL,142,8,134,5,escaping immune response to cancer,41,4,50,21.52160622,78.47839378,Estimated from documented WES/WGS
+ANAL,142,8,134,5,escaping programmed cell death,187,8,100,67.55924351,100,Estimated from documented WES/WGS
+ANAL,142,8,134,5,genome instability and mutations,96,8,100,67.55924351,100,Estimated from documented WES/WGS
+ANAL,142,8,134,5,global regulation of gene expression,54,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,invasion and metastasis,190,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,proliferative signalling,163,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,suppression of growth,118,7,87.5,52.91118178,97.75825085,Estimated from documented WES/WGS
+ANAL,142,8,134,5,tumour promoting inflammation,43,3,37.5,13.68442858,69.42576054,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,angiogenesis,66,20,31.25,21.23106654,43.3923357,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,cell division control,93,23,35.9375,25.28840229,48.17914939,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,cell replicative immortality,42,17,26.5625,17.29637907,38.48287373,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,change of cellular energetics,61,28,43.75,32.2940097,55.91379104,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,differentiation and development,140,37,57.8125,45.61003154,69.13021753,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,escaping immune response to cancer,41,17,26.5625,17.29637907,38.48287373,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,escaping programmed cell death,187,34,53.125,41.07208705,64.82401257,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,genome instability and mutations,96,25,39.0625,28.05556919,51.30808212,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,global regulation of gene expression,54,31,48.4375,36.63355167,60.41839852,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,invasion and metastasis,190,37,57.8125,45.61003154,69.13021753,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,proliferative signalling,163,33,51.5625,39.58160148,63.36644833,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,suppression of growth,118,29,45.3125,33.72944778,57.42640278,Estimated from documented WES/WGS
+MYELOID,131,64,67,7,tumour promoting inflammation,43,12,18.75,11.06464317,29.97436056,Estimated from documented WES/WGS
+VULVA,112,3,109,5,angiogenesis,66,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+VULVA,112,3,109,5,cell division control,93,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,cell replicative immortality,42,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,change of cellular energetics,61,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+VULVA,112,3,109,5,differentiation and development,140,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+VULVA,112,3,109,5,escaping immune response to cancer,41,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+VULVA,112,3,109,5,escaping programmed cell death,187,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,genome instability and mutations,96,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,global regulation of gene expression,54,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+VULVA,112,3,109,5,invasion and metastasis,190,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,proliferative signalling,163,3,100,43.85029682,100,Estimated from documented WES/WGS
+VULVA,112,3,109,5,suppression of growth,118,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+VULVA,112,3,109,5,tumour promoting inflammation,43,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+RBL,109,0,109,3,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,cell division control,93,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+RBL,109,0,109,3,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+BOWEL,100,1,99,4,angiogenesis,66,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,cell division control,93,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,cell replicative immortality,42,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,change of cellular energetics,61,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,differentiation and development,140,1,100,20.65493144,100,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,escaping immune response to cancer,41,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,escaping programmed cell death,187,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,genome instability and mutations,96,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,global regulation of gene expression,54,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,invasion and metastasis,190,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,proliferative signalling,163,1,100,20.65493144,100,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,suppression of growth,118,0,0,0,79.34506856,Estimated from documented WES/WGS
+BOWEL,100,1,99,4,tumour promoting inflammation,43,0,0,0,79.34506856,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,angiogenesis,66,19,25.67567568,17.0977073,36.65444413,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,cell division control,93,24,32.43243243,22.86407491,43.73470113,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,cell replicative immortality,42,34,45.94594595,35.07337093,57.21865431,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,change of cellular energetics,61,33,44.59459459,33.81582233,55.90687799,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,differentiation and development,140,45,60.81081081,49.4195193,71.13508006,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,escaping immune response to cancer,41,20,27.02702703,18.23022792,38.09124843,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,escaping programmed cell death,187,43,58.10810811,46.74028445,68.67566507,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,genome instability and mutations,96,24,32.43243243,22.86407491,43.73470113,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,global regulation of gene expression,54,35,47.2972973,36.33870692,58.52264324,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,invasion and metastasis,190,53,71.62162162,60.48274584,80.62645289,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,proliferative signalling,163,50,67.56756757,56.26529887,77.13592509,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,suppression of growth,118,34,45.94594595,35.07337093,57.21865431,Estimated from documented WES/WGS
+LYMPH,94,74,20,5,tumour promoting inflammation,43,20,27.02702703,18.23022792,38.09124843,Estimated from documented WES/WGS
+OVARY,85,6,79,4,angiogenesis,66,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+OVARY,85,6,79,4,cell division control,93,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,cell replicative immortality,42,2,33.33333333,9.677141111,70.00066849,Estimated from documented WES/WGS
+OVARY,85,6,79,4,change of cellular energetics,61,2,33.33333333,9.677141111,70.00066849,Estimated from documented WES/WGS
+OVARY,85,6,79,4,differentiation and development,140,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,escaping immune response to cancer,41,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+OVARY,85,6,79,4,escaping programmed cell death,187,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,genome instability and mutations,96,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,global regulation of gene expression,54,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,invasion and metastasis,190,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,proliferative signalling,163,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,suppression of growth,118,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+OVARY,85,6,79,4,tumour promoting inflammation,43,5,83.33333333,43.64971778,96.99466303,Estimated from documented WES/WGS
+HL,82,61,21,3,angiogenesis,66,31,50.81967213,38.60261849,62.93960468,Estimated from documented WES/WGS
+HL,82,61,21,3,cell division control,93,36,59.01639344,46.49979227,70.46466257,Estimated from documented WES/WGS
+HL,82,61,21,3,cell replicative immortality,42,28,45.90163934,34.01293229,58.27595187,Estimated from documented WES/WGS
+HL,82,61,21,3,change of cellular energetics,61,33,54.09836066,41.72404813,65.98706771,Estimated from documented WES/WGS
+HL,82,61,21,3,differentiation and development,140,44,72.13114754,59.82856941,81.81145611,Estimated from documented WES/WGS
+HL,82,61,21,3,escaping immune response to cancer,41,45,73.7704918,61.56325822,83.16121364,Estimated from documented WES/WGS
+HL,82,61,21,3,escaping programmed cell death,187,51,83.60655738,72.38716147,90.84398839,Estimated from documented WES/WGS
+HL,82,61,21,3,genome instability and mutations,96,41,67.21311475,54.72180631,77.6648802,Estimated from documented WES/WGS
+HL,82,61,21,3,global regulation of gene expression,54,28,45.90163934,34.01293229,58.27595187,Estimated from documented WES/WGS
+HL,82,61,21,3,invasion and metastasis,190,50,81.96721311,70.52584365,89.62085988,Estimated from documented WES/WGS
+HL,82,61,21,3,proliferative signalling,163,48,78.68852459,66.8775846,87.10022626,Estimated from documented WES/WGS
+HL,82,61,21,3,suppression of growth,118,45,73.7704918,61.56325822,83.16121364,Estimated from documented WES/WGS
+HL,82,61,21,3,tumour promoting inflammation,43,31,50.81967213,38.60261849,62.93960468,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,angiogenesis,66,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,cell division control,93,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,cell replicative immortality,42,1,50,9.453120573,90.54687943,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,change of cellular energetics,61,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,differentiation and development,140,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,escaping immune response to cancer,41,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,escaping programmed cell death,187,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,genome instability and mutations,96,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,global regulation of gene expression,54,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,invasion and metastasis,190,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,proliferative signalling,163,1,50,9.453120573,90.54687943,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,suppression of growth,118,2,100,34.23802275,100,Estimated from documented WES/WGS
+HEAD_NECK,63,2,61,6,tumour promoting inflammation,43,2,100,34.23802275,100,Estimated from documented WES/WGS
+BREAST,43,3,40,4,angiogenesis,66,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,cell division control,93,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,cell replicative immortality,42,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,change of cellular energetics,61,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,differentiation and development,140,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,escaping immune response to cancer,41,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,escaping programmed cell death,187,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,genome instability and mutations,96,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,global regulation of gene expression,54,0,0,5.551115123e-15,56.14970318,Estimated from documented WES/WGS
+BREAST,43,3,40,4,invasion and metastasis,190,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,proliferative signalling,163,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,suppression of growth,118,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+BREAST,43,3,40,4,tumour promoting inflammation,43,1,33.33333333,6.149194472,79.23403992,Estimated from documented WES/WGS
+LEUK,35,14,21,5,angiogenesis,66,6,42.85714286,21.3807989,67.40935542,Estimated from documented WES/WGS
+LEUK,35,14,21,5,cell division control,93,10,71.42857143,45.35091567,88.27862136,Estimated from documented WES/WGS
+LEUK,35,14,21,5,cell replicative immortality,42,8,57.14285714,32.59064458,78.6192011,Estimated from documented WES/WGS
+LEUK,35,14,21,5,change of cellular energetics,61,7,50,26.79920245,73.20079755,Estimated from documented WES/WGS
+LEUK,35,14,21,5,differentiation and development,140,10,71.42857143,45.35091567,88.27862136,Estimated from documented WES/WGS
+LEUK,35,14,21,5,escaping immune response to cancer,41,9,64.28571429,38.7644231,83.65526825,Estimated from documented WES/WGS
+LEUK,35,14,21,5,escaping programmed cell death,187,11,78.57142857,52.41076941,92.42861329,Estimated from documented WES/WGS
+LEUK,35,14,21,5,genome instability and mutations,96,6,42.85714286,21.3807989,67.40935542,Estimated from documented WES/WGS
+LEUK,35,14,21,5,global regulation of gene expression,54,6,42.85714286,21.3807989,67.40935542,Estimated from documented WES/WGS
+LEUK,35,14,21,5,invasion and metastasis,190,11,78.57142857,52.41076941,92.42861329,Estimated from documented WES/WGS
+LEUK,35,14,21,5,proliferative signalling,163,5,35.71428571,16.34473175,61.2355769,Estimated from documented WES/WGS
+LEUK,35,14,21,5,suppression of growth,118,11,78.57142857,52.41076941,92.42861329,Estimated from documented WES/WGS
+LEUK,35,14,21,5,tumour promoting inflammation,43,3,21.42857143,7.571386713,47.58923059,Estimated from documented WES/WGS
+PERITONEUM,26,0,26,1,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,cell division control,93,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+PERITONEUM,26,0,26,1,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+TLL,24,7,17,3,angiogenesis,66,1,14.28571429,2.567962434,51.31278293,Estimated from documented WES/WGS
+TLL,24,7,17,3,cell division control,93,0,0,5.551115123e-15,35.43304351,Estimated from documented WES/WGS
+TLL,24,7,17,3,cell replicative immortality,42,3,42.85714286,15.82198553,74.95416355,Estimated from documented WES/WGS
+TLL,24,7,17,3,change of cellular energetics,61,1,14.28571429,2.567962434,51.31278293,Estimated from documented WES/WGS
+TLL,24,7,17,3,differentiation and development,140,1,14.28571429,2.567962434,51.31278293,Estimated from documented WES/WGS
+TLL,24,7,17,3,escaping immune response to cancer,41,0,0,5.551115123e-15,35.43304351,Estimated from documented WES/WGS
+TLL,24,7,17,3,escaping programmed cell death,187,2,28.57142857,8.2218924,64.10655482,Estimated from documented WES/WGS
+TLL,24,7,17,3,genome instability and mutations,96,1,14.28571429,2.567962434,51.31278293,Estimated from documented WES/WGS
+TLL,24,7,17,3,global regulation of gene expression,54,0,0,5.551115123e-15,35.43304351,Estimated from documented WES/WGS
+TLL,24,7,17,3,invasion and metastasis,190,3,42.85714286,15.82198553,74.95416355,Estimated from documented WES/WGS
+TLL,24,7,17,3,proliferative signalling,163,2,28.57142857,8.2218924,64.10655482,Estimated from documented WES/WGS
+TLL,24,7,17,3,suppression of growth,118,2,28.57142857,8.2218924,64.10655482,Estimated from documented WES/WGS
+TLL,24,7,17,3,tumour promoting inflammation,43,1,14.28571429,2.567962434,51.31278293,Estimated from documented WES/WGS
+EYE,21,0,21,1,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,cell division control,93,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+EYE,21,0,21,1,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+PENIS,19,4,15,3,angiogenesis,66,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,cell division control,93,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,cell replicative immortality,42,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,change of cellular energetics,61,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,differentiation and development,140,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,escaping immune response to cancer,41,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,escaping programmed cell death,187,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,genome instability and mutations,96,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,global regulation of gene expression,54,3,75,30.06418426,95.44127392,Estimated from documented WES/WGS
+PENIS,19,4,15,3,invasion and metastasis,190,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,proliferative signalling,163,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,suppression of growth,118,4,100,51.01091635,100,Estimated from documented WES/WGS
+PENIS,19,4,15,3,tumour promoting inflammation,43,3,75,30.06418426,95.44127392,Estimated from documented WES/WGS
+UTERUS,19,0,19,2,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,cell division control,93,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+UTERUS,19,0,19,2,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+BILIARY_TRACT,17,11,6,4,angiogenesis,66,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,cell division control,93,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,cell replicative immortality,42,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,change of cellular energetics,61,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,differentiation and development,140,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,escaping immune response to cancer,41,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,escaping programmed cell death,187,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,genome instability and mutations,96,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,global regulation of gene expression,54,7,63.63636364,35.38011745,84.8335289,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,invasion and metastasis,190,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,proliferative signalling,163,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,suppression of growth,118,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+BILIARY_TRACT,17,11,6,4,tumour promoting inflammation,43,8,72.72727273,43.43546988,90.25394071,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,angiogenesis,66,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,cell division control,93,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,cell replicative immortality,42,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,change of cellular energetics,61,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,differentiation and development,140,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,escaping immune response to cancer,41,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,escaping programmed cell death,187,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,genome instability and mutations,96,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,global regulation of gene expression,54,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,invasion and metastasis,190,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,proliferative signalling,163,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,suppression of growth,118,1,16.66666667,3.005336975,56.35028222,Estimated from documented WES/WGS
+SOFT_TISSUE,17,6,11,2,tumour promoting inflammation,43,0,0,2.775557562e-15,39.03342879,Estimated from documented WES/WGS
+MAST,9,3,6,5,angiogenesis,66,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,cell division control,93,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+MAST,9,3,6,5,cell replicative immortality,42,0,0,5.551115123e-15,56.14970318,Estimated from documented WES/WGS
+MAST,9,3,6,5,change of cellular energetics,61,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+MAST,9,3,6,5,differentiation and development,140,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+MAST,9,3,6,5,escaping immune response to cancer,41,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,escaping programmed cell death,187,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,genome instability and mutations,96,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,global regulation of gene expression,54,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+MAST,9,3,6,5,invasion and metastasis,190,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,proliferative signalling,163,3,100,43.85029682,100,Estimated from documented WES/WGS
+MAST,9,3,6,5,suppression of growth,118,2,66.66666667,20.76596008,93.85080553,Estimated from documented WES/WGS
+MAST,9,3,6,5,tumour promoting inflammation,43,0,0,5.551115123e-15,56.14970318,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,angiogenesis,66,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,cell division control,93,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,cell replicative immortality,42,0,0,0,79.34506856,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,change of cellular energetics,61,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,differentiation and development,140,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,escaping immune response to cancer,41,0,0,0,79.34506856,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,escaping programmed cell death,187,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,genome instability and mutations,96,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,global regulation of gene expression,54,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,invasion and metastasis,190,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,proliferative signalling,163,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,suppression of growth,118,1,100,20.65493144,100,Estimated from documented WES/WGS
+TESTIS,8,1,7,2,tumour promoting inflammation,43,1,100,20.65493144,100,Estimated from documented WES/WGS
+BLADDER,7,0,7,2,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,cell division control,93,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+BLADDER,7,0,7,2,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,cell division control,93,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+NHL,4,0,4,1,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,cell division control,93,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+ADRENAL_GLAND,3,0,3,2,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,angiogenesis,66,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,cell division control,93,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,cell replicative immortality,42,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,change of cellular energetics,61,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,differentiation and development,140,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,escaping immune response to cancer,41,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,escaping programmed cell death,187,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,genome instability and mutations,96,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,global regulation of gene expression,54,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,invasion and metastasis,190,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,proliferative signalling,163,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,suppression of growth,118,0,,,,Not assayed by documented WES/WGS
+SKIN,2,0,2,1,tumour promoting inflammation,43,0,,,,Not assayed by documented WES/WGS
+LUNG,1,1,0,1,angiogenesis,66,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,cell division control,93,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,cell replicative immortality,42,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,change of cellular energetics,61,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,differentiation and development,140,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,escaping immune response to cancer,41,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,escaping programmed cell death,187,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,genome instability and mutations,96,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,global regulation of gene expression,54,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,invasion and metastasis,190,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,proliferative signalling,163,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,suppression of growth,118,0,0,0,79.34506856,Estimated from documented WES/WGS
+LUNG,1,1,0,1,tumour promoting inflammation,43,0,0,0,79.34506856,Estimated from documented WES/WGS

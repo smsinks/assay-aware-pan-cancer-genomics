@@ -1,0 +1,31 @@
+context,scope,cancer,geneA,geneB,leaveOneOutMethod,nLeaveOneOutEstimates,fullPrimaryHazardRatio,minimumLeaveOneOutHazardRatio,maximumLeaveOneOutHazardRatio,directionStableRelativeToOne,minimumLeaveOneOutP,maximumLeaveOneOutP
+BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,leave-one-study-out random-effects meta-analysis,4,1.19313417,1.258338141,2.737009755,True,0.006339454972,0.4748110375
+BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,leave-one-study-out random-effects meta-analysis,8,1.279967907,1.128040079,1.36331428,True,0.1179017799,0.5223634957
+EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,leave-one-study-out random-effects meta-analysis,3,1.37016444,1.239863475,4.074952394,True,0.1946988694,0.5473031271
+IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,leave-one-study-out random-effects meta-analysis,5,0.4889441259,0.4680924733,0.7409515965,True,0.005309853139,0.2859308711
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,exact pooled stratified four-group Cox refit,17,2.509185522,2.32951284,2.695823843,True,6.175544897e-41,5.129570108e-27
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,leave-one-study-out random-effects meta-analysis,11,2.509185522,2.38418584,2.71567815,True,4.446796256e-19,1.398316402e-11
+KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,leave-one-study-out random-effects meta-analysis,9,1.190705165,1.057210829,1.323171493,True,0.009429354918,0.6713521543
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,exact pooled stratified four-group Cox refit,17,1.648188394,1.612183042,1.678708568,True,1.098017187e-11,8.31720824e-07
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,leave-one-study-out random-effects meta-analysis,12,1.648188394,1.617264563,1.70662981,True,1.946746155e-11,2.872443678e-06
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,exact pooled stratified four-group Cox refit,14,2.918721343,2.439517804,3.098281965,True,5.916048815e-38,1.823922136e-16
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,leave-one-study-out random-effects meta-analysis,8,2.918721343,2.015683702,2.54830964,True,8.249345777e-09,0.0009654254571
+PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,leave-one-study-out random-effects meta-analysis,3,0.4096343318,0.3492806469,0.4841885461,True,3.054554575e-05,0.1532995657
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,exact pooled stratified four-group Cox refit,8,2.056376279,1.724315753,2.400227534,True,6.260687574e-33,4.729151539e-12
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,leave-one-study-out random-effects meta-analysis,6,2.056376279,1.734960102,2.216591924,True,7.417425674e-12,3.748548246e-05
+PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,leave-one-study-out random-effects meta-analysis,4,0.3743829862,0.305888158,0.5789708146,True,4.196732229e-17,0.3354508673
+PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,leave-one-study-out random-effects meta-analysis,3,1.130120946,0.8682820501,1.077429564,False,0.7281323001,0.7945491433
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,exact pooled stratified four-group Cox refit,17,2.343993016,2.254387465,2.414923515,True,1.470557374e-21,1.016488581e-11
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,leave-one-study-out random-effects meta-analysis,10,2.343993016,2.266950393,2.437876661,True,1.550121992e-20,4.068389246e-11
+BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,leave-one-study-out random-effects meta-analysis,12,0.9327969611,1.057233775,1.665543507,False,0.007117275817,0.6783322329
+BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,leave-one-study-out random-effects meta-analysis,11,1.276246602,1.036105201,1.166134067,True,0.3382606738,0.8226706477
+CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,leave-one-study-out random-effects meta-analysis,35,1.267472132,1.246989146,1.381013089,True,0.001232287743,0.01323800483
+EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,leave-one-study-out random-effects meta-analysis,9,1.058395007,1.208215163,1.68228279,True,0.1556699264,0.5762733035
+IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,leave-one-study-out random-effects meta-analysis,24,0.8455751799,0.8461668907,1.064111446,False,0.4391587573,0.9969842422
+KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,leave-one-study-out random-effects meta-analysis,14,2.300954909,2.434254291,2.71091721,True,1.229928817e-16,2.365059153e-11
+KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,leave-one-study-out random-effects meta-analysis,46,1.791264194,1.567079514,1.649369049,True,1.396373858e-12,6.745327252e-08
+PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,leave-one-study-out random-effects meta-analysis,13,0.6481890412,0.6635282285,0.8650333105,True,0.001385555547,0.4508011604
+PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,leave-one-study-out random-effects meta-analysis,57,1.558287216,1.298598495,1.371581076,True,2.55185127e-06,0.0005010247318
+PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,leave-one-study-out random-effects meta-analysis,25,0.8438458867,0.9465539686,1.156087966,False,0.3173200008,0.9862036007
+PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,leave-one-study-out random-effects meta-analysis,44,1.483236641,1.288189461,1.40042027,True,7.029321362e-06,0.003441613784
+STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,leave-one-study-out random-effects meta-analysis,21,1.943459213,1.850009795,2.055482272,True,1.00958312e-28,8.972887792e-10

@@ -1,0 +1,32 @@
+recordLevel,studyId,nConflictSpecimens,nConflictMutationRecords,nConflictGenes,pctConflictSpecimens,sensitivityDefinition
+All selected specimens,ALL,1832,2508,292,1.385978318,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,sarcoma_msk_2022,1635,2076,145,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,blca_msk_2024,39,48,27,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,bowel_colitis_msk_2022,34,103,45,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,skcm_vanderbilt_mskcc_2015,26,53,15,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,utuc_mskcc_2015,25,70,30,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,msk_impact_2017,12,17,10,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,ucec_ccr_msk_2022,9,58,28,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,blca_msk_2025,8,8,6,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,blca_plasmacytoid_mskcc_2016,8,11,10,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,rectal_radiation_msk_2024,6,33,32,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,escc_ucla_2014,4,4,4,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,prad_mskcc,3,4,3,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,bcc_unige_2016,2,2,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,crc_eo_2020,2,2,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,rectal_msk_2022,2,2,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,tmb_mskcc_2018,2,2,2,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,utuc_msk_2019,2,2,2,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,blca_nmibc_2017,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,breast_alpelisib_2020,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,cfdna_msk_2019,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,crc_orion_2024,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,difg_msk_2023,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,glioma_msk_2018,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,hnc_mskcc_2016,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,mixed_selpercatinib_2020,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,paired_bladder_2022,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,panet_msk_2018,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,rectal_msk_2019,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,summit_2018,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope
+Study,urcc_mskcc_2016,1,1,1,,exclude every selected specimen with at least one observed mutation outside its documented assay scope

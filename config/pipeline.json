@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "analysis_version": "1.0.0",
+  "random_seed": 42,
+  "frozen_output_audit": {
+    "command": "python src/run_pipeline.py",
+    "network_access": false,
+    "fits_models": false,
+    "uses_packaged_tables": true
+  },
+  "full_raw_reconstruction": {
+    "command": "python src/run_all.py",
+    "network_access": true,
+    "fits_models": true,
+    "external_input_manifest": "config/data_manifest.json"
+  },
+  "expected_packaged_outputs": {
+    "result_tables": 41,
+    "main_figures": 9,
+    "supplementary_figures": 7
+  }
+}

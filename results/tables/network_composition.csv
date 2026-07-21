@@ -1,0 +1,19 @@
+cancer,direction,nContexts
+AML,co-occurring,2
+AML,mutually exclusive,3
+BLCA,co-occurring,1
+BLCA,mutually exclusive,2
+BRCA,mutually exclusive,3
+CCRCC,mutually exclusive,1
+CHOL,mutually exclusive,1
+COADREAD,co-occurring,1
+COADREAD,mutually exclusive,5
+HCC,mutually exclusive,1
+HNSC,co-occurring,1
+LUAD,co-occurring,1
+LUAD,mutually exclusive,6
+PAAD,co-occurring,2
+PRAD,co-occurring,1
+PRAD,mutually exclusive,1
+SKCM,mutually exclusive,1
+UCEC,mutually exclusive,4

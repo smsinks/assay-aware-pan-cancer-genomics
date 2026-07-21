@@ -1,0 +1,7 @@
+displayOrder,criterion,definition,nPairs,pctJointlyEstimable
+0,Jointly estimable,Finite positive OR under primary and leave-two-out models,71360,100
+1,Direction stable,Same OR direction under primary and leave-two-out models,62072,86.98430493
+2,Effect stable,"Same direction and within two-fold OR, or concordantly strong",41611,58.31137892
+3,Both q < 0.05,Effect stable and within-cancer FDR < 0.05 under both models,6221,8.717769058
+4,+ primary assay concordance,Also cross-assay concordant under the primary model,2934,4.111547085
+5,+ sensitivity assay concordance,Also cross-assay concordant under the leave-two-out model,1540,2.158071749

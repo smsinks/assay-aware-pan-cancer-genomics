@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "description": "Authoritative upstream resources required only for the gated full raw-data reconstruction. None is read by the frozen-output audit, which verifies deposited analytical tables and figures without refitting models.",
+  "resources": [
+    {
+      "id": "cbioportal_public_api",
+      "kind": "remote_api",
+      "version_or_snapshot": "records retrieved 2026-06-10 to 2026-06-13",
+      "source": "https://www.cbioportal.org/api",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "public"
+    },
+    {
+      "id": "oncokb_public_endpoint",
+      "kind": "remote_api",
+      "version_or_snapshot": "queried during gene-panel construction",
+      "source": "https://www.oncokb.org/",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider terms apply"
+    },
+    {
+      "id": "cosmic_cgc_v104",
+      "kind": "file",
+      "path": "data/external/cosmic_cgc_v104.csv",
+      "version_or_snapshot": "COSMIC Cancer Gene Census v104",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "licensed provider download",
+      "sha256": "447b7e644fcdc7e21b0d2957313d9e92e565a9654e2303e0aadf9b4a58adafc0"
+    },
+    {
+      "id": "cosmic_cgc_hallmarks_v104",
+      "kind": "file",
+      "path": "data/external/cosmic_cgc_hallmarks.tsv",
+      "version_or_snapshot": "COSMIC Cancer Gene Census v104",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "licensed provider download",
+      "sha256": "753b86521fc1fd03ea67a1e42a2b67cdb62f099a80658e3bd13d91c28d58ecac"
+    },
+    {
+      "id": "prior_2023_gene_classes",
+      "kind": "file",
+      "path": "data/external/prior2023_gene_classes.csv",
+      "version_or_snapshot": "gene classes used in the 2023 landscape",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "author-supplied analytical input",
+      "sha256": "51f70ff6c52e25739aeae9822d403e7ebc83bc552fa1996939e984943149ad0f"
+    },
+    {
+      "id": "cosmic_cmc_v104",
+      "kind": "file",
+      "path": "data/external/cosmic/CancerMutationCensus_AllData_Tsv_v104_GRCh37.tar",
+      "version_or_snapshot": "COSMIC Cancer Mutation Census v104, GRCh37",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "licensed provider download",
+      "sha256": null
+    },
+    {
+      "id": "cross_study_overlap_review",
+      "kind": "file",
+      "path": "data/external/references/cross_study_sample_overlap_whitelist_2026-07-18.csv",
+      "version_or_snapshot": "2026-07-18",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "author-supplied analytical input",
+      "sha256": "66898f11d1071bead6dd381eb0b4b283737fce15f3fee8e52d951627665dce95"
+    },
+    {
+      "id": "oncotree_taxonomy",
+      "kind": "file",
+      "path": "data/external/references/oncotree_2025_10_03.csv",
+      "version_or_snapshot": "OncoTree 2025-10-03",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "public taxonomy snapshot",
+      "sha256": "c4abff7beb654b1557e5c470de90eda0d1f8763e9ae50b889b93d9d60cbfd48a"
+    },
+    {
+      "id": "sample_taxonomy_adjudications",
+      "kind": "file",
+      "path": "data/external/references/reviewed_sample_taxonomy_adjudications_2026-07-18.csv",
+      "version_or_snapshot": "2026-07-18",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "author-supplied analytical input",
+      "sha256": "01c590294e6577e9800cdb36b89e11b7ad6720a7dd45cd7f66bb10f6095759f1"
+    },
+    {
+      "id": "sanchez_vega_pathways",
+      "kind": "file",
+      "path": "data/external/references/sanchez_vega_2018_table_s3.xlsx",
+      "version_or_snapshot": "Cell 2018 Supplementary Table S3, PMID 29625050",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "public article supplement",
+      "sha256": "35fe8cbb97ea55fd654c9da5ada32602808c1924bd3f524957e89c9ac8acc81b"
+    },
+    {
+      "id": "depmap_model_metadata",
+      "kind": "file",
+      "path": "data/external/depmap/Model.csv",
+      "version_or_snapshot": "DepMap Public 26Q1",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider download and terms",
+      "sha256": "ea4e0b2a3bc806f81df62689a5ae75f1a100135727a3d7b8a4c7ccc8815183f8"
+    },
+    {
+      "id": "depmap_crispr_gene_effect",
+      "kind": "file",
+      "path": "data/external/depmap/CRISPRGeneEffect.csv",
+      "version_or_snapshot": "DepMap Public 26Q1",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider download and terms",
+      "sha256": "e610a4cefb13a82b5b256b47eb08b63ff14843f8dbd0fb164bc0a32688e5b89e"
+    },
+    {
+      "id": "depmap_hotspot_matrix",
+      "kind": "file",
+      "path": "data/external/depmap/OmicsSomaticMutationsMatrixHotspot.csv",
+      "version_or_snapshot": "DepMap Public 26Q1",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider download and terms",
+      "sha256": "a86cd8c92b86d5507e63103f06a507913897c85262e0a0d7e44fa22768dd4dc9"
+    },
+    {
+      "id": "prism_auc_matrix",
+      "kind": "file",
+      "path": "data/external/depmap/REPURPOSINGAUCMatrix.csv",
+      "version_or_snapshot": "PRISM Repurposing Secondary Screen 25Q2",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider download and terms",
+      "sha256": "e94d2e2cb08f310841ef6d612ffaf182f66cb54dfe100a239eb0fbf23261a1d7"
+    },
+    {
+      "id": "prism_response_curves",
+      "kind": "file",
+      "path": "data/external/depmap/REPURPOSINGResponseCurves.csv",
+      "version_or_snapshot": "PRISM Repurposing Secondary Screen 25Q2",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "provider download and terms",
+      "sha256": "dff8ef0b11084a0a94dc7f275880a08c14a89c3812d3d20c3d42e664881a7cb4"
+    },
+    {
+      "id": "directed_human_interactome",
+      "kind": "file",
+      "path": "data/external/interactome/Human_Interactome.xlsx",
+      "version_or_snapshot": "author-supplied directed interactome",
+      "required_for_full_reconstruction": true,
+      "redistributed": false,
+      "access": "obtain from the study author",
+      "sha256": null
+    }
+  ]
+}

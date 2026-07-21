@@ -1,0 +1,117 @@
+context,scope,cancer,geneA,geneB,group,nPatients,nEvents,medianOsMonths,medianOsStatus
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,A−/B−,5586,1703,53.13333333,estimated
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,A only,415,172,40.504,estimated
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,B only,473,170,36,estimated
+KEAP1–STK11 (LUAD),cancer-specific,LUAD,KEAP1,STK11,A+B,451,243,14.23560084,estimated
+KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,A−/B−,1223,526,32.679,estimated
+KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,A only,153,74,28.537,estimated
+KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,B only,19,11,10.81631982,estimated
+KEAP1–STK11 (LUSC),cancer-specific,LUSC,KEAP1,STK11,A+B,8,4,36.39412171,estimated
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,A−/B−,725,204,56.77801997,estimated
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,A only,653,344,18.51,estimated
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,B only,157,74,21.13,estimated
+KRAS–TP53 (PAAD),cancer-specific,PAAD,KRAS,TP53,A+B,2258,1260,14.827,estimated
+KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,A−/B−,932,236,92.88,estimated
+KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,A only,879,197,181.88,estimated
+KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,B only,2473,519,65.85133314,estimated
+KRAS–TP53 (COADREAD),cancer-specific,COADREAD,KRAS,TP53,A+B,1409,353,54.60762074,estimated
+PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,A−/B−,641,181,53.293,estimated
+PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,A only,628,101,,not reached
+PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,B only,429,140,41.16119275,estimated
+PTEN–PIK3CA (UCEC),cancer-specific,UCEC,PTEN,PIK3CA,A+B,828,94,,not reached
+IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,A−/B−,1486,940,16.175,estimated
+IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,A only,12,6,47,estimated
+IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,B only,497,308,15.38613276,estimated
+IDH1–TP53 (GBM),cancer-specific,GBM,IDH1,TP53,A+B,59,26,36.1,estimated
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,A−/B−,3241,856,142.6666667,estimated
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,A only,2207,637,134.2666667,estimated
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,B only,2441,882,88.93333333,estimated
+PIK3CA–TP53 (BRCA),cancer-specific,BRCA,PIK3CA,TP53,A+B,937,402,53.688,estimated
+EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,A−/B−,2849,977,48.5,estimated
+EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,A only,1992,573,52.636,estimated
+EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,B only,2048,725,44.942,estimated
+EGFR–KRAS (LUAD),cancer-specific,LUAD,EGFR,KRAS,A+B,36,13,25.73333333,estimated
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,A−/B−,2449,628,91.03333333,estimated
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,A only,1355,467,48.099,estimated
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,B only,2392,922,35.99,estimated
+KRAS–TP53 (LUAD),cancer-specific,LUAD,KRAS,TP53,A+B,729,271,42,estimated
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,A−/B−,3191,830,90.9,estimated
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,A only,613,265,24.559,estimated
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,B only,2810,1045,38.66297133,estimated
+STK11–TP53 (LUAD),cancer-specific,LUAD,STK11,TP53,A+B,311,148,21.01,estimated
+BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,A−/B−,2803,585,72.48,estimated
+BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,A only,602,170,81.3689713,estimated
+BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,B only,2231,536,62.63,estimated
+BRAF–KRAS (COADREAD),cancer-specific,COADREAD,BRAF,KRAS,A+B,57,14,,not reached
+BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,A−/B−,813,313,50.13643686,estimated
+BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,A only,947,336,87.59868421,estimated
+BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,B only,603,245,59.90131579,estimated
+BRAF–NRAS (SKCM),cancer-specific,SKCM,BRAF,NRAS,A+B,69,38,27.02436138,estimated
+PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,A−/B−,730,176,102.3112076,estimated
+PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,A only,1059,214,,not reached
+PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,B only,539,106,,not reached
+PIK3CA–PIK3R1 (UCEC),cancer-specific,UCEC,PIK3CA,PIK3R1,A+B,198,20,,not reached
+PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,A−/B−,370,69,112.535753,estimated
+PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,A only,1174,137,,not reached
+PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,B only,700,252,41.16119275,estimated
+PTEN–TP53 (UCEC),cancer-specific,UCEC,PTEN,TP53,A+B,282,58,,not reached
+CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,A−/B−,1068,146,,not reached
+CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,A only,476,60,,not reached
+CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,B only,912,301,50.203,estimated
+CTNNB1–TP53 (UCEC),cancer-specific,UCEC,CTNNB1,TP53,A+B,70,9,,not reached
+SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,A−/B−,1991,1007,35.80273973,estimated
+SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,A only,711,309,54.87123288,estimated
+SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,B only,539,325,25.70958904,estimated
+SF3B1–SRSF2 (MDS),cancer-specific,MDS,SF3B1,SRSF2,A+B,28,15,24.92054795,estimated
+KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,A−/B−,55380,17937,56.91,estimated
+KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,A only,1269,524,38.16944472,estimated
+KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,B only,1108,431,37.808,estimated
+KEAP1–STK11 (pan-cancer),pan-cancer,PAN-CANCER,KEAP1,STK11,A+B,629,339,13.019,estimated
+KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,A−/B−,39259,12335,82.93,estimated
+KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,A only,4673,1615,47.04336399,estimated
+KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,B only,23361,9274,40,estimated
+KRAS–TP53 (pan-cancer),pan-cancer,PAN-CANCER,KRAS,TP53,A+B,5319,2307,23.638,estimated
+PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,A−/B−,58373,20779,54.34520548,estimated
+PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,A only,3351,1249,42.08278581,estimated
+PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,B only,7513,2513,84.83333333,estimated
+PTEN–PIK3CA (pan-cancer),pan-cancer,PAN-CANCER,PTEN,PIK3CA,A+B,1438,308,120.5666667,estimated
+IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,A−/B−,41539,12863,70.51977513,estimated
+IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,A only,1033,330,85.08399908,estimated
+IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,B only,27106,10892,33.48,estimated
+IDH1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,IDH1,TP53,A+B,910,274,80,estimated
+PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,A−/B−,38415,12410,72.9,estimated
+PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,A only,5446,1509,113.7850544,estimated
+PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,B only,25169,10266,35.375,estimated
+PIK3CA–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,TP53,A+B,3505,1312,45.2,estimated
+EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,A−/B−,56916,19652,63.81299931,estimated
+EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,A only,3492,1204,48.65753425,estimated
+EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,B only,9807,3863,30.51,estimated
+EGFR–KRAS (pan-cancer),pan-cancer,PAN-CANCER,EGFR,KRAS,A+B,184,58,58.51990663,estimated
+STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,A−/B−,40142,12151,87.386,estimated
+STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,A only,1013,445,29.20499343,estimated
+STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,B only,27540,10955,37.512,estimated
+STK11–TP53 (pan-cancer),pan-cancer,PAN-CANCER,STK11,TP53,A+B,745,336,26.5312161,estimated
+BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,A−/B−,56252,19325,62.89246145,estimated
+BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,A only,3575,1122,83.7,estimated
+BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,B only,9743,3853,30.18,estimated
+BRAF–KRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,KRAS,A+B,249,69,79.9890411,estimated
+BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,A−/B−,64122,22396,57.40273973,estimated
+BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,A only,3681,1129,84,estimated
+BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,B only,1832,758,44.08718809,estimated
+BRAF–NRAS (pan-cancer),pan-cancer,PAN-CANCER,BRAF,NRAS,A+B,143,62,56.41447368,estimated
+PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,A−/B−,56169,19621,55.8,estimated
+PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,A only,8484,2733,87.386,estimated
+PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,B only,1736,553,61.08426209,estimated
+PIK3CA–PIK3R1 (pan-cancer),pan-cancer,PAN-CANCER,PIK3CA,PIK3R1,A+B,456,80,137.8,estimated
+PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,A−/B−,40812,13070,79.56,estimated
+PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,A only,3060,860,74.71,estimated
+PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,B only,26945,10881,36.62943495,estimated
+PTEN–TP53 (pan-cancer),pan-cancer,PAN-CANCER,PTEN,TP53,A+B,1729,697,34.45441694,estimated
+CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,A−/B−,40924,12789,69.99452055,estimated
+CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,A only,1677,397,115.3618421,estimated
+CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,B only,27222,10912,34.586,estimated
+CTNNB1–TP53 (pan-cancer),pan-cancer,PAN-CANCER,CTNNB1,TP53,A+B,781,249,52.011,estimated
+SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,A−/B−,61228,20595,55.00213696,estimated
+SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,A only,2355,819,71.99921097,estimated
+SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,B only,1034,567,24.36164384,estimated
+SF3B1–SRSF2 (pan-cancer),pan-cancer,PAN-CANCER,SF3B1,SRSF2,A+B,57,27,25.90684932,estimated

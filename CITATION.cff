@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: >-
+  If you use this analysis code or its frozen result tables, please cite this
+  software record and the associated article.
+title: Pan-cancer mutational landscape of 132,181 tumours links recurrent mutations to functional dependencies and survival
+type: software
+authors:
+  - family-names: Sinkala
+    given-names: Musalula
+version: 1.0.0
+date-released: 2026-07-21
+license: MIT
+abstract: >-
+  Reproducibility materials for an assay-aware pan-cancer analysis of 132,181
+  tissue tumours, including frozen result audits and a gated full reconstruction
+  route for users who can supply the documented upstream resources.
+keywords:
+  - cancer genomics
+  - somatic mutation
+  - pan-cancer
+  - functional dependency
+  - survival analysis

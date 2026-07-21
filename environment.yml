@@ -1,0 +1,26 @@
+name: pancancer-mutational-landscape
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - numpy=2.4.6
+  - pandas=2.3.3
+  - scipy=1.17.1
+  - statsmodels=0.14.6
+  - matplotlib=3.10.9
+  - networkx=3.6
+  - requests=2.34.2
+  - tqdm=4.68.2
+  - pyarrow=24.0.0
+  - openpyxl=3.1.5
+  - pillow=12.2.0
+  - ipython=9.14.1
+  - ipykernel=7.3.0
+  - jupyterlab=4.5.8
+  - nbformat=5.10.4
+  - nbconvert=7.17.1
+  - r-base=4.5.2
+  - r-survival=3.8_3
+  - pip:
+      - lifelines==0.30.3
