@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: >-
   If you use this analysis code or its frozen result tables, please cite this
   software record and the associated article.
-title: Pan-cancer mutational landscape of 132,181 tumours links recurrent mutations to functional dependencies and survival
+title: Pan-cancer assay-aware analysis of 132,181 tumours links recurrent mutations to functional dependencies and survival
 type: software
 authors:
   - family-names: Sinkala
