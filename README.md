@@ -1,4 +1,4 @@
-# Pan-cancer mutational landscape of 132,181 tumours
+# Pan-cancer assay-aware analysis of 132,181 tumours
 
 This repository contains the analysis and reproducibility materials for an assay-aware
 pan-cancer analysis of 132,181 selected tissue tumours from 367 cBioPortal studies. It
