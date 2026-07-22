@@ -50,10 +50,12 @@ analysis state; throughout this release they implement the assay-scope definitio
 | `network_composition.csv` | Cancer-by-direction groups | Number of displayed contexts |
 | `interactome_degree_matched_null.csv` | Display-network–connectivity metrics | Observed connectivity, matched-null expectation and empirical permutation P value |
 | `survival_medians.csv` | Genotype groups within selected contexts | Patients, events and median overall survival |
+| `survival_complete_screen.csv` | 2,492 cancer-specific and 120 pan-cancer contexts | Separate joint-state and formal multiplicative-interaction Cox estimates, global FDR and mutation-frequency thresholds |
+| `survival_screen_eligibility.csv` | 5,254 mutation-frequency-qualified candidate contexts | Endpoint, study, stratum and four-state group counts with explicit model-eligibility state |
 | `survival_pan_cancer.csv` | 13 pan-cancer gene pairs | Joint-state and multiplicative-interaction estimates with PH diagnostics |
 | `survival_cancer_specific.csv` | 16 cancer-specific gene pairs | Joint-state and multiplicative-interaction estimates with PH diagnostics |
 | `survival_sensitivity.csv` | Survival sensitivity specifications | Hazard ratios under each analysis specification |
-| `survival_joint_state_interaction.csv` | All 29 primary survival contexts | Separate joint-state and multiplicative-interaction estimates |
+| `survival_joint_state_interaction.csv` | 29 expanded diagnostic contexts | Separate joint-state and multiplicative-interaction estimates used for time-resolved diagnostics |
 | `survival_ph_diagnostics.csv` | Model terms and global tests | Schoenfeld-residual proportional-hazards tests and FDR |
 | `survival_piecewise_hazard_ratios.csv` | Context–follow-up-interval combinations | Hazard ratios for 0–12, 12–36 and >36 months |
 | `survival_rmst_differences.csv` | Context–time-horizon combinations | A+B minus A−/B− restricted mean survival time at 36 and 60 months |

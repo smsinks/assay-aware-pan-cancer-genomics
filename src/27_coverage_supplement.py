@@ -16,15 +16,22 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
 from matplotlib.lines import Line2D
 import numpy as np
 import pandas as pd
 
 from config import FIGURES, PROCESSED, TABLES
-from plot_style import COLORS, apply as apply_style, figsize, panel_label, save_figure
+from nature_style import (
+    COLORS,
+    aligned_panel_labels,
+    apply as apply_style,
+    figsize,
+    save_figure,
+)
 
 
-COMPLETE = TABLES.parent / "complete_tables"
+COMPLETE = TABLES.parent / "submission_tables"
 SOURCE = TABLES.parent / "source_data"
 SUPP = FIGURES / "supplementary"
 
@@ -235,8 +242,12 @@ def main() -> None:
     if cancers.cancerGroup.duplicated().any() or studies.studyId.duplicated().any():
         raise AssertionError("Coverage ranks are not unique")
 
-    fig, axes = plt.subplots(2, 2, figsize=figsize(180, 150), gridspec_kw={"hspace": 0.42, "wspace": 0.36})
-    ax_a, ax_b, ax_c, ax_d = axes.ravel()
+    fig = plt.figure(figsize=figsize(220, 150))
+    grid = GridSpec(2, 2, figure=fig, hspace=0.43, wspace=0.36)
+    ax_a = fig.add_subplot(grid[0, 0])
+    ax_b = fig.add_subplot(grid[0, 1])
+    ax_c = fig.add_subplot(grid[1, 0])
+    ax_d = fig.add_subplot(grid[1, 1])
 
     scatter_by_assay(ax_a, cancers, "nEligibleSamples", study=False)
     ax_a.set_yscale("log")
@@ -251,7 +262,6 @@ def main() -> None:
         fontsize=3.8,
     )
     ax_a.text(0.98, 0.96, f"all {len(cancers)} cancer families", transform=ax_a.transAxes, ha="right", va="top", fontsize=5.1)
-    panel_label(ax_a, "a")
 
     ordered = prevalence_shift.sort_values("freqPctCurated").reset_index(drop=True)
     label_y = ordered.freqPctCurated.to_numpy(float).copy()
@@ -300,7 +310,6 @@ def main() -> None:
         handlelength=1.5,
         columnspacing=0.9,
     )
-    panel_label(ax_b, "b")
 
     scatter_by_assay(ax_c, studies, "nEligibleSamples", study=True)
     ax_c.set_yscale("log")
@@ -315,11 +324,10 @@ def main() -> None:
         fontsize=3.65,
     )
     ax_c.text(0.98, 0.96, f"all {len(studies)} studies", transform=ax_c.transAxes, ha="right", va="top", fontsize=5.1)
-    panel_label(ax_c, "c")
 
     scatter_by_assay(ax_d, studies, "callableFractionPct", study=True)
     ax_d.set_xlabel("Study rank by eligible cases")
-    ax_d.set_ylabel("Callable sample–gene pairs (%)")
+    ax_d.set_ylabel("Assay-covered sample–gene pairs (%)")
     ax_d.set_ylim(-2, 103)
     annotate_selected(
         ax_d,
@@ -329,7 +337,6 @@ def main() -> None:
         labels=PANEL_D_LABELS,
         fontsize=3.65,
     )
-    panel_label(ax_d, "d")
 
     handles = [
         Line2D([0], [0], marker="o", ls="", markerfacecolor=color, markeredgecolor="none", label=label, markersize=4.2)
@@ -346,7 +353,14 @@ def main() -> None:
         columnspacing=1.15,
         handletextpad=0.45,
     )
-    fig.subplots_adjust(left=0.12, right=0.985, top=0.94, bottom=0.12)
+    fig.subplots_adjust(left=0.095, right=0.985, top=0.94, bottom=0.12)
+    aligned_panel_labels(
+        fig,
+        [
+            (("a", ax_a), ("b", ax_b)),
+            (("c", ax_c), ("d", ax_d)),
+        ],
+    )
 
     cancers["panelALabel"] = cancers.cancerGroup.map(
         {key: value[0] for key, value in PANEL_A_LABELS.items()}

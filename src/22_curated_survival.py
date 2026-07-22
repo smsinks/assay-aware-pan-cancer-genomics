@@ -1,8 +1,10 @@
 """Stage 22 -- cancer-specific and pan-cancer overall-survival analysis.
 
-The analysis uses the biospecimen-curated one-sample-per-patient-key cohort, namespaces
-every clinical record by study, requires both genes to be callable in the selected
-tumour sample, and fits models within cancer group with study-specific baseline hazards.
+The historical survival stages pooled cancers, de-duplicated generic patient identifiers
+globally and encoded cancer type as an arbitrary continuous integer.  This replacement
+uses the biospecimen-curated one-sample-per-patient-key cohort, namespaces every clinical
+record by study, requires both genes to be callable in the selected tumour sample, and
+fits models within cancer group with study-specific baseline hazards.
 
 Two model families are reported for prespecified gene-pair/cancer contexts:
 
@@ -10,8 +12,8 @@ Two model families are reported for prespecified gene-pair/cancer contexts:
 * mutation main effects plus A-by-B interaction.
 
 The primary analysis requires a finite, strictly positive overall-survival time and uses
-a Cox model with Efron's method for tied event times and study-specific baseline hazards.
-Conventional model-based
+Cox models with study-specific baseline hazards and Efron's method for tied event
+times. Conventional model-based
 uncertainty is primary because several cancer-specific contexts contain fewer than ten
 contributing studies. A study-clustered sandwich sensitivity is added when at least ten
 studies contribute, using R ``survival::coxph`` so tied event times are handled by the
@@ -52,6 +54,7 @@ results/figures/supplementary/figureS4_survival_diagnostics.{pdf,svg,png}
 from __future__ import annotations
 
 import argparse
+import importlib
 import subprocess
 import tempfile
 import warnings
@@ -75,6 +78,7 @@ from callability import partition_callable_mutations
 from config import FIGURES, PROCESSED, TABLES
 from nature_style import (
     COLORS,
+    aligned_panel_labels,
     apply as apply_style,
     figsize,
     figure_panel_label,
@@ -91,8 +95,8 @@ CONTEXTS = [
     ("COADREAD", "KRAS", "TP53"),
     ("UCEC", "PTEN", "PIK3CA"),
     # The heterogeneous broad BRAIN category includes medulloblastoma,
-    # meningioma and other non-diffuse CNS tumours; glioblastoma is modelled
-    # separately.
+    # meningioma and other non-diffuse CNS tumours.  Keep glioblastoma
+    # separate rather than recreating the former pooled glioma endpoint.
     ("GBM", "IDH1", "TP53"),
     ("BRCA", "PIK3CA", "TP53"),
     # Additional cross-layer contexts are drawn from the prespecified
@@ -114,6 +118,27 @@ CONTEXTS = [
 # every eligible cancer group and use study-by-cancer baseline hazards.
 PANCAN_CONTEXTS = list(dict.fromkeys((gene_a, gene_b) for _, gene_a, gene_b in CONTEXTS))
 
+# Updated Figure 9 contexts are selected from the complete, outcome-independent
+# mutation-frequency-gated survival screen.  They combine the strongest newly
+# exposed cancer-specific associations with the two leading informative pan-cancer
+# results used in the time-resolved display.
+FIGURE9_LATEST_CONTEXTS = [
+    ("cancer-specific", "LUAD", "KEAP1", "KRAS", "LUAD · KEAP1–KRAS"),
+    ("cancer-specific", "MDS", "ASXL1", "RUNX1", "MDS · ASXL1–RUNX1"),
+    ("cancer-specific", "PAAD", "CDKN2A", "KRAS", "PAAD · CDKN2A–KRAS"),
+    ("cancer-specific", "UCEC", "ARID1A", "PTEN", "UCEC · ARID1A–PTEN"),
+    ("cancer-specific", "PAAD", "KRAS", "SMAD4", "PAAD · KRAS–SMAD4"),
+    ("cancer-specific", "MDS", "ASXL1", "SRSF2", "MDS · ASXL1–SRSF2"),
+    ("pan-cancer", "PAN-CANCER", "KRAS", "TP53", "Pan-cancer · KRAS–TP53"),
+    ("pan-cancer", "PAN-CANCER", "KMT2C", "TP53", "Pan-cancer · KMT2C–TP53"),
+]
+
+# A complementary established lung-cancer context is used for the second
+# Kaplan–Meier display without altering the eight-context time-resolved set.
+FIGURE9_SECONDARY_KM_CONTEXT = (
+    "cancer-specific", "LUAD", "KEAP1", "STK11", "LUAD · KEAP1–STK11"
+)
+
 GROUP_ORDER = ["A−/B−", "A only", "B only", "A+B"]
 GROUP_COLORS = {
     "A−/B−": COLORS["grey"],
@@ -130,6 +155,16 @@ MIN_STUDY_EVENTS = 2
 MIN_CLUSTER_STUDIES = 10
 ZERO_TIME_EPSILON_MONTHS = 0.5 / 30.4375  # half a day, expressed in portal OS months
 DISPLAY_HORIZON_MONTHS = 120.0
+
+# Outcome-independent discovery thresholds.  Cancer-specific models require both
+# genes to reach 10% assay-aware prevalence in the corresponding cancer family;
+# pan-cancer models require 5% prevalence across the full cohort.  Survival data are
+# used only for model-adequacy checks after this mutation-frequency gate has been
+# applied.  Requiring 20 patients in every four-state genotype group limits sparse
+# separation without selecting contexts on the observed survival association.
+SURVIVAL_SCREEN_CANCER_MIN_PREVALENCE = 0.10
+SURVIVAL_SCREEN_PANCANCER_MIN_PREVALENCE = 0.05
+SURVIVAL_SCREEN_MIN_GROUP_N = 20
 
 EXTENDED_SURVIVAL_TABLES = (
     "survival_ph_diagnostics.csv",
@@ -263,8 +298,8 @@ def build_curated_clinical(samples: pd.DataFrame) -> pd.DataFrame:
     out["validPositiveOs"] = finite_endpoint & out.months.gt(0)
     out["zeroOsTime"] = finite_endpoint & out.months.eq(0)
     out["negativeOsTime"] = finite_endpoint & out.months.lt(0)
-    # The compatibility field validOs represents the strictly positive follow-up
-    # population used for primary survival inference.
+    # Keep the historical column name, but make its revised meaning explicit:
+    # primary survival inference now requires strictly positive follow-up.
     out["validOs"] = out.validPositiveOs
     out.to_parquet(cache, index=False)
     return out
@@ -310,6 +345,249 @@ def callability_and_mutation_flags(
         if (info[f"mut_{gene}"].eq(1) & ~info[f"callable_{gene}"]).any():
             raise AssertionError(f"A retained {gene} mutation is outside documented callability")
     return info
+
+
+def survival_screen_specifications() -> tuple[pd.DataFrame, list[str]]:
+    """Define the complete survival screen without consulting survival outcomes.
+
+    The candidate-gene universe is identical to the 123-gene mutation-association
+    screen: the 120 highest recurrence-by-CMC-evidence scores plus the three
+    prespecified controls that were not already in the top 120.  Cancer-specific
+    pairs are inherited from the complete jointly assay-covered mutation screen and
+    filtered only on each gene's assay-aware prevalence in that cancer.  Pan-cancer
+    pairs are all combinations of candidate genes that independently pass the
+    pan-cancer prevalence threshold.
+    """
+    interaction = importlib.import_module("17_curated_interactions")
+    panel = pd.read_csv(PROCESSED / "gene_panel.csv")
+    candidate_entrez, entrez_to_symbol = interaction.candidate_genes(panel)
+    candidate_genes = sorted(entrez_to_symbol[int(gene)] for gene in candidate_entrez)
+    if len(candidate_genes) != 123:
+        raise AssertionError(
+            f"The survival discovery universe should contain 123 genes; found {len(candidate_genes)}"
+        )
+
+    pairwise = pd.read_csv(
+        TABLES / "cooccurrence_curated_jointly_profiled.csv",
+        usecols=["cancer", "geneA", "geneB", "full_n", "full_nA", "full_nB"],
+    ).drop_duplicates(["cancer", "geneA", "geneB"])
+    pairwise["geneAFrequency"] = pairwise.full_nA / pairwise.full_n
+    pairwise["geneBFrequency"] = pairwise.full_nB / pairwise.full_n
+    cancer_specific = pairwise.loc[
+        pairwise.geneAFrequency.ge(SURVIVAL_SCREEN_CANCER_MIN_PREVALENCE)
+        & pairwise.geneBFrequency.ge(SURVIVAL_SCREEN_CANCER_MIN_PREVALENCE)
+    ].copy()
+    cancer_specific.insert(0, "scope", "cancer-specific")
+
+    prevalence = pd.read_csv(TABLES / "gene_frequencies_curated.csv")
+    prevalence = prevalence.loc[prevalence.gene.isin(candidate_genes)].copy()
+    prevalence["frequency"] = prevalence.freqPct / 100
+    pan_genes = sorted(
+        prevalence.loc[
+            prevalence.frequency.ge(SURVIVAL_SCREEN_PANCANCER_MIN_PREVALENCE), "gene"
+        ].astype(str)
+    )
+    pan_frequency = prevalence.set_index("gene").frequency.to_dict()
+    pan_rows = []
+    for index, gene_a in enumerate(pan_genes):
+        for gene_b in pan_genes[index + 1 :]:
+            pan_rows.append(
+                {
+                    "scope": "pan-cancer",
+                    "cancer": "PAN-CANCER",
+                    "geneA": gene_a,
+                    "geneB": gene_b,
+                    "full_n": len(panel),
+                    "full_nA": np.nan,
+                    "full_nB": np.nan,
+                    "geneAFrequency": float(pan_frequency[gene_a]),
+                    "geneBFrequency": float(pan_frequency[gene_b]),
+                }
+            )
+    specifications = pd.concat(
+        [
+            cancer_specific[
+                [
+                    "scope", "cancer", "geneA", "geneB", "full_n", "full_nA",
+                    "full_nB", "geneAFrequency", "geneBFrequency",
+                ]
+            ],
+            pd.DataFrame(pan_rows),
+        ],
+        ignore_index=True,
+    )
+    specifications["frequencyThreshold"] = np.where(
+        specifications.scope.eq("cancer-specific"),
+        SURVIVAL_SCREEN_CANCER_MIN_PREVALENCE,
+        SURVIVAL_SCREEN_PANCANCER_MIN_PREVALENCE,
+    )
+    specifications["selectionBasis"] = (
+        "outcome-independent assay-aware mutation-frequency threshold"
+    )
+    return specifications, candidate_genes
+
+
+def _screen_context_eligibility(
+    analysis: pd.DataFrame,
+    specification: pd.Series,
+) -> tuple[dict[str, object], bool]:
+    """Apply only endpoint-availability and model-adequacy filters to one context."""
+    scope = str(specification.scope)
+    cancer = str(specification.cancer)
+    gene_a = str(specification.geneA)
+    gene_b = str(specification.geneB)
+    if scope == "cancer-specific":
+        data = analysis.loc[analysis.broadCancerCode.eq(cancer)].copy()
+        data["stratumId"] = data.studyId.astype(str)
+    else:
+        data = analysis.copy()
+        data["stratumId"] = data.studyId.astype(str) + "::" + data.broadCancerCode.astype(str)
+    data = data.loc[
+        data[f"callable_{gene_a}"].eq(True)
+        & data[f"callable_{gene_b}"].eq(True)
+    ].copy()
+    data["genotypeCode"] = (
+        2 * data[f"mut_{gene_a}"].astype(int) + data[f"mut_{gene_b}"].astype(int)
+    )
+    strata = (
+        data.groupby("stratumId", observed=True)
+        .agg(
+            nPatients=("event", "size"),
+            nEvents=("event", "sum"),
+            nGenotypeGroups=("genotypeCode", "nunique"),
+        )
+    )
+    retained = set(
+        strata.index[
+            strata.nPatients.ge(MIN_STUDY_N)
+            & strata.nEvents.ge(MIN_STUDY_EVENTS)
+            & strata.nGenotypeGroups.ge(2)
+        ].astype(str)
+    )
+    data = data.loc[data.stratumId.astype(str).isin(retained)]
+    group_counts = data.genotypeCode.value_counts().reindex(range(4), fill_value=0)
+    eligible = bool(
+        len(data) >= MIN_CONTEXT_N
+        and data.event.sum() >= MIN_CONTEXT_EVENTS
+        and group_counts.min() >= SURVIVAL_SCREEN_MIN_GROUP_N
+    )
+    audit = {
+        "scope": scope,
+        "cancer": cancer,
+        "geneA": gene_a,
+        "geneB": gene_b,
+        "geneAFrequency": float(specification.geneAFrequency),
+        "geneBFrequency": float(specification.geneBFrequency),
+        "frequencyThreshold": float(specification.frequencyThreshold),
+        "nPatients": int(len(data)),
+        "nEvents": int(data.event.sum()),
+        "nDoubleNegative": int(group_counts.loc[0]),
+        "nBOnly": int(group_counts.loc[1]),
+        "nAOnly": int(group_counts.loc[2]),
+        "nDoubleMutant": int(group_counts.loc[3]),
+        "nStudies": int(data.studyId.nunique()),
+        "nStrata": int(data.stratumId.nunique()),
+        "eligible": eligible,
+        "eligibilityRule": (
+            f"both genes meet mutation-frequency threshold; n>={MIN_CONTEXT_N}; "
+            f"events>={MIN_CONTEXT_EVENTS}; every genotype group>={SURVIVAL_SCREEN_MIN_GROUP_N}; "
+            f"retained stratum n>={MIN_STUDY_N}, events>={MIN_STUDY_EVENTS} and >=2 genotype groups"
+        ),
+    }
+    return audit, eligible
+
+
+def run_unbiased_survival_screen(
+    clinical: pd.DataFrame,
+    flags: pd.DataFrame,
+    specifications: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Fit every frequency-eligible cancer-specific and pan-cancer pair."""
+    analysis = clinical.loc[clinical.validPositiveOs].merge(
+        flags,
+        on=["studyId", "sampleId"],
+        how="inner",
+        validate="one_to_one",
+    )
+    audit_rows: list[dict[str, object]] = []
+    eligible_rows: list[dict[str, object]] = []
+    for specification in tqdm(
+        list(specifications.itertuples(index=False)),
+        desc="outcome-independent survival eligibility",
+    ):
+        record = pd.Series(specification._asdict())
+        audit, eligible = _screen_context_eligibility(analysis, record)
+        audit_rows.append(audit)
+        if eligible:
+            eligible_rows.append(audit)
+    audit = pd.DataFrame(audit_rows)
+    eligible = pd.DataFrame(eligible_rows)
+    if eligible.empty:
+        raise RuntimeError("No frequency-defined survival context met model-adequacy criteria")
+
+    keep_columns = [
+        "studyId", "sampleId", "broadCancerCode", "months", "event",
+    ] + [column for column in flags.columns if column.startswith(("callable_", "mut_"))]
+    screen_data = analysis[keep_columns].copy()
+    r_script = Path(__file__).with_name("survival_unbiased_screen.R")
+    with tempfile.TemporaryDirectory(prefix="cancer_survival_screen_") as tmp_dir:
+        tmp = Path(tmp_dir)
+        data_path = tmp / "screen_data.csv"
+        spec_path = tmp / "screen_specs.csv"
+        out_path = tmp / "screen_results.csv"
+        screen_data.to_csv(data_path, index=False)
+        eligible.to_csv(spec_path, index=False)
+        completed = subprocess.run(
+            ["Rscript", str(r_script), str(data_path), str(spec_path), str(out_path)],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(
+                "Unbiased R survival screen failed:\n"
+                + completed.stdout
+                + "\n"
+                + completed.stderr
+            )
+        results = pd.read_csv(out_path)
+
+    results["globalFdr"] = np.nan
+    results["withinCancerFdr"] = np.nan
+    for (scope, contrast), group in results.groupby(["scope", "contrast"], observed=True):
+        indexes = group.index[group.p.notna() & np.isfinite(group.p)]
+        if len(indexes):
+            results.loc[indexes, "globalFdr"] = multipletests(
+                results.loc[indexes, "p"], method="fdr_bh"
+            )[1]
+    cancer_mask = results.scope.eq("cancer-specific")
+    for (cancer, contrast), group in results.loc[cancer_mask].groupby(
+        ["cancer", "contrast"], observed=True
+    ):
+        indexes = group.index[group.p.notna() & np.isfinite(group.p)]
+        if len(indexes):
+            results.loc[indexes, "withinCancerFdr"] = multipletests(
+                results.loc[indexes, "p"], method="fdr_bh"
+            )[1]
+    results["fdrFamily"] = np.where(
+        results.scope.eq("cancer-specific"),
+        results.contrast + "; all cancer-specific frequency-eligible contexts",
+        results.contrast + "; all pan-cancer frequency-eligible contexts",
+    )
+    results = results.merge(
+        eligible[
+            [
+                "scope", "cancer", "geneA", "geneB", "geneAFrequency",
+                "geneBFrequency", "frequencyThreshold", "eligibilityRule",
+            ]
+        ],
+        on=["scope", "cancer", "geneA", "geneB"],
+        how="left",
+        validate="many_to_one",
+    )
+    audit.to_csv(TABLES / "survival_unbiased_screen_audit.csv", index=False)
+    results.to_csv(TABLES / "survival_unbiased_screen.csv", index=False)
+    return results, audit
 
 
 def assay_discordance_specimen_audit(
@@ -1136,8 +1414,9 @@ def draw_km(
     gene_a: str,
     gene_b: str,
     letter: str,
+    display_cancer: str | None = None,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    cancer = str(data.broadCancerCode.iloc[0])
+    cancer = display_cancer or str(data.broadCancerCode.iloc[0])
     context = f"{gene_a}–{gene_b} ({cancer})"
     display_label = {
         "A−/B−": "A−/B−",
@@ -1216,11 +1495,12 @@ def draw_km(
     ax.set_title(f"{cancer}: {gene_a}–{gene_b}", loc="left", fontsize=5.8, pad=3.0)
     risk_ax.axis("off")
     risk_ax.set_xlim(ax.get_xlim())
-    risk_ax.text(-0.12, 0.98, "No. at risk", transform=risk_ax.transAxes, ha="right", va="top", fontsize=4.2)
+    risk_ax.text(-0.12, 0.92, "No. at risk", transform=risk_ax.transAxes, ha="right", va="top", fontsize=4.2)
     shown_groups = [g for g in GROUP_ORDER if len(data[data.group.eq(g)]) >= MIN_GROUP_N]
     for row_index, group_name in enumerate(shown_groups):
         group = data[data.group.eq(group_name)]
-        y = 0.77 - row_index * 0.21
+        # Keep the first risk row clear of the KM x-axis tick labels above it.
+        y = 0.68 - row_index * 0.19
         risk_ax.text(
             -0.12,
             y,
@@ -1258,12 +1538,134 @@ def draw_km(
     return curves, risks, logrank_summary, medians
 
 
+def run_figure9_latest_diagnostics(
+    clinical: pd.DataFrame,
+    flags: pd.DataFrame,
+) -> tuple[
+    dict[tuple[str, str, str], pd.DataFrame],
+    dict[str, pd.DataFrame],
+]:
+    """Fit the time-resolved Figure 9 diagnostics for the latest screen hits.
+
+    This targeted figure stage does not replace the complete screen or the 29-context
+    supplementary diagnostic archive. It refits the eight outcome-independent
+    time-resolved contexts selected from that screen, and also prepares the established
+    LUAD KEAP1–STK11 context used for the second Kaplan–Meier display.
+    """
+    contexts: dict[tuple[str, str, str], pd.DataFrame] = {}
+    primary_datasets: list[pd.DataFrame] = []
+    primary_specs: list[dict[str, object]] = []
+    for scope, cancer, gene_a, gene_b, _ in FIGURE9_LATEST_CONTEXTS:
+        data, zero_data, _, _ = context_data(
+            clinical,
+            flags,
+            cancer,
+            gene_a,
+            gene_b,
+            scope=scope,
+        )
+        if len(data) < MIN_CONTEXT_N or data.event.sum() < MIN_CONTEXT_EVENTS:
+            raise AssertionError(
+                f"Latest Figure 9 context is no longer estimable: {cancer} {gene_a}–{gene_b}"
+            )
+        contexts[(cancer, gene_a, gene_b)] = data
+        datasets, specs = build_model_inputs(
+            data, zero_data, scope, cancer, gene_a, gene_b
+        )
+        primary_spec = next(spec for spec in specs if spec["model"] == "four-group primary")
+        primary_dataset = next(
+            frame
+            for frame in datasets
+            if str(frame.datasetId.iloc[0]) == str(primary_spec["datasetId"])
+        )
+        primary_specs.append(primary_spec)
+        primary_datasets.append(primary_dataset)
+
+    km_scope, km_cancer, km_gene_a, km_gene_b, _ = FIGURE9_SECONDARY_KM_CONTEXT
+    km_data, _, _, _ = context_data(
+        clinical,
+        flags,
+        km_cancer,
+        km_gene_a,
+        km_gene_b,
+        scope=km_scope,
+    )
+    if len(km_data) < MIN_CONTEXT_N or km_data.event.sum() < MIN_CONTEXT_EVENTS:
+        raise AssertionError(
+            "Figure 9f LUAD KEAP1–STK11 context is no longer estimable"
+        )
+    contexts[(km_cancer, km_gene_a, km_gene_b)] = km_data
+
+    analysis_data = pd.concat(primary_datasets, ignore_index=True)
+    spec_frame = pd.DataFrame(primary_specs)
+    if len(spec_frame) != 8 or analysis_data.datasetId.nunique() != 8:
+        raise AssertionError("Latest Figure 9 diagnostics require eight unique contexts")
+
+    r_script = Path(__file__).with_name("survival_extended_diagnostics.R")
+    with tempfile.TemporaryDirectory(prefix="figure9_latest_survival_") as tmp_dir:
+        tmp = Path(tmp_dir)
+        data_path = tmp / "figure9_data.csv"
+        spec_path = tmp / "figure9_specs.csv"
+        output_dir = tmp / "outputs"
+        analysis_data.to_csv(data_path, index=False)
+        spec_frame.to_csv(spec_path, index=False)
+        completed = subprocess.run(
+            ["Rscript", str(r_script), str(data_path), str(spec_path), str(output_dir)],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        if completed.returncode != 0:
+            raise RuntimeError(
+                "Latest Figure 9 survival diagnostics failed:\n"
+                + completed.stdout
+                + "\n"
+                + completed.stderr
+            )
+        filenames = (
+            "survival_ph_diagnostics.csv",
+            "survival_time_varying_hazard_ratios.csv",
+            "survival_piecewise_hazard_ratios.csv",
+            "survival_rmst_differences.csv",
+            "survival_extended_diagnostic_audit.csv",
+        )
+        outputs = {
+            filename: pd.read_csv(output_dir / filename) for filename in filenames
+        }
+
+    expected = {
+        "survival_piecewise_hazard_ratios.csv": 24,
+        "survival_rmst_differences.csv": 16,
+        "survival_time_varying_hazard_ratios.csv": 800,
+        "survival_extended_diagnostic_audit.csv": 8,
+    }
+    for filename, expected_rows in expected.items():
+        observed = len(outputs[filename])
+        if observed != expected_rows:
+            raise AssertionError(
+                f"Latest Figure 9 {filename} contains {observed:,} rows; expected {expected_rows:,}"
+            )
+    outputs["survival_piecewise_hazard_ratios.csv"] = _add_bh_fdr(
+        outputs["survival_piecewise_hazard_ratios.csv"], ["interval"]
+    )
+    outputs["survival_rmst_differences.csv"] = _add_bh_fdr(
+        outputs["survival_rmst_differences.csv"], ["horizonMonths"]
+    )
+    for filename, frame in outputs.items():
+        frame.to_csv(
+            TABLES / f"figure9_latest_{filename.removeprefix('survival_')}",
+            index=False,
+        )
+    return contexts, outputs
+
+
 def make_figure(
     contexts: dict[tuple[str, str, str], pd.DataFrame],
     models: pd.DataFrame,
     groups: pd.DataFrame,
     audit: pd.DataFrame,
     extended: dict[str, pd.DataFrame],
+    screen_results: pd.DataFrame,
 ) -> None:
     apply_style()
     source = TABLES.parent / "source_data"
@@ -1277,16 +1679,7 @@ def make_figure(
     # and Supplementary Data.  Legacy portal-defined GBM is deliberately not a
     # headline survival context because contemporary molecular classification
     # cannot be reconstructed uniformly across the historical cohorts.
-    display_specs = [
-        ("cancer-specific", "LUAD", "KEAP1", "STK11", "LUAD · KEAP1–STK11"),
-        ("cancer-specific", "PAAD", "KRAS", "TP53", "PAAD · KRAS–TP53"),
-        ("cancer-specific", "BRCA", "PIK3CA", "TP53", "BRCA · PIK3CA–TP53"),
-        ("cancer-specific", "LUAD", "STK11", "TP53", "LUAD · STK11–TP53"),
-        ("pan-cancer", "PAN-CANCER", "KEAP1", "STK11", "Pan-cancer · KEAP1–STK11"),
-        ("pan-cancer", "PAN-CANCER", "KRAS", "TP53", "Pan-cancer · KRAS–TP53"),
-        ("pan-cancer", "PAN-CANCER", "STK11", "TP53", "Pan-cancer · STK11–TP53"),
-        ("pan-cancer", "PAN-CANCER", "PIK3CA", "TP53", "Pan-cancer · PIK3CA–TP53"),
-    ]
+    display_specs = FIGURE9_LATEST_CONTEXTS
 
     def selected_rows(frame: pd.DataFrame) -> pd.DataFrame:
         frames: list[pd.DataFrame] = []
@@ -1306,103 +1699,305 @@ def make_figure(
             frames.append(selected)
         return pd.concat(frames, ignore_index=True)
 
-    joint_interaction = selected_rows(
-        extended["survival_joint_state_and_interaction_summary.csv"]
-    )
     piecewise = selected_rows(extended["survival_piecewise_hazard_ratios.csv"])
     rmst = selected_rows(extended["survival_rmst_differences.csv"])
     time_varying = extended["survival_time_varying_hazard_ratios.csv"].copy()
 
-    fig = plt.figure(figsize=figsize(180, 128))
+    fig = plt.figure(figsize=figsize(180, 135))
     outer = GridSpec(
         2,
         1,
         figure=fig,
-        height_ratios=[0.93, 1.07],
-        hspace=0.50,
+        height_ratios=[0.96, 1.04],
+        hspace=0.31,
     )
     top = GridSpecFromSubplotSpec(
         1,
-        3,
+        4,
         subplot_spec=outer[0],
-        width_ratios=[1.08, 0.82, 1.10],
-        wspace=0.52,
+        width_ratios=[1.52, 0.91, 0.72, 0.89],
+        wspace=0.68,
     )
     bottom = GridSpecFromSubplotSpec(
         1,
         3,
         subplot_spec=outer[1],
-        width_ratios=[0.95, 0.95, 1.10],
-        wspace=0.43,
+        width_ratios=[1.02, 1.02, 1.08],
+        wspace=0.37,
     )
     ax_a = fig.add_subplot(top[0, 0])
     ax_b = fig.add_subplot(top[0, 1])
     ax_c = fig.add_subplot(top[0, 2])
+    ax_d = fig.add_subplot(top[0, 3])
     left = GridSpecFromSubplotSpec(
-        2, 1, subplot_spec=bottom[0, 0], height_ratios=[0.76, 0.24], hspace=0.05
+        2, 1, subplot_spec=bottom[0, 0], height_ratios=[0.72, 0.28], hspace=0.05
     )
     middle = GridSpecFromSubplotSpec(
-        2, 1, subplot_spec=bottom[0, 1], height_ratios=[0.76, 0.24], hspace=0.05
+        2, 1, subplot_spec=bottom[0, 1], height_ratios=[0.72, 0.28], hspace=0.05
     )
-    ax_d = fig.add_subplot(left[0]); risk_d = fig.add_subplot(left[1], sharex=ax_d)
-    ax_e = fig.add_subplot(middle[0]); risk_e = fig.add_subplot(middle[1], sharex=ax_e)
-    ax_f = fig.add_subplot(bottom[0, 2])
+    ax_e = fig.add_subplot(left[0]); risk_e = fig.add_subplot(left[1], sharex=ax_e)
+    ax_f = fig.add_subplot(middle[0]); risk_f = fig.add_subplot(middle[1], sharex=ax_f)
+    ax_g = fig.add_subplot(bottom[0, 2])
 
-    # a -- the A+B genotype-state contrast is not the same estimand as the
-    # multiplicative A×B coefficient.  Plotting them side by side prevents a
-    # poor A+B survival state from being described as synergistic interaction.
-    joint_interaction = joint_interaction.sort_values("plotRow").reset_index(drop=True)
-    joint_interaction.to_csv(
-        source / "figure9_panel_a_joint_state_interaction.csv", index=False
+    # a -- retain the complete 2,612-context volcano from the revised figure,
+    # compacted for the original three-panel top lane.
+    screen_display = screen_results.loc[
+        screen_results.contrast.eq("A+B versus A−/B−")
+        & screen_results.globalFdr.notna()
+        & screen_results.fitStatus.str.startswith("estimated")
+        & screen_results.hazardRatio.gt(0)
+    ].copy()
+    if len(screen_display) != 2_612:
+        raise AssertionError(
+            f"Figure 9a requires all 2,612 eligible joint-state contexts; found {len(screen_display):,}"
+        )
+    screen_display["log2HazardRatio"] = np.log2(screen_display.hazardRatio)
+    screen_display["plotLog2HazardRatio"] = screen_display.log2HazardRatio.clip(-4.0, 4.0)
+    screen_display["hazardRatioPlacedAtPlotBoundary"] = screen_display.log2HazardRatio.ne(
+        screen_display.plotLog2HazardRatio
     )
-    for estimate, low, high, fdr, offset, colour, marker, label in (
-        (
-            "jointStateHazardRatio", "jointStateCiLow", "jointStateCiHigh",
-            "jointStateFdr", -0.12, COLORS["vermillion"], "o",
-            "Joint state: A+B vs A−/B−",
-        ),
-        (
-            "multiplicativeInteractionHazardRatio", "multiplicativeInteractionCiLow",
-            "multiplicativeInteractionCiHigh", "multiplicativeInteractionFdr", 0.12,
-            COLORS["blue"], "s", "Formal interaction: A×B",
-        ),
-    ):
-        y = joint_interaction.plotRow.to_numpy(float) + offset
-        ax_a.hlines(
-            y, joint_interaction[low], joint_interaction[high], color=colour, lw=0.85,
-            alpha=0.82,
-        )
-        significant = joint_interaction[fdr].lt(0.05)
-        ax_a.scatter(
-            joint_interaction.loc[significant, estimate], y[significant], s=18,
-            marker=marker, color=colour, edgecolor="white", lw=0.3, zorder=3,
-            label=label,
-        )
-        ax_a.scatter(
-            joint_interaction.loc[~significant, estimate], y[~significant], s=18,
-            marker=marker, facecolor="white", edgecolor=colour, lw=0.7, zorder=3,
-        )
-    ax_a.axvline(1, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
-    ax_a.set_xscale("log")
-    ax_a.set_xlim(0.32, 4.2)
-    ax_a.set_xticks([0.5, 1, 2, 4], ["0.5", "1", "2", "4"])
-    ax_a.tick_params(axis="x", which="minor", labelbottom=False)
-    ax_a.set_yticks(
-        joint_interaction.plotRow,
-        [label.replace(" · ", "\n") for label in joint_interaction.displayContext],
-        fontsize=4.15,
+    screen_display["negativeLog10GlobalFdr"] = -np.log10(
+        screen_display.globalFdr.clip(lower=np.finfo(float).tiny)
     )
-    ax_a.set_ylim(len(joint_interaction) - 0.48, -0.52)
-    ax_a.set_xlabel("Hazard ratio (95% CI)\nfilled symbols: BH q<0.05", fontsize=4.4)
-    ax_a.set_title("Joint genotype state and formal interaction", loc="left", fontsize=5.6, pad=3)
+    screen_display["globalFdrSignificant"] = screen_display.globalFdr.lt(0.05)
+    screen_display["phStatus"] = np.where(
+        screen_display.phTestP.lt(0.05), "PH test P<0.05", "PH test P≥0.05"
+    )
+    screen_display["displayContext"] = np.where(
+        screen_display.scope.eq("pan-cancer"),
+        "Pan-cancer · " + screen_display.geneA + "–" + screen_display.geneB,
+        screen_display.cancer + " · " + screen_display.geneA + "–" + screen_display.geneB,
+    )
+    screen_display = screen_display.sort_values(["globalFdr", "p", "cancer", "geneA", "geneB"])
+    screen_display.to_csv(
+        source / "figure9_panel_a_complete_survival_screen.csv", index=False
+    )
+
+    nonsignificant = screen_display.loc[~screen_display.globalFdrSignificant]
+    ax_a.scatter(
+        nonsignificant.plotLog2HazardRatio,
+        nonsignificant.negativeLog10GlobalFdr,
+        s=4,
+        color=COLORS["light_grey"],
+        alpha=0.40,
+        linewidths=0,
+        rasterized=True,
+        zorder=1,
+    )
+    highlighted_colours = {
+        "PAN-CANCER": COLORS["black"],
+        "UCEC": COLORS["sky"],
+        "SKCM": COLORS["green"],
+        "BLCA": COLORS["purple"],
+        "MDS": COLORS["blue"],
+        "COADREAD": COLORS["orange"],
+        "LUAD": COLORS["vermillion"],
+        "PAAD": "#A6761D",
+    }
+    significant = screen_display.loc[screen_display.globalFdrSignificant].copy()
+    significant["displayCancer"] = np.where(
+        significant.cancer.isin(highlighted_colours), significant.cancer, "Other"
+    )
+    highlighted_colours["Other"] = COLORS["grey"]
+    for cancer, colour in highlighted_colours.items():
+        selected = significant.loc[significant.displayCancer.eq(cancer)]
+        compatible = selected.loc[selected.phTestP.ge(0.05)]
+        flagged = selected.loc[selected.phTestP.lt(0.05)]
+        ax_a.scatter(
+            compatible.plotLog2HazardRatio,
+            compatible.negativeLog10GlobalFdr,
+            s=7,
+            marker="o",
+            color=colour,
+            alpha=0.80,
+            edgecolor="white",
+            linewidth=0.18,
+            rasterized=True,
+            zorder=2,
+        )
+        ax_a.scatter(
+            flagged.plotLog2HazardRatio,
+            flagged.negativeLog10GlobalFdr,
+            s=9,
+            marker="^",
+            facecolor="white",
+            edgecolor=colour,
+            linewidth=0.55,
+            rasterized=True,
+            zorder=3,
+        )
+    ax_a.axvline(0, color=COLORS["black"], lw=0.6, ls=(0, (2, 2)))
+    ax_a.axhline(-np.log10(0.05), color=COLORS["grey"], lw=0.6, ls=(0, (2, 2)))
+    ax_a.set_xlim(-4.0, 4.0)
+    ax_a.set_xlabel("Joint-state log₂ HR", fontsize=4.4)
+    ax_a.set_ylabel("−log₁₀(global BH FDR)", fontsize=4.4)
+    ax_a.set_title(
+        "Complete survival screen",
+        loc="left",
+        fontsize=5.6,
+        pad=3,
+        fontweight="normal",
+    )
+    label_specs = [
+        ("pan-cancer", "PAN-CANCER", "KRAS", "TP53"),
+        ("pan-cancer", "PAN-CANCER", "PIK3CA", "TP53"),
+        ("cancer-specific", "LUAD", "KEAP1", "STK11"),
+        ("cancer-specific", "UCEC", "ARID1A", "PTEN"),
+    ]
+    for row in pd.concat(
+        [
+            screen_display.loc[
+                screen_display.scope.eq(scope_name)
+                & screen_display.cancer.eq(cancer)
+                & screen_display.geneA.eq(gene_a)
+                & screen_display.geneB.eq(gene_b)
+            ]
+            for scope_name, cancer, gene_a, gene_b in label_specs
+        ],
+        ignore_index=True,
+    ).itertuples(index=False):
+        is_top_pancancer = row.displayContext == "Pan-cancer · KRAS–TP53"
+        ax_a.annotate(
+            row.displayContext,
+            (row.plotLog2HazardRatio, row.negativeLog10GlobalFdr),
+            xytext=(
+                3 if row.plotLog2HazardRatio >= 0 else -3,
+                -7 if is_top_pancancer else 2,
+            ),
+            textcoords="offset points",
+            ha="left" if row.plotLog2HazardRatio >= 0 else "right",
+            va="top" if is_top_pancancer else "bottom",
+            fontsize=2.8,
+            arrowprops={"arrowstyle": "-", "lw": 0.25, "color": COLORS["grey"]},
+        )
+    cancer_legend = ax_a.legend(
+        handles=[
+            Line2D([0], [0], marker="o", ls="", markersize=2.7, mfc=colour, mec="none", label=("Pan" if cancer == "PAN-CANCER" else cancer))
+            for cancer, colour in highlighted_colours.items()
+        ],
+        loc="upper left",
+        ncol=3,
+        fontsize=2.45,
+        columnspacing=0.38,
+        handletextpad=0.15,
+        labelspacing=0.15,
+        borderpad=0.22,
+        frameon=True,
+        fancybox=True,
+        framealpha=0.92,
+        edgecolor=COLORS["light_grey"],
+    )
+    ax_a.add_artist(cancer_legend)
     ax_a.legend(
-        **LEGEND_BOX, loc="upper left", bbox_to_anchor=(0.0, -0.27),
-        fontsize=3.7, handlelength=1.0, handletextpad=0.35,
-        labelspacing=0.20, ncol=2, columnspacing=0.7,
+        handles=[
+            Line2D([0], [0], marker="o", ls="", markersize=2.8, mfc=COLORS["grey"], mec="none", label="PH P≥0.05"),
+            Line2D([0], [0], marker="^", ls="", markersize=3.0, mfc="white", mec=COLORS["grey"], label="PH P<0.05"),
+        ],
+        **LEGEND_BOX,
+        loc="upper left",
+        # Stack the PH-symbol key immediately below the cancer-family key so
+        # neither legend obscures the leading pan-cancer KRAS–TP53 context.
+        bbox_to_anchor=(0.0, 0.885),
+        fontsize=2.65,
+        handletextpad=0.2,
+        labelspacing=0.12,
     )
 
-    # b -- interval-specific effects show how joint-state associations vary across
-    # prespecified follow-up intervals.
+    # b -- combine the leading cancer-specific and pan-cancer joint-state
+    # associations in one compact forest plot.
+    cancer_leaders = (
+        screen_display.loc[screen_display.scope.eq("cancer-specific")]
+        .nsmallest(4, ["globalFdr", "p"])
+        .copy()
+    )
+    pancancer_leaders = (
+        screen_display.loc[screen_display.scope.eq("pan-cancer")]
+        .nsmallest(4, ["globalFdr", "p"])
+        .copy()
+    )
+    cancer_leaders["scopeLabel"] = "Cancer-specific"
+    pancancer_leaders["scopeLabel"] = "Pan-cancer"
+    leading_forest = pd.concat(
+        [cancer_leaders, pancancer_leaders], ignore_index=True
+    )
+    leading_forest["plotY"] = np.arange(len(leading_forest), dtype=float)
+    leading_forest.to_csv(
+        source / "figure9_panel_b_leading_associations.csv", index=False
+    )
+    forest_colours = np.where(
+        leading_forest.hazardRatio.ge(1), COLORS["vermillion"], COLORS["blue"]
+    )
+    ph_compatible = leading_forest.phTestP.ge(0.05)
+    group_boundary = len(cancer_leaders) - 0.5
+    ax_b.axhspan(
+        group_boundary,
+        len(leading_forest) - 0.5,
+        color=COLORS["very_light_grey"],
+        zorder=0,
+    )
+    ax_b.hlines(
+        leading_forest.plotY,
+        leading_forest.ciLow,
+        leading_forest.ciHigh,
+        color=forest_colours,
+        lw=0.75,
+        alpha=0.9,
+        zorder=2,
+    )
+    ax_b.scatter(
+        leading_forest.loc[ph_compatible, "hazardRatio"],
+        leading_forest.loc[ph_compatible, "plotY"],
+        c=forest_colours[ph_compatible],
+        s=13,
+        marker="o",
+        edgecolor="white",
+        linewidth=0.25,
+        zorder=3,
+    )
+    ax_b.scatter(
+        leading_forest.loc[~ph_compatible, "hazardRatio"],
+        leading_forest.loc[~ph_compatible, "plotY"],
+        facecolor="white",
+        edgecolor=forest_colours[~ph_compatible],
+        s=16,
+        marker="^",
+        linewidth=0.65,
+        zorder=3,
+    )
+    ax_b.axvline(1, color=COLORS["black"], lw=0.6, ls=(0, (2, 2)))
+    ax_b.axhline(group_boundary, color=COLORS["light_grey"], lw=0.55)
+    ax_b.set_xscale("log")
+    ax_b.set_xlim(0.19, 4.2)
+    ax_b.set_xticks([0.25, 0.5, 1, 2, 4], ["0.25", "0.5", "1", "2", "4"])
+    ax_b.tick_params(axis="x", which="minor", labelbottom=False)
+    ax_b.set_yticks(
+        leading_forest.plotY,
+        [label.replace(" · ", "\n") for label in leading_forest.displayContext],
+        fontsize=3.45,
+    )
+    ax_b.set_ylim(len(leading_forest) - 0.48, -0.52)
+    ax_b.set_xlabel("Joint-state HR (95% CI)", fontsize=4.1)
+    ax_b.set_title(
+        "Leading survival associations",
+        loc="left",
+        fontsize=5.4,
+        pad=3,
+        fontweight="normal",
+    )
+    ax_b.legend(
+        handles=[
+            Line2D([0], [0], marker="o", ls="", markersize=2.9, mfc=COLORS["grey"], mec="none", label="PH P≥0.05"),
+            Line2D([0], [0], marker="^", ls="", markersize=3.1, mfc="white", mec=COLORS["grey"], label="PH P<0.05"),
+        ],
+        **LEGEND_BOX,
+        loc="lower right",
+        fontsize=2.55,
+        handletextpad=0.18,
+        labelspacing=0.10,
+    )
+
+    # c -- interval-specific effects replace the constant-HR forest for the
+    # contexts in which the proportional-hazards assumption is untenable.
     interval_order = ["0–12 months", "12–36 months", ">36 months"]
     piecewise["interval"] = pd.Categorical(
         piecewise.interval, categories=interval_order, ordered=True
@@ -1411,7 +2006,7 @@ def make_figure(
     piecewise = piecewise.sort_values(["plotRow", "plotColumn"]).reset_index(drop=True)
     piecewise["log2HazardRatio"] = np.log2(piecewise.hazardRatio)
     piecewise.to_csv(
-        source / "figure9_panel_b_piecewise_hazard_ratios.csv", index=False
+        source / "figure9_panel_c_piecewise_hazard_ratios.csv", index=False
     )
     hr_matrix = (
         piecewise.pivot(index="displayContext", columns="interval", values="hazardRatio")
@@ -1427,100 +2022,116 @@ def make_figure(
         )
         .to_numpy(float)
     )
-    image = ax_b.imshow(
+    image = ax_c.imshow(
         np.log2(hr_matrix), cmap="RdBu_r", vmin=-2, vmax=2, aspect="auto",
         interpolation="nearest",
     )
-    ax_b.set_xticks(np.arange(3), ["0–12", "12–36", ">36"], fontsize=4.0)
-    ax_b.set_yticks(
+    ax_c.set_xticks(np.arange(3), ["0–12", "12–36", ">36"], fontsize=4.0)
+    ax_c.set_yticks(
         np.arange(len(display_specs)),
         [spec[-1].replace(" · ", "\n") for spec in display_specs],
-        fontsize=4.05,
+        fontsize=3.45,
     )
-    ax_b.set_xlabel("Months after reported survival origin", fontsize=4.25)
-    ax_b.set_title("Time-specific A+B survival associations", loc="left", fontsize=5.6, pad=3)
-    ax_b.set_xticks(np.arange(-0.5, 3, 1), minor=True)
-    ax_b.set_yticks(np.arange(-0.5, len(display_specs), 1), minor=True)
-    ax_b.grid(which="minor", color="white", lw=0.65)
-    ax_b.tick_params(which="minor", bottom=False, left=False)
+    ax_c.set_xlabel("Months after reported survival origin", fontsize=3.85)
+    ax_c.set_title("Time-specific survival associations", loc="left", fontsize=5.2, pad=3)
+    ax_c.set_xticks(np.arange(-0.5, 3, 1), minor=True)
+    ax_c.set_yticks(np.arange(-0.5, len(display_specs), 1), minor=True)
+    ax_c.grid(which="minor", color="white", lw=0.65)
+    ax_c.tick_params(which="minor", bottom=False, left=False)
     for row in range(hr_matrix.shape[0]):
         for column in range(hr_matrix.shape[1]):
             value = hr_matrix[row, column]
             label = "NE" if not np.isfinite(value) else f"{value:.2f}"
             if np.isfinite(q_matrix[row, column]) and q_matrix[row, column] < 0.05:
                 label += "*"
-            ax_b.text(
+            ax_c.text(
                 column, row, label, ha="center", va="center", fontsize=4.0,
                 color="white" if np.isfinite(value) and abs(np.log2(value)) > 1.15 else COLORS["black"],
             )
-    color_ax = ax_b.inset_axes([0.02, -0.25, 0.66, 0.045])
-    colour_bar = fig.colorbar(image, cax=color_ax, orientation="horizontal")
+    color_ax = ax_c.inset_axes([1.045, 0.55, 0.045, 0.42])
+    colour_bar = fig.colorbar(image, cax=color_ax, orientation="vertical")
     colour_bar.set_ticks([-2, 0, 2])
     colour_bar.set_ticklabels(["0.25", "1", "4"])
-    colour_bar.set_label("Interval-specific HR", fontsize=3.8, labelpad=1)
+    colour_bar.set_label("Interval-specific HR", fontsize=3.35, labelpad=1.2)
     colour_bar.ax.tick_params(labelsize=3.5, length=1.5, pad=1)
-    ax_b.text(
-        0.73, -0.235, "* BH q<0.05", transform=ax_b.transAxes,
-        ha="left", va="center", fontsize=3.35,
+    ax_c.text(
+        1.04, 0.50, "* BH q<0.05", transform=ax_c.transAxes,
+        ha="left", va="top", fontsize=3.15,
     )
 
-    # c -- absolute survival-time differences provide a directly interpretable
+    # d -- absolute survival-time differences provide a directly interpretable
     # complement to the relative piecewise effects.
     rmst["plotOffset"] = rmst.horizonMonths.map({36: -0.11, 60: 0.11})
     rmst["plotY"] = rmst.plotRow + rmst.plotOffset
     rmst = rmst.sort_values(["plotRow", "horizonMonths"]).reset_index(drop=True)
-    rmst.to_csv(source / "figure9_panel_c_rmst_differences.csv", index=False)
+    rmst.to_csv(source / "figure9_panel_d_rmst_differences.csv", index=False)
     for horizon, colour, marker, label in (
         (36, COLORS["blue"], "o", "36 months"),
         (60, COLORS["purple"], "s", "60 months"),
     ):
         selected = rmst.loc[rmst.horizonMonths.eq(horizon)]
-        ax_c.hlines(selected.plotY, selected.ciLow, selected.ciHigh, color=colour, lw=0.9)
-        ax_c.scatter(
+        ax_d.hlines(selected.plotY, selected.ciLow, selected.ciHigh, color=colour, lw=0.9)
+        ax_d.scatter(
             selected.rmstDifferenceMonths, selected.plotY, s=19, marker=marker,
             color=colour, edgecolor="white", lw=0.3, zorder=3, label=label,
         )
-    ax_c.axvline(0, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
-    ax_c.set_yticks(
+    ax_d.axvline(0, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
+    ax_d.set_yticks(
         np.arange(len(display_specs)),
         [spec[-1].replace(" · ", "\n") for spec in display_specs],
-        fontsize=4.05,
+        fontsize=3.55,
     )
-    ax_c.set_ylim(len(display_specs) - 0.48, -0.52)
+    ax_d.set_ylim(len(display_specs) - 0.48, -0.52)
     x_min = min(float(rmst.ciLow.min()) - 2.0, -2.0)
     x_max = max(float(rmst.ciHigh.max()) + 2.0, 2.0)
-    ax_c.set_xlim(x_min, x_max)
-    ax_c.set_xlabel("RMST difference, A+B minus A−/B− (months)", fontsize=4.3)
-    ax_c.set_title("Restricted mean survival time", loc="left", fontsize=5.6, pad=3)
-    ax_c.legend(
-        **LEGEND_BOX, loc="lower left", fontsize=3.8, ncol=2,
+    ax_d.set_xlim(x_min, x_max)
+    ax_d.set_xlabel("RMST difference, A+B minus A−/B− (months)", fontsize=3.8)
+    ax_d.set_title("Restricted mean survival time", loc="left", fontsize=5.2, pad=3)
+    ax_d.legend(
+        **LEGEND_BOX, loc="upper right", fontsize=3.8, ncol=1,
         handlelength=1.0, columnspacing=0.8, handletextpad=0.3,
+        labelspacing=0.15,
     )
 
-    d_key = ("LUAD", "KEAP1", "STK11")
-    e_key = ("PAAD", "KRAS", "TP53")
-    curves_d, risks_d, logrank_d, medians_d = draw_km(
-        ax_d, risk_d, contexts[d_key], "KEAP1", "STK11", "d"
-    )
+    e_key = ("PAN-CANCER", "KRAS", "TP53")
+    f_key = ("LUAD", "KEAP1", "STK11")
     curves_e, risks_e, logrank_e, medians_e = draw_km(
-        ax_e, risk_e, contexts[e_key], "KRAS", "TP53", "e"
+        ax_e,
+        risk_e,
+        contexts[e_key],
+        "KRAS",
+        "TP53",
+        "e",
+        display_cancer="Pan-cancer",
     )
-    curves_d.to_csv(source / "figure9_panel_d_km.csv", index=False)
-    risks_d.to_csv(source / "figure9_panel_d_risk.csv", index=False)
-    logrank_d.to_csv(source / "figure9_panel_d_logrank.csv", index=False)
-    medians_d.to_csv(source / "figure9_panel_d_medians.csv", index=False)
+    curves_f, risks_f, logrank_f, medians_f = draw_km(
+        ax_f, risk_f, contexts[f_key], "KEAP1", "STK11", "f"
+    )
+    # ``axis('off')`` on the shared risk-table axes can suppress the KM tick
+    # labels in some Matplotlib backends; make both time axes explicit.
+    km_ticks = np.array([0, 12, 24, 36, 60, 84, 120], dtype=float)
+    for km_ax in (ax_e, ax_f):
+        km_ax.set_xticks(km_ticks)
+        km_ax.set_xticklabels(["0", "12", "24", "36", "60", "84", "120"])
+        km_ax.tick_params(axis="x", labelbottom=True, pad=1.5)
+        plt.setp(km_ax.get_xticklabels(), visible=True)
     curves_e.to_csv(source / "figure9_panel_e_km.csv", index=False)
     risks_e.to_csv(source / "figure9_panel_e_risk.csv", index=False)
     logrank_e.to_csv(source / "figure9_panel_e_logrank.csv", index=False)
     medians_e.to_csv(source / "figure9_panel_e_medians.csv", index=False)
+    curves_f.to_csv(source / "figure9_panel_f_km.csv", index=False)
+    risks_f.to_csv(source / "figure9_panel_f_risk.csv", index=False)
+    logrank_f.to_csv(source / "figure9_panel_f_logrank.csv", index=False)
+    medians_f.to_csv(source / "figure9_panel_f_medians.csv", index=False)
 
-    # f -- smooth beta(t) estimates derived from scaled Schoenfeld residuals
+    # g -- smooth beta(t) estimates derived from scaled Schoenfeld residuals
     # expose how the A+B contrast changes during follow-up.
     time_contexts = [
-        ("KEAP1–STK11 (LUAD)", "LUAD · KEAP1–STK11", COLORS["vermillion"]),
-        ("KRAS–TP53 (PAAD)", "PAAD · KRAS–TP53", COLORS["orange"]),
-        ("PIK3CA–TP53 (BRCA)", "BRCA · PIK3CA–TP53", COLORS["blue"]),
-        ("STK11–TP53 (LUAD)", "LUAD · STK11–TP53", COLORS["purple"]),
+        ("KEAP1–KRAS (LUAD)", "LUAD · KEAP1–KRAS", COLORS["vermillion"]),
+        ("ASXL1–RUNX1 (MDS)", "MDS · ASXL1–RUNX1", COLORS["orange"]),
+        ("CDKN2A–KRAS (PAAD)", "PAAD · CDKN2A–KRAS", COLORS["blue"]),
+        ("ARID1A–PTEN (UCEC)", "UCEC · ARID1A–PTEN", COLORS["purple"]),
+        ("KRAS–TP53 (pan-cancer)", "Pan-cancer · KRAS–TP53", COLORS["green"]),
     ]
     time_frames: list[pd.DataFrame] = []
     for context_name, display_label, colour in time_contexts:
@@ -1529,46 +2140,430 @@ def make_figure(
             & time_varying.eventTimeMonths.le(60)
         ].copy()
         if selected.empty:
-            raise AssertionError(f"Figure 9f requires time-varying estimates for {context_name}")
+            raise AssertionError(f"Figure 9g requires time-varying estimates for {context_name}")
         selected["displayContext"] = display_label
         time_frames.append(selected)
-        ax_f.fill_between(
+        ax_g.fill_between(
             selected.eventTimeMonths.to_numpy(float), selected.ciLow.to_numpy(float),
             selected.ciHigh.to_numpy(float), color=colour, alpha=0.09, lw=0,
         )
-        ax_f.plot(
+        ax_g.plot(
             selected.eventTimeMonths, selected.hazardRatio, color=colour, lw=1.05,
             label=display_label,
         )
     time_plot = pd.concat(time_frames, ignore_index=True)
-    time_plot.to_csv(source / "figure9_panel_f_time_varying_hazard_ratios.csv", index=False)
-    ax_f.axhline(1, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
-    ax_f.set_xscale("log")
+    time_plot.to_csv(source / "figure9_panel_g_time_varying_hazard_ratios.csv", index=False)
+    ax_g.axhline(1, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
+    ax_g.set_xscale("log")
     # Only the hazard-ratio axis is logarithmic; follow-up remains on a linear
     # month scale.
-    ax_f.set_xscale("linear")
-    ax_f.set_yscale("log")
-    ax_f.set_xlim(0, 60)
-    ax_f.set_ylim(0.5, 8.5)
-    ax_f.set_yticks([0.5, 1, 2, 4, 8], ["0.5", "1", "2", "4", "8"])
-    ax_f.tick_params(axis="y", which="minor", labelleft=False)
-    ax_f.set_xlabel("Months after reported survival origin", fontsize=4.5)
-    ax_f.set_ylabel("Time-varying A+B vs A−/B− HR", fontsize=4.45)
-    ax_f.set_title("Hazard ratios change during follow-up", loc="left", fontsize=5.8, pad=4.0)
-    ax_f.legend(
+    ax_g.set_xscale("linear")
+    ax_g.set_yscale("log")
+    ax_g.set_xlim(0, 60)
+    ax_g.set_ylim(0.125, 8.5)
+    ax_g.set_yticks(
+        [0.125, 0.25, 0.5, 1, 2, 4, 8],
+        ["0.125", "0.25", "0.5", "1", "2", "4", "8"],
+    )
+    ax_g.tick_params(axis="y", which="minor", labelleft=False)
+    ax_g.set_xlabel("Months after reported survival origin", fontsize=4.5)
+    ax_g.set_ylabel("Time-varying A+B vs A−/B− HR", fontsize=4.45)
+    ax_g.set_title("Hazard ratios change during follow-up", loc="left", fontsize=5.8, pad=4.0)
+    ax_g.legend(
         **LEGEND_BOX, fontsize=3.35, ncol=1, loc="upper right",
         handletextpad=0.35, labelspacing=0.2,
     )
-    fig.subplots_adjust(left=0.115, right=0.99, top=0.952, bottom=0.075)
+    fig.subplots_adjust(left=0.070, right=0.99, top=0.952, bottom=0.075)
 
-    # Deliberately use panel-specific vertical positions: nested risk-table and
-    # quantitative axes do not share identical top edges in this landscape grid.
-    for letter, x_position, y_position in (
-        ("a", 0.071, 0.982), ("b", 0.397, 0.974), ("c", 0.680, 0.982),
-        ("d", 0.071, 0.482), ("e", 0.389, 0.474), ("f", 0.690, 0.485),
-    ):
-        figure_panel_label(fig, letter, x=x_position, y=y_position, ha="left", va="top")
+    aligned_panel_labels(
+        fig,
+        [
+            (("a", ax_a), ("b", ax_b), ("c", ax_c), ("d", ax_d)),
+            (("e", ax_e), ("f", ax_f), ("g", ax_g)),
+        ],
+    )
 
+    save_figure(fig, FIGURES / "figure9_survival")
+    plt.close(fig)
+
+
+def make_survival_screen_figure(
+    contexts: dict[tuple[str, str, str], pd.DataFrame],
+    screen_results: pd.DataFrame,
+) -> None:
+    """Render the unbiased survival screen as the active main Figure 9.
+
+    The complete screen contributes one joint-state point for every eligible
+    cancer/gene-pair context.  Detailed time-dependent diagnostics remain in
+    Supplementary Figure 4 rather than competing with the screen-level result in
+    the main figure.
+    """
+    apply_style()
+    source = TABLES.parent / "source_data"
+    source.mkdir(parents=True, exist_ok=True)
+    for stale_path in source.glob("figure9_panel_*.csv"):
+        stale_path.unlink()
+
+    joint = screen_results.loc[
+        screen_results.contrast.eq("A+B versus A−/B−")
+        & screen_results.fitStatus.str.startswith("estimated")
+        & screen_results.hazardRatio.gt(0)
+        & screen_results.globalFdr.notna()
+    ].copy()
+    if len(joint) != 2_612:
+        raise AssertionError(
+            f"Figure 9a requires all 2,612 eligible joint-state contexts; found {len(joint):,}"
+        )
+    joint["log2HazardRatio"] = np.log2(joint.hazardRatio)
+    joint["plotLog2HazardRatio"] = joint.log2HazardRatio.clip(-4.5, 4.5)
+    joint["hazardRatioPlacedAtPlotBoundary"] = joint.log2HazardRatio.ne(
+        joint.plotLog2HazardRatio
+    )
+    joint["negativeLog10GlobalFdr"] = -np.log10(
+        joint.globalFdr.clip(lower=np.finfo(float).tiny)
+    )
+    joint["globalFdrSignificant"] = joint.globalFdr.lt(0.05)
+    joint["phStatus"] = np.where(
+        joint.phTestP.lt(0.05), "PH test P<0.05", "PH test P≥0.05"
+    )
+    joint["displayContext"] = np.where(
+        joint.scope.eq("pan-cancer"),
+        "Pan-cancer · " + joint.geneA + "–" + joint.geneB,
+        joint.cancer + " · " + joint.geneA + "–" + joint.geneB,
+    )
+    joint = joint.sort_values(["globalFdr", "p", "cancer", "geneA", "geneB"])
+    joint.to_csv(source / "figure9_panel_a_complete_survival_screen.csv", index=False)
+
+    cancer_leaders = (
+        joint.loc[joint.scope.eq("cancer-specific")]
+        .nsmallest(10, ["globalFdr", "p"])
+        .copy()
+    )
+    pancancer_leaders = (
+        joint.loc[joint.scope.eq("pan-cancer")]
+        .nsmallest(10, ["globalFdr", "p"])
+        .copy()
+    )
+    cancer_leaders.to_csv(
+        source / "figure9_panel_c_cancer_specific_leaders.csv", index=False
+    )
+    pancancer_leaders.to_csv(
+        source / "figure9_panel_d_pancancer_leaders.csv", index=False
+    )
+
+    fig = plt.figure(figsize=figsize(180, 122))
+    outer = GridSpec(
+        2,
+        1,
+        figure=fig,
+        height_ratios=[1.08, 0.92],
+        hspace=0.46,
+    )
+    top = GridSpecFromSubplotSpec(
+        1,
+        2,
+        subplot_spec=outer[0],
+        width_ratios=[1.62, 1.0],
+        wspace=0.30,
+    )
+    bottom = GridSpecFromSubplotSpec(
+        1,
+        2,
+        subplot_spec=outer[1],
+        width_ratios=[1.03, 0.97],
+        wspace=0.38,
+    )
+    ax_a = fig.add_subplot(top[0, 0])
+    km_grid = GridSpecFromSubplotSpec(
+        2,
+        1,
+        subplot_spec=top[0, 1],
+        height_ratios=[0.77, 0.23],
+        hspace=0.04,
+    )
+    ax_b = fig.add_subplot(km_grid[0])
+    risk_b = fig.add_subplot(km_grid[1], sharex=ax_b)
+    ax_c = fig.add_subplot(bottom[0, 0])
+    ax_d = fig.add_subplot(bottom[0, 1])
+
+    # a -- every outcome-independent, mutation-frequency-qualified context.
+    significant_cancers = sorted(
+        joint.loc[joint.globalFdrSignificant, "cancer"].unique(),
+        key=lambda value: (value == "PAN-CANCER", value),
+    )
+    tab20 = list(plt.colormaps["tab20"].colors)
+    cancer_colours = {
+        cancer: (
+            COLORS["black"]
+            if cancer == "PAN-CANCER"
+            else tab20[index % len(tab20)]
+        )
+        for index, cancer in enumerate(significant_cancers)
+    }
+    nonsignificant = joint.loc[~joint.globalFdrSignificant]
+    ax_a.scatter(
+        nonsignificant.plotLog2HazardRatio,
+        nonsignificant.negativeLog10GlobalFdr,
+        s=5,
+        color=COLORS["light_grey"],
+        alpha=0.42,
+        linewidths=0,
+        rasterized=True,
+        zorder=1,
+    )
+    for cancer in significant_cancers:
+        selected = joint.loc[joint.globalFdrSignificant & joint.cancer.eq(cancer)]
+        compatible = selected.loc[selected.phTestP.ge(0.05)]
+        flagged = selected.loc[selected.phTestP.lt(0.05)]
+        colour = cancer_colours[cancer]
+        if len(compatible):
+            ax_a.scatter(
+                compatible.plotLog2HazardRatio,
+                compatible.negativeLog10GlobalFdr,
+                s=10,
+                marker="o",
+                color=colour,
+                alpha=0.82,
+                edgecolor="white",
+                linewidth=0.2,
+                rasterized=True,
+                zorder=2,
+            )
+        if len(flagged):
+            ax_a.scatter(
+                flagged.plotLog2HazardRatio,
+                flagged.negativeLog10GlobalFdr,
+                s=13,
+                marker="^",
+                facecolor="white",
+                edgecolor=colour,
+                linewidth=0.65,
+                rasterized=True,
+                zorder=3,
+            )
+    ax_a.axvline(0, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
+    ax_a.axhline(
+        -np.log10(0.05), color=COLORS["grey"], lw=0.65, ls=(0, (2, 2))
+    )
+    ax_a.set_xlabel("Joint-state log₂ hazard ratio, A+B versus A−/B−")
+    ax_a.set_ylabel("−log₁₀(global BH FDR)")
+    ax_a.set_xlim(-4.8, 4.8)
+    ax_a.set_title(
+        "Complete outcome-independent survival screen",
+        loc="left",
+        fontsize=5.6,
+        pad=3.0,
+        fontweight="normal",
+    )
+    label_specs = [
+        ("pan-cancer", "PAN-CANCER", "KRAS", "TP53"),
+        ("pan-cancer", "PAN-CANCER", "PIK3CA", "TP53"),
+        ("cancer-specific", "LUAD", "KEAP1", "STK11"),
+        ("cancer-specific", "MDS", "ASXL1", "RUNX1"),
+        ("cancer-specific", "UCEC", "ARID1A", "PTEN"),
+        ("cancer-specific", "PAAD", "KRAS", "SMAD4"),
+        ("pan-cancer", "PAN-CANCER", "APC", "ATM"),
+    ]
+    label_rows = pd.concat(
+        [
+            joint.loc[
+                joint.scope.eq(scope_name)
+                & joint.cancer.eq(cancer)
+                & joint.geneA.eq(gene_a)
+                & joint.geneB.eq(gene_b)
+            ]
+            for scope_name, cancer, gene_a, gene_b in label_specs
+        ],
+        ignore_index=True,
+    )
+    for row_index, row in enumerate(label_rows.itertuples(index=False)):
+        horizontal = 5 if row.log2HazardRatio >= 0 else -5
+        vertical = 3 if row_index % 2 == 0 else -3
+        ax_a.annotate(
+            row.displayContext,
+            (row.plotLog2HazardRatio, row.negativeLog10GlobalFdr),
+            xytext=(horizontal, vertical),
+            textcoords="offset points",
+            ha="left" if horizontal > 0 else "right",
+            va="bottom" if vertical > 0 else "top",
+            fontsize=3.35,
+            color=COLORS["black"],
+            arrowprops={"arrowstyle": "-", "lw": 0.3, "color": COLORS["grey"]},
+            zorder=5,
+        )
+    cancer_handles = [
+        Line2D(
+            [0],
+            [0],
+            marker="o",
+            ls="",
+            markersize=3.0,
+            mfc=cancer_colours[cancer],
+            mec="none",
+            label="Pan-cancer" if cancer == "PAN-CANCER" else cancer,
+        )
+        for cancer in significant_cancers
+    ]
+    cancer_legend = ax_a.legend(
+        handles=cancer_handles,
+        title="Cancer family among global-FDR-significant contexts",
+        loc="upper left",
+        bbox_to_anchor=(0.005, 0.985),
+        ncol=7,
+        fontsize=2.75,
+        title_fontsize=3.2,
+        columnspacing=0.50,
+        handletextpad=0.18,
+        labelspacing=0.22,
+        borderpad=0.28,
+        frameon=True,
+        fancybox=True,
+        framealpha=0.94,
+        facecolor="#FFFFFF",
+        edgecolor=COLORS["light_grey"],
+    )
+    ax_a.add_artist(cancer_legend)
+    ax_a.legend(
+        handles=[
+            Line2D(
+                [0], [0], marker="o", ls="", markersize=3.5,
+                mfc=COLORS["grey"], mec="none", label="PH test P≥0.05",
+            ),
+            Line2D(
+                [0], [0], marker="^", ls="", markersize=3.8,
+                mfc="white", mec=COLORS["grey"], label="PH test P<0.05",
+            ),
+        ],
+        **LEGEND_BOX,
+        loc="lower left",
+        bbox_to_anchor=(0.006, 0.035),
+        fontsize=3.2,
+        handletextpad=0.30,
+        labelspacing=0.18,
+    )
+    if joint.hazardRatioPlacedAtPlotBoundary.any():
+        ax_a.text(
+            0.995,
+            0.018,
+            "HRs outside the displayed range are placed at the boundary",
+            transform=ax_a.transAxes,
+            ha="right",
+            va="bottom",
+            fontsize=3.0,
+            color=COLORS["grey"],
+        )
+
+    # b -- the leading pan-cancer result, shown as four observed genotype states.
+    pan_key = ("PAN-CANCER", "KRAS", "TP53")
+    if pan_key not in contexts:
+        raise AssertionError("Figure 9b requires the pan-cancer KRAS–TP53 context")
+    curves_b, risks_b, logrank_b, medians_b = draw_km(
+        ax_b,
+        risk_b,
+        contexts[pan_key],
+        "KRAS",
+        "TP53",
+        "b",
+        display_cancer="Pan-cancer",
+    )
+    leading_pan = joint.loc[
+        joint.scope.eq("pan-cancer")
+        & joint.geneA.eq("KRAS")
+        & joint.geneB.eq("TP53")
+    ].iloc[0]
+    ax_b.text(
+        0.02,
+        0.13,
+        f"stratified Cox HR={leading_pan.hazardRatio:.2f} "
+        f"({leading_pan.ciLow:.2f}–{leading_pan.ciHigh:.2f}); "
+        f"global q={leading_pan.globalFdr:.1e}",
+        transform=ax_b.transAxes,
+        fontsize=3.65,
+    )
+    curves_b.to_csv(source / "figure9_panel_b_pancancer_km.csv", index=False)
+    risks_b.to_csv(source / "figure9_panel_b_pancancer_risk.csv", index=False)
+    logrank_b.to_csv(source / "figure9_panel_b_pancancer_logrank.csv", index=False)
+    medians_b.to_csv(source / "figure9_panel_b_pancancer_medians.csv", index=False)
+
+    def draw_leader_forest(
+        ax: plt.Axes,
+        frame: pd.DataFrame,
+        title_text: str,
+    ) -> None:
+        plot = frame.sort_values(["globalFdr", "p"], ascending=True).reset_index(drop=True)
+        plot["plotY"] = np.arange(len(plot))
+        compatible = plot.phTestP.ge(0.05)
+        colours = np.where(
+            plot.hazardRatio.ge(1), COLORS["vermillion"], COLORS["blue"]
+        )
+        ax.hlines(plot.plotY, plot.ciLow, plot.ciHigh, color=colours, lw=0.9, alpha=0.9)
+        ax.scatter(
+            plot.loc[compatible, "hazardRatio"],
+            plot.loc[compatible, "plotY"],
+            c=colours[compatible],
+            s=19,
+            marker="o",
+            edgecolor="white",
+            linewidth=0.3,
+            zorder=3,
+        )
+        ax.scatter(
+            plot.loc[~compatible, "hazardRatio"],
+            plot.loc[~compatible, "plotY"],
+            facecolor="white",
+            edgecolor=colours[~compatible],
+            s=22,
+            marker="^",
+            linewidth=0.7,
+            zorder=3,
+        )
+        ax.axvline(1, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
+        ax.set_xscale("log")
+        left = max(0.12, float(plot.ciLow.min()) * 0.76)
+        right = max(4.2, float(plot.ciHigh.max()) * 1.12)
+        ax.set_xlim(left, right)
+        ticks = [tick for tick in [0.25, 0.5, 1, 2, 4, 8, 16] if left <= tick <= right]
+        ax.set_xticks(ticks, [f"{tick:g}" for tick in ticks])
+        ax.tick_params(axis="x", which="minor", labelbottom=False)
+        ax.set_yticks(
+            plot.plotY,
+            [label.replace(" · ", "\n") for label in plot.displayContext],
+            fontsize=4.1,
+        )
+        ax.set_ylim(len(plot) - 0.48, -0.52)
+        ax.set_xlabel("Joint-state hazard ratio (95% CI)")
+        ax.set_title(
+            title_text, loc="left", fontsize=5.6, pad=3.0, fontweight="normal"
+        )
+        ax.legend(
+            handles=[
+                Line2D(
+                    [0], [0], marker="o", ls="", markersize=3.5,
+                    mfc=COLORS["grey"], mec="none", label="PH test P≥0.05",
+                ),
+                Line2D(
+                    [0], [0], marker="^", ls="", markersize=3.8,
+                    mfc="white", mec=COLORS["grey"], label="PH test P<0.05",
+                ),
+            ],
+            **LEGEND_BOX,
+            loc="lower right",
+            fontsize=3.4,
+            handletextpad=0.25,
+            labelspacing=0.16,
+        )
+
+    draw_leader_forest(ax_c, cancer_leaders, "Leading cancer-specific associations")
+    draw_leader_forest(ax_d, pancancer_leaders, "Leading pan-cancer associations")
+
+    fig.subplots_adjust(left=0.105, right=0.988, top=0.955, bottom=0.078)
+    aligned_panel_labels(
+        fig,
+        [
+            (("a", ax_a), ("b", ax_b)),
+            (("c", ax_c), ("d", ax_d)),
+        ],
+    )
     save_figure(fig, FIGURES / "figure9_survival")
     plt.close(fig)
 
@@ -1578,6 +2573,7 @@ def make_diagnostics(
     missing: pd.DataFrame,
     endpoint_audit: pd.DataFrame,
     extended: dict[str, pd.DataFrame],
+    screen_results: pd.DataFrame,
 ) -> None:
     apply_style()
     supplementary = FIGURES / "supplementary"
@@ -1611,42 +2607,50 @@ def make_diagnostics(
     )
     ax_a.set_xscale("log")
     ax_a.set_xlabel("Selected patients (log scale)")
+    ax_a.set_title(
+        "Overall-survival endpoint eligibility",
+        loc="left",
+        fontsize=5.5,
+        pad=3,
+        fontweight="normal",
+    )
     for yy, count in enumerate(endpoint_plot.nPatients):
         ax_a.text(count, yy, f"  {int(count):,}", va="center", fontsize=4.5)
     panel_label(ax_a, "a", x=-0.12, y=1.045)
     endpoint_plot.to_csv(source / "figureS4_panel_a_endpoint_eligibility.csv", index=False)
 
-    # b -- clinical covariate missingness. Horizontal bars keep all context
-    # labels legible without allowing rotated text to intrude into the lower row.
-    missing_plot = missing.loc[missing.scope.eq("cancer-specific")].copy()
-    missing_plot = missing_plot.iloc[::-1].reset_index(drop=True)
-    missing_plot["plotY"] = np.arange(len(missing_plot))
+    # b -- retain the author-approved replacement panel: absolute 60-month
+    # survival-time differences from the expanded diagnostic subset.
+    rmst_plot = extended["survival_rmst_differences.csv"].loc[
+        lambda frame: frame.horizonMonths.eq(60)
+    ].copy()
+    rmst_plot = rmst_plot.sort_values("rmstDifferenceMonths").reset_index(drop=True)
+    rmst_plot["plotY"] = np.arange(len(rmst_plot))
     ax_b.barh(
-        missing_plot.plotY - 0.17, missing_plot.pctAgeMissing, height=0.34,
-        color=COLORS["orange"], label="age",
+        rmst_plot.plotY,
+        rmst_plot.rmstDifferenceMonths,
+        color=np.where(
+            rmst_plot.rmstDifferenceMonths.lt(0),
+            COLORS["vermillion"],
+            COLORS["blue"],
+        ),
     )
-    ax_b.barh(
-        missing_plot.plotY + 0.17, missing_plot.pctSexMissing, height=0.34,
-        color=COLORS["blue"], label="sex",
-    )
+    ax_b.axvline(0, color=COLORS["black"], lw=0.65, ls=(0, (2, 2)))
     ax_b.set_yticks(
-        missing_plot.plotY,
-        missing_plot.context.str.replace(" (GBM)", " (legacy GBM)", regex=False),
-        fontsize=3.8,
+        rmst_plot.plotY,
+        rmst_plot.context.str.replace(" (GBM)", " (legacy GBM)", regex=False),
+        fontsize=3.0,
     )
-    ax_b.set_xlabel("Missing among primary-model patients (%)")
-    ax_b.legend(
-        **LEGEND_BOX,
-        handlelength=1.2,
-        ncol=2,
-        loc="upper left",
-        bbox_to_anchor=(0.0, -0.23),
-        fontsize=3.8,
-        columnspacing=0.8,
+    ax_b.set_xlabel("60-month RMST difference, A+B minus A−/B− (months)")
+    ax_b.set_title(
+        "Restricted mean survival time",
+        loc="left",
+        fontsize=5.5,
+        pad=3,
+        fontweight="normal",
     )
-    ax_b.set_xlim(0, 100)
     panel_label(ax_b, "b", x=-0.12, y=1.045)
-    missing_plot.to_csv(source / "figureS4_panel_b_covariate_missingness.csv", index=False)
+    rmst_plot.to_csv(source / "figureS4_panel_b_60_month_rmst.csv", index=False)
 
     # c -- clustered-to-model-based standard-error ratio for the A+B term.
     conventional = models.loc[
@@ -1676,6 +2680,13 @@ def make_diagnostics(
     ax_c.axvline(1, color=COLORS["black"], ls=(0, (2, 2)), lw=0.7)
     ax_c.set_yticks(np.arange(len(variance_plot)), variance_plot.context, fontsize=4.4)
     ax_c.set_xlabel("Clustered/model-based SE ratio")
+    ax_c.set_title(
+        "Variance sensitivity",
+        loc="left",
+        fontsize=5.5,
+        pad=3,
+        fontweight="normal",
+    )
     ax_c.legend(
         handles=[
             Line2D([0], [0], marker="o", ls="", mfc=COLORS["blue"], mec="none", label="Cancer-specific"),
@@ -1688,26 +2699,49 @@ def make_diagnostics(
     panel_label(ax_c, "c", x=-0.12, y=1.045)
     variance_plot.to_csv(source / "figureS4_panel_c_variance_sensitivity.csv", index=False)
 
-    # d -- all 29 conventional primary A+B models, with the nominal PH-test
-    # threshold and globally multiplicity-adjusted failures visually separated.
-    ph = extended["survival_ph_diagnostics.csv"].loc[
-        lambda frame: frame.term.eq("Both") & frame.phTestP.notna()
+    # d -- coefficient-level proportional-hazards diagnostics for the complete
+    # joint-state screen, rather than only the former 29-context subset.
+    ph = screen_results.loc[
+        screen_results.contrast.eq("A+B versus A−/B−")
+        & screen_results.fitStatus.str.startswith("estimated")
+        & screen_results.phTestP.notna()
     ].copy()
-    if len(ph) != 29:
-        raise AssertionError(f"Supplementary Figure 4d requires all 29 primary models; found {len(ph)}")
-    ph["label"] = ph.context.str.replace(" (GBM)", " (legacy GBM)", regex=False)
+    if len(ph) != 2_612:
+        raise AssertionError(
+            f"Supplementary Figure 4d requires 2,612 joint-state models; found {len(ph):,}"
+        )
+    ph["phFdr"] = multipletests(ph.phTestP, method="fdr_bh")[1]
+    ph["label"] = np.where(
+        ph.scope.eq("pan-cancer"),
+        "Pan-cancer · " + ph.geneA + "–" + ph.geneB,
+        ph.cancer + " · " + ph.geneA + "–" + ph.geneB,
+    )
     ph["negativeLog10P"] = -np.log10(ph.phTestP.clip(lower=np.finfo(float).tiny))
-    ph = ph.sort_values("phTestP", ascending=False).reset_index(drop=True)
-    ph["plotY"] = np.arange(len(ph))
+    ph = ph.sort_values("phTestP", ascending=True).reset_index(drop=True)
+    ph["plotRank"] = np.arange(1, len(ph) + 1)
     colors = np.where(
         ph.phFdr.lt(0.05), COLORS["vermillion"],
         np.where(ph.phTestP.lt(0.05), COLORS["orange"], COLORS["grey"]),
     )
-    ax_d.scatter(ph.negativeLog10P, ph.plotY, c=colors, s=12)
-    ax_d.axvline(-np.log10(0.05), color=COLORS["black"], ls=(0, (2, 2)), lw=0.7)
-    ax_d.set_yticks(ph.plotY, ph.label, fontsize=3.5)
-    ax_d.set_xlabel("−log₁₀(P), coefficient-level PH test")
-    ax_d.set_title("All 29 primary A+B models", loc="left", fontsize=5.5, pad=3)
+    ax_d.scatter(
+        ph.plotRank,
+        ph.negativeLog10P,
+        c=colors,
+        s=6,
+        alpha=0.72,
+        linewidths=0,
+        rasterized=True,
+    )
+    ax_d.axhline(-np.log10(0.05), color=COLORS["black"], ls=(0, (2, 2)), lw=0.7)
+    ax_d.set_xlabel("Contexts ranked by PH-test P")
+    ax_d.set_ylabel("−log₁₀(P), coefficient-level PH test")
+    ax_d.set_title(
+        "Proportional-hazards diagnostics across all 2,612 contexts",
+        loc="left",
+        fontsize=5.5,
+        pad=3,
+        fontweight="normal",
+    )
     ax_d.legend(
         handles=[
             Line2D(
@@ -1841,6 +2875,51 @@ def make_diagnostics(
     plt.close(fig)
 
 
+def render_saved_survival_figures() -> None:
+    """Rebuild Figure 9 and Supplementary Figure 4 from frozen result tables."""
+    samples = pd.read_parquet(PROCESSED / "analysis_samples_curated.parquet")
+    samples = samples.loc[samples.analysisEligible].copy()
+    clinical = build_curated_clinical(samples)
+    conflict_specimens, _ = assay_discordance_specimen_audit(samples)
+    clinical["hasAssayScopeConflict"] = [
+        (str(study_id), str(sample_id)) in conflict_specimens
+        for study_id, sample_id in zip(clinical.studyId, clinical.sampleId)
+    ]
+    latest_genes = sorted(
+        {
+            gene
+            for _, _, gene_a, gene_b, _ in FIGURE9_LATEST_CONTEXTS
+            for gene in (gene_a, gene_b)
+        }
+        | {FIGURE9_SECONDARY_KM_CONTEXT[2], FIGURE9_SECONDARY_KM_CONTEXT[3]}
+    )
+    flags = callability_and_mutation_flags(samples, latest_genes)
+    contexts, latest_extended = run_figure9_latest_diagnostics(clinical, flags)
+    screen_results = pd.read_csv(TABLES / "survival_unbiased_screen.csv")
+    models = pd.read_csv(TABLES / "survival_curated_pair_models.csv")
+    groups = pd.read_csv(TABLES / "survival_curated_pair_groups.csv")
+    audit = pd.read_csv(TABLES / "survival_curated_cohort_audit.csv")
+    missing = pd.read_csv(TABLES / "survival_curated_missingness.csv")
+    endpoint_audit = pd.read_csv(TABLES / "survival_endpoint_eligibility.csv")
+    required_extended = set(EXTENDED_SURVIVAL_TABLES) | {
+        "survival_joint_state_and_interaction_summary.csv",
+    }
+    extended = {
+        filename: pd.read_csv(TABLES / filename)
+        for filename in sorted(required_extended)
+    }
+    make_figure(
+        contexts,
+        models,
+        groups,
+        audit.loc[audit.nModelPatients.ge(MIN_CONTEXT_N)],
+        latest_extended,
+        screen_results,
+    )
+    make_diagnostics(models, missing, endpoint_audit, extended, screen_results)
+    print("Rebuilt Figure 9 and Supplementary Figure 4 from frozen survival results.")
+
+
 def main(*, render_figures: bool = True) -> None:
     samples = pd.read_parquet(PROCESSED / "analysis_samples_curated.parquet")
     samples = samples.loc[samples.analysisEligible].copy()
@@ -1858,8 +2937,19 @@ def main(*, render_figures: bool = True) -> None:
         (str(study_id), str(sample_id)) in conflict_specimens
         for study_id, sample_id in zip(clinical.studyId, clinical.sampleId)
     ]
-    genes = sorted({gene for _, gene_a, gene_b in CONTEXTS for gene in (gene_a, gene_b)})
+    screen_specifications, genes = survival_screen_specifications()
     flags = callability_and_mutation_flags(samples, genes)
+    screen_results, screen_audit = run_unbiased_survival_screen(
+        clinical,
+        flags,
+        screen_specifications,
+    )
+    print(
+        "Comprehensive survival screen: "
+        f"{int(screen_audit.eligible.sum()):,} eligible contexts from "
+        f"{len(screen_audit):,} mutation-frequency-qualified candidates; "
+        f"{int(screen_results.globalFdr.lt(0.05).sum()):,} target coefficients at global FDR < 0.05."
+    )
 
     # Mutually exclusive endpoint eligibility audit. The primary survival cohort
     # requires a recognized status and a finite, strictly positive time.
@@ -2035,14 +3125,18 @@ def main(*, render_figures: bool = True) -> None:
         absent = sorted(required - set(context_frames))
         raise RuntimeError(f"Prespecified KM contexts were not estimable: {absent}")
     if render_figures:
+        latest_context_frames, latest_figure_extended = run_figure9_latest_diagnostics(
+            clinical, flags
+        )
         make_figure(
-            context_frames,
+            latest_context_frames,
             models,
             groups,
             audit.loc[audit.nModelPatients.ge(MIN_CONTEXT_N)],
-            extended,
+            latest_figure_extended,
+            screen_results,
         )
-        make_diagnostics(models, missing, endpoint_audit, extended)
+        make_diagnostics(models, missing, endpoint_audit, extended, screen_results)
 
     print(f"Curated selected samples: {len(samples):,}")
     print(
@@ -2083,5 +3177,15 @@ if __name__ == "__main__":
         action="store_true",
         help="Regenerate survival result tables without rewriting figure files.",
     )
+    parser.add_argument(
+        "--figures-only",
+        action="store_true",
+        help="Rebuild Figure 9 and Supplementary Figure 4 from frozen result tables.",
+    )
     arguments = parser.parse_args()
-    main(render_figures=not arguments.tables_only)
+    if arguments.tables_only and arguments.figures_only:
+        parser.error("--tables-only and --figures-only cannot be combined")
+    if arguments.figures_only:
+        render_saved_survival_figures()
+    else:
+        main(render_figures=not arguments.tables_only)

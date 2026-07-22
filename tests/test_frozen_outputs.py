@@ -11,7 +11,7 @@ class FrozenOutputTests(unittest.TestCase):
     def test_inventory_and_integrity(self):
         checks = preflight()
         self.assertTrue(checks["ready"], checks["missing"])
-        self.assertEqual(checks["tables"], 41)
+        self.assertEqual(checks["tables"], 43)
         self.assertEqual(checks["main_figures"], 9)
         self.assertEqual(checks["supplementary_figures"], 7)
         manifest = verify_manifest()
@@ -38,7 +38,12 @@ class FrozenOutputTests(unittest.TestCase):
         self.assertEqual(
             results["pairwise_screen"]["+ sensitivity assay concordance"], 1_540
         )
-        self.assertEqual(results["survival"]["primary_joint_state_models"], 29)
+        self.assertEqual(
+            results["survival"]["complete_screen_joint_state_models"], 2_612
+        )
+        self.assertEqual(
+            results["survival"]["expanded_diagnostic_joint_state_models"], 29
+        )
         self.assertEqual(
             results["survival"]["primary_joint_state_ph_p_below_0_05"], 10
         )

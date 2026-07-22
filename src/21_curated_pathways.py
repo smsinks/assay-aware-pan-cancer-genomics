@@ -1,7 +1,7 @@
 """Stage 21 -- exact-reference, callability-aware pathway mutation landscape.
 
-This stage uses the curated pathway templates distributed as Supplementary Table S3 by
-Sanchez-Vega et al.
+This stage replaces the hand-reconstructed pathway lists used by Stage 14 with the
+curated templates distributed as Supplemental Table S3 by Sanchez-Vega et al.
 (Cell 2018; PMID 29625050).  The workbook is treated as a frozen external reference.
 
 Important scope
@@ -47,9 +47,16 @@ import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import leaves_list, linkage, optimal_leaf_ordering
 from scipy.spatial.distance import squareform
+from scipy.stats import spearmanr
 
 from config import EXTERNAL, FIGURES, PROCESSED, TABLES
-from nature_style import COLORS, apply as apply_style, figsize, save_figure
+from nature_style import (
+    COLORS,
+    aligned_panel_labels,
+    apply as apply_style,
+    figsize,
+    save_figure,
+)
 
 warnings.filterwarnings("ignore", message="Unknown extension is not supported")
 
@@ -85,7 +92,8 @@ PATHWAY_LABELS = {
 
 MIN_MAIN_WES = 100
 # The main landscape remains readable at journal width with 36 reviewed cancer
-# families; Supplementary Fig. S2 shows the complete 89-family universe.
+# families.  This extends the previous 28-family display while Supplementary Fig. S2
+# continues to show the complete 89-family universe.
 N_MAIN_CANCERS = 36
 
 LEGEND_BOX = {
@@ -178,7 +186,7 @@ def load_templates(panel: pd.DataFrame) -> pd.DataFrame:
     """Extract every role-annotated reference member and persist an audit table."""
     if not REFERENCE.exists():
         raise FileNotFoundError(
-            f"Missing official Supplementary Table S3 workbook: {REFERENCE}"
+            f"Missing official Supplemental Table S3 workbook: {REFERENCE}"
         )
     observed_hash = _sha256(REFERENCE)
     if observed_hash != REFERENCE_SHA256:
@@ -674,6 +682,8 @@ def make_main_figure(cancer: pd.DataFrame, membership: pd.DataFrame) -> None:
     )
 
     fig.subplots_adjust(left=0.145, right=0.985, top=0.95, bottom=0.19)
+    # Figure 6 is a single integrated pathway landscape with aligned cohort and
+    # pan-cancer marginal tracks; panel letters are intentionally omitted.
     save_figure(fig, FIGURES / "figure6_pathway_landscape")
     plt.close(fig)
 
@@ -720,23 +730,35 @@ def make_supplementary_figure(cancer: pd.DataFrame) -> None:
             "Supplementary Figure S2 requires the frozen 54,249-case WES/WGS denominator"
         )
 
-    # The continuous portrait matrix aligns cancer-level assay context at right and the
-    # pathway-level pan-cancer marginal below, so every summary can be read against the
-    # same rows and columns without artificial panel divisions.
-    fig = plt.figure(figsize=figsize(180, 245))
+    standard = pd.read_csv(TABLES / "assay_frequency_standardized.csv")
+    prevalence = pd.read_csv(TABLES / "gene_frequencies_curated.csv")
+    assay_comparison = standard.loc[standard.nCommonCancers.ge(2)].merge(
+        prevalence[["gene", "nMutated"]], on="gene", how="left", validate="one_to_one"
+    )
+    if len(assay_comparison) != 738:
+        raise AssertionError(
+            "Supplementary Figure S2b requires the frozen 738-gene cross-assay "
+            f"comparison; found {len(assay_comparison)}"
+        )
+
+    # Panel a remains one integrated all-cancer pathway landscape. Panel b restores
+    # the cancer-standardised WES/WGS-versus-targeted-panel prevalence comparison
+    # formerly shown in the main recurrence figure.
+    fig = plt.figure(figsize=figsize(220, 245))
     grid = GridSpec(
         2,
-        2,
+        3,
         figure=fig,
-        width_ratios=[1.0, 0.34],
-        height_ratios=[1.0, 0.135],
-        hspace=0.018,
-        wspace=0.025,
+        width_ratios=[0.82, 0.56, 0.36],
+        height_ratios=[1.0, 0.23],
+        hspace=0.055,
+        wspace=0.12,
     )
-    ax_heat = fig.add_subplot(grid[0, 0])
-    ax_cohort = fig.add_subplot(grid[0, 1], sharey=ax_heat)
+    ax_heat = fig.add_subplot(grid[0, 0:2])
+    ax_cohort = fig.add_subplot(grid[0, 2], sharey=ax_heat)
     ax_pan = fig.add_subplot(grid[1, 0])
-    ax_key = fig.add_subplot(grid[1, 1])
+    ax_assay = fig.add_subplot(grid[1, 1])
+    ax_key = fig.add_subplot(grid[1, 2])
 
     _heatmap(
         ax_heat,
@@ -838,7 +860,68 @@ def make_supplementary_figure(cancer: pd.DataFrame) -> None:
         handlelength=1.2,
     )
 
-    fig.subplots_adjust(left=0.112, right=0.985, top=0.935, bottom=0.055)
+    assay_scatter = ax_assay.scatter(
+        assay_comparison.freqWesStandardizedPct,
+        assay_comparison.freqPanelStandardizedPct,
+        s=np.clip(np.sqrt(assay_comparison.nMutated), 3, 18),
+        c=assay_comparison.nCommonCancers,
+        cmap="cividis",
+        alpha=0.60,
+        edgecolors="none",
+    )
+    assay_limit = 1.06 * max(
+        float(assay_comparison.freqWesStandardizedPct.max()),
+        float(assay_comparison.freqPanelStandardizedPct.max()),
+    )
+    ax_assay.plot(
+        [0, assay_limit], [0, assay_limit], color=COLORS["grey"],
+        lw=0.65, ls=(0, (2, 2)),
+    )
+    label_offsets = {
+        "CSMD3": (3, 2), "TP53": (3, -8), "MUC16": (3, -7),
+        "TRRAP": (-22, -8), "KRAS": (3, 3), "PIK3CA": (-23, -8),
+    }
+    for row in assay_comparison.loc[
+        assay_comparison.gene.isin(label_offsets)
+    ].itertuples(index=False):
+        ax_assay.annotate(
+            row.gene,
+            (row.freqWesStandardizedPct, row.freqPanelStandardizedPct),
+            xytext=label_offsets[row.gene],
+            textcoords="offset points",
+            fontsize=3.7,
+        )
+    rho = float(
+        spearmanr(
+            assay_comparison.freqWesStandardizedPct,
+            assay_comparison.freqPanelStandardizedPct,
+        ).statistic
+    )
+    ax_assay.text(
+        0.04, 0.96, f"n=738 genes\nSpearman ρ={rho:.3f}",
+        transform=ax_assay.transAxes, va="top", fontsize=4.0,
+        bbox={
+            "boxstyle": "round,pad=0.28", "facecolor": "white",
+            "edgecolor": COLORS["light_grey"], "linewidth": 0.45, "alpha": 0.95,
+        },
+    )
+    ax_assay.set_xlim(0, assay_limit)
+    ax_assay.set_ylim(0, assay_limit)
+    ax_assay.set_aspect("equal", adjustable="box")
+    ax_assay.set_xlabel("WES/WGS prevalence, cancer-standardised (%)", fontsize=4.3)
+    ax_assay.set_ylabel("Targeted-panel prevalence, same weights (%)", fontsize=4.3)
+    assay_cax = ax_key.inset_axes([0.08, 0.28, 0.84, 0.08])
+    assay_bar = fig.colorbar(assay_scatter, cax=assay_cax, orientation="horizontal")
+    assay_bar.set_label("Shared cancer groups (n)", fontsize=4.0, labelpad=1.2)
+    assay_bar.ax.tick_params(labelsize=3.6, pad=0.8, length=1.2)
+
+    assay_comparison.to_csv(
+        TABLES.parent / "source_data" / "figureS2_panel_b_assay_concordance.csv",
+        index=False,
+    )
+
+    fig.subplots_adjust(left=0.095, right=0.986, top=0.936, bottom=0.064)
+    aligned_panel_labels(fig, [(('a', ax_heat),), (('b', ax_assay),)])
     save_figure(fig, supplementary / "figureS2_pathway_all_cancers")
     plt.close(fig)
 

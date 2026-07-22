@@ -114,9 +114,12 @@ combined CSV and JSON request manifests under `results/`.
   including three-group comparator and leave-one-lineage-out analyses.
 - Directed interaction-network annotations with a degree- and cancer-gene-matched
   permutation null.
-- Joint genotype-state and formal multiplicative-interaction survival estimates,
-  proportional-hazards diagnostics, piecewise hazard ratios, restricted mean survival
-  time differences, study-level meta-analyses and leave-one-study-out estimates.
+- A complete, outcome-independent survival screen requiring both genes to reach 10%
+  assay-aware prevalence within cancer-specific analyses or 5% pan-cancer prevalence,
+  followed by endpoint and four-state group-size criteria. Separate joint genotype-state
+  and formal multiplicative-interaction estimates are accompanied by proportional-hazards
+  diagnostics, piecewise hazard ratios, restricted mean survival time differences,
+  study-level meta-analyses and leave-one-study-out estimates.
 
 The primary no-burden estimates for LUAD are OR = 0.0277 for EGFR–KRAS and OR = 10.83
 for KEAP1–STK11. Across all 74,582 tested cancer–gene-pair contexts, 71,360 were
@@ -148,7 +151,7 @@ matrix is deposited, while the main figures retain selected contexts for readabi
 ├── requirements-lock.txt
 ├── results/
 │   ├── figures/                 # 9 main and 7 supplementary PNG files
-│   └── tables/                  # 41 frozen analytical result tables
+│   └── tables/                  # 43 frozen analytical result tables
 ├── src/                         # acquisition, curation, models and figure stages
 └── tests/                       # synthetic analytical contract tests
 ```
@@ -168,8 +171,9 @@ matrix is deposited, while the main figures retain selected contexts for readabi
   conditioning on mutation burden. The leave-two-out sensitivity subtracts both tested
   gene indicators before constructing background-burden quintiles. The original
   total-burden specification is retained only as a diagnostic.
-- Primary survival models require positive follow-up; reported zero-time records enter
-  only the explicit half-day sensitivity analysis.
+- Survival screening requires positive follow-up, at least 80 patients, 20 deaths and
+  20 patients in each four-state genotype group. Reported zero-time records enter only
+  the explicit half-day sensitivity analysis.
 - cBioPortal acquisition records response counts and SHA-256 hashes per request and
   fails if a paginated response reaches its configured page boundary.
 

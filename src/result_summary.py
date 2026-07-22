@@ -49,6 +49,8 @@ REQUIRED_TABLES = [
     "survival_pan_cancer.csv",
     "survival_cancer_specific.csv",
     "survival_sensitivity.csv",
+    "survival_complete_screen.csv",
+    "survival_screen_eligibility.csv",
     "hallmark_by_cancer.csv",
     "gene_pair_three_specifications.csv",
     "gene_pair_screen_summary.csv",
@@ -131,6 +133,8 @@ def headline_results() -> dict[str, object]:
     survival_cancer = pd.read_csv(TABLES / "survival_cancer_specific.csv")
     survival_pan = pd.read_csv(TABLES / "survival_pan_cancer.csv")
     survival_joint = pd.read_csv(TABLES / "survival_joint_state_interaction.csv")
+    survival_screen = pd.read_csv(TABLES / "survival_complete_screen.csv")
+    survival_eligibility = pd.read_csv(TABLES / "survival_screen_eligibility.csv")
     survival_piecewise = pd.read_csv(TABLES / "survival_piecewise_hazard_ratios.csv")
     survival_rmst = pd.read_csv(TABLES / "survival_rmst_differences.csv")
 
@@ -220,7 +224,13 @@ def headline_results() -> dict[str, object]:
                 paad_survival.jointStateHazardRatio
             ),
             "pan_cancer_pairs": int(len(survival_pan)),
-            "primary_joint_state_models": int(len(survival_joint)),
+            "eligible_complete_screen_contexts": int(
+                survival_eligibility.eligible.fillna(False).astype(bool).sum()
+            ),
+            "complete_screen_joint_state_models": int(
+                survival_screen.contrast.eq("A+B versus A−/B−").sum()
+            ),
+            "expanded_diagnostic_joint_state_models": int(len(survival_joint)),
             "primary_joint_state_ph_p_below_0_05": int(
                 survival_joint.jointStatePhTestP.lt(0.05).sum()
             ),
