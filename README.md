@@ -1,4 +1,4 @@
-# Pan-cancer assay-aware analysis of 132,181 tumours
+# Harmonised genomic profiles of 132,181 tumours resolve recurrent mutations that mark cancer dependencies and survival
 
 This repository contains the analysis and reproducibility materials for an assay-aware
 pan-cancer analysis of 132,181 selected tissue tumours from 367 cBioPortal studies. It
