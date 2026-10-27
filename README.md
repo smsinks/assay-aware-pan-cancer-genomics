@@ -162,7 +162,7 @@ matrix is deposited, while the main figures retain selected contexts for readabi
   study-pair overlap mapping; unresolved generic identifier collisions remain
   study-qualified.
 - One representative eligible tissue tumour is selected per patient key, with primary
-  tumour preceding recurrence, metastasis and unspecified tissue.
+  tumour preceding recurrence, metastasis, and unspecified tissue.
 - A targeted-panel gene is callable only when documented panel membership includes it;
   a positive call outside the documented scope is audited rather than silently counted.
 - Multiple-testing correction uses Benjamini–Hochberg within each stated testing family.
